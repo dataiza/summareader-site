@@ -1,0 +1,212 @@
+<!doctype html>
+<!-- Reviewed against PRIVACY.md @ sha256:91481bcc6c2f0d9bade1e33b6090b1c929e53bf1fa880c0dd60211be4ba918f6
+     The app ships that file and this page publishes it. If refresh.sh says the
+     hash has moved, they have diverged — which is the failure a store review
+     finds. Fix both, then update the line above. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy policy — SummaReader</title>
+<meta name="description" content="SummaReader collects nothing about you. No account, no analytics, no telemetry, no crash reporting. This page says what leaves your device and who sees it.">
+<link rel="canonical" href="https://summareader.dataiza.sk/privacy.html">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav>
+  <div>
+    <a class="wordmark" href="index.html">SummaReader</a>
+    <a href="guide.html">Guide</a>
+    <a href="privacy.html" aria-current="page">Privacy</a>
+    <a href="terms.html">Terms</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<h1>Privacy policy</h1>
+
+<p class="muted"><strong>Last updated:</strong> 14 August 2026 · Applies to the
+SummaReader app for Linux and Android, and to this website.</p>
+
+<h2>The short version</h2>
+
+<p>SummaReader collects nothing about you. There is no account, no analytics, no
+telemetry, no crash reporting and no advertising. Your reading library is stored
+on your own devices, and when it is synced between them it is encrypted so that
+the server carrying it cannot read it.</p>
+
+<p>The app does talk to the internet, because a reader must. This document is
+mostly about who it talks to and what they can see.</p>
+
+<h2>What stays on your device</h2>
+
+<p>Everything, unless a section below says otherwise:</p>
+
+<ul>
+  <li>the articles, feeds, videos and posts you follow, and their text</li>
+  <li>summaries, whether made on your device or elsewhere</li>
+  <li>your highlights, notes, read state and saved items</li>
+  <li>your settings, including any API keys you enter</li>
+</ul>
+
+<p>None of this is sent to us. <strong>We operate no service that receives
+it</strong> — including sync, which is described below and which we do not
+host.</p>
+
+<h2>What leaves your device, and who sees it</h2>
+
+<div class="scroll">
+<table>
+  <thead><tr><th>When</th><th>Where it goes</th><th>What they can see</th></tr></thead>
+  <tbody>
+    <tr><td>You follow a source</td><td>The publisher's own server</td><td>Your IP address, and that something fetched their feed</td></tr>
+    <tr><td>You follow a YouTube channel</td><td>YouTube, and <code>i.ytimg.com</code> for thumbnails</td><td>Your IP address, and which channel or video was asked for</td></tr>
+    <tr><td>You follow a Mastodon account</td><td>The server that account is on</td><td>Your IP address, and which account was asked for</td></tr>
+    <tr><td>You open a Nostr link</td><td><code>njump.me</code></td><td>Your IP address, and which note was asked for</td></tr>
+    <tr><td>You open an article</td><td>That website</td><td>The same as any browser visiting it</td></tr>
+    <tr><td>You summarize on your device</td><td>Nowhere</td><td>Nothing leaves</td></tr>
+    <tr><td>You summarize using an endpoint you configured</td><td>That provider</td><td>The text of the article being summarized</td></tr>
+    <tr><td>You download a model</td><td>Hugging Face</td><td>Your IP address and which model you chose</td></tr>
+    <tr><td>You turn on sync</td><td>The sync server you run</td><td>Encrypted data it cannot read — see below</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Two of these are worth stating plainly.</p>
+
+<p><strong>Fetching is direct.</strong> The app talks to publishers itself.
+There is no proxy in between, so publishers see your IP address exactly as they
+would if you visited in a browser — and we see nothing at all.</p>
+
+<p><strong>Remote summarization sends the article.</strong> If you point the app
+at OpenAI, OpenRouter, Anthropic, your own server or anything else, the text
+being summarized is sent there and that provider's terms apply to it. This is
+off by default; summarizing on your device sends nothing anywhere. The app tells
+you which of the two it is using.</p>
+
+<h2>Sync</h2>
+
+<p>Sync is off until you turn it on, there is no address in the box until you
+put one there, and it works between your own devices.</p>
+
+<p><strong>We operate no sync service.</strong> There is no hosted option and no
+default server: the only sync server your app talks to is one you or somebody
+you trust runs. The software for it is published separately, under
+AGPL-3.0.</p>
+
+<p><strong>A sync server cannot read your library.</strong> Everything is
+encrypted on your device before it is sent, with a key that exists only on your
+devices and is never transmitted to the server. That is a property of the design
+rather than a promise about anybody's conduct, which is the point: it holds even
+if the server is hostile.</p>
+
+<p>What a sync server does hold:</p>
+
+<ul>
+  <li>your encrypted data, which is opaque to it</li>
+  <li>one token per device, so it can tell your devices apart and you can revoke
+  one</li>
+  <li><strong>a label for each device, in the clear</strong> — by default your
+  Android device model or your computer's hostname, so the paired-devices list
+  can name them. You can change it, and it is the one piece of unencrypted
+  metadata about your hardware</li>
+  <li>the timing and size of what you sync, which is unavoidable for anything
+  that stores data — it can see that you synced and roughly how much, never
+  what</li>
+</ul>
+
+<p><strong>If you lose your recovery code, nobody can recover your data</strong>
+— not you and not us. That is what "we cannot read it" means in practice.</p>
+
+<h2>What we collect: nothing</h2>
+
+<p>No analytics. No usage statistics. No crash reports. No device identifiers.
+No advertising identifiers. No third-party SDKs that collect anything.</p>
+
+<p>The Android app requests three permissions: internet access, permission to
+show notifications if you enable them, and the camera.</p>
+
+<p><strong>The camera is used for exactly one thing:</strong> scanning the
+pairing code shown by a device you already use, when you add a second device.
+The scanner reads one code and closes. Nothing is photographed, stored, or sent
+anywhere, and the same pairing code can be pasted as text instead if you would
+rather never grant it.</p>
+
+<h2>The local API</h2>
+
+<p>The app can serve a small HTTP API on your own machine — a door for a browser
+extension or a script to put something into your library, and a
+<code>/metrics</code> endpoint for a dashboard. It is <strong>off by
+default</strong>, there is no default token and no default port, and nothing
+listens until you switch it on.</p>
+
+<p>Two things to know if you do. It requires a token you set, and it <strong>can
+be bound to every network interface rather than only this machine</strong> —
+which is useful and is also your decision to make, because behind that token is
+your library in plaintext.</p>
+
+<h2>Purchases</h2>
+
+<p>There are none. The app has no store code, no licence keys and no payments,
+so there is nothing here about billing. If that changes, this section is where
+it will say so.</p>
+
+<h2>How long things are kept</h2>
+
+<p>On your device, by default: article text for 14 days, and items for 180 days,
+after which the app tidies them away. Saved items are never removed
+automatically. You can change both, and you can delete everything at once from
+Settings.</p>
+
+<p>On a sync server, until you delete it. There is a wipe operation that removes
+your synced copy; it is deliberately separate from switching servers and from
+anything else, so it cannot happen by accident.</p>
+
+<h2>Your rights</h2>
+
+<p>Under the GDPR you have rights of access, correction, erasure, portability
+and objection. They are unusually simple to exercise here, because we hold
+almost nothing:</p>
+
+<ul>
+  <li><strong>Access and portability</strong>: your library is on your device
+  already, and Settings exports your subscriptions in standard formats.</li>
+  <li><strong>Erasure</strong>: deleting the app removes everything on that
+  device. If you used sync, the wipe operation removes the synced copy.</li>
+  <li><strong>Anything else</strong>: write to the address below.</li>
+</ul>
+
+<h2>Children</h2>
+
+<p>The app is not directed at children and collects nothing from anybody,
+including them.</p>
+
+<h2>This website</h2>
+
+<p>This site sets no cookies, runs no analytics and loads nothing from any other
+host — no fonts, no scripts, no embedded anything. Its host records what any web
+server records in order to serve a page, and nothing is added to that.</p>
+
+<h2>Changes</h2>
+
+<p>If this policy changes in a way that affects what leaves your device, the app
+will say so rather than relying on you re-reading this page.</p>
+
+<h2>Who is responsible, and how to reach us</h2>
+
+<p>Data controller: <strong>Dataiza s. r. o.</strong>, Slovakia<br>
+Contact: <a href="mailto:development@dataiza.sk">development@dataiza.sk</a></p>
+
+<footer>
+  <p>SummaReader is made by Dataiza s. r. o. ·
+  <a href="index.html">Home</a> ·
+  <a href="guide.html">Guide</a> ·
+  <a href="terms.html">Terms</a></p>
+</footer>
+
+</main>
+</body>
+</html>

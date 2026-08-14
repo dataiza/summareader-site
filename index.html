@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SummaReader — a reader that summarizes what you follow</title>
+<meta name="description" content="A reader that pulls in feeds, articles, YouTube and Mastodon, summarizes them on your own device, and keeps the result in step across your devices. Your library never leaves your devices in readable form.">
+<link rel="canonical" href="https://summareader.dataiza.sk/">
+<link rel="stylesheet" href="style.css">
+<meta property="og:title" content="SummaReader">
+<meta property="og:description" content="A reader that summarizes what you follow, on your own device.">
+<meta property="og:url" content="https://summareader.dataiza.sk/">
+<meta property="og:type" content="website">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav>
+  <div>
+    <a class="wordmark" href="index.html">SummaReader</a>
+    <a href="guide.html">Guide</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<h1>SummaReader</h1>
+
+<p class="lede">A reader that pulls in what you follow — feeds, articles,
+YouTube, Mastodon, Nostr — summarizes it, and keeps the result in step across
+your own devices.</p>
+
+<ul class="claims">
+  <li>Your library never leaves your devices in readable form.</li>
+  <li>Summarization runs on-device by default. You can point it at your own
+  server or a cloud API instead — that is the only time content goes anywhere,
+  and only if you choose it.</li>
+  <li>Sync is end-to-end encrypted: the server holds ciphertext against
+  sequence numbers and cannot read any of it.</li>
+</ul>
+
+<p>There is no server-side summarization, no server-side search, and no web
+reader. Those are not missing features; they are what the first line costs.</p>
+
+<figure>
+  <a href="img/window.png">
+    <img src="img/window.png" width="1400" height="950" loading="lazy" decoding="async"
+         alt="The main window: a shelf of feeds down the left, a list of articles in the middle with summaries under each title, and the article open beside it.">
+  </a>
+  <figcaption>The main window. Screenshots are the Linux build in its light
+  theme, over a demo library — which includes a Nostr source, the one thing
+  below that does not work yet.</figcaption>
+</figure>
+
+<h2>What you can paste</h2>
+
+<p>Press <strong>+</strong> beside <strong>Your shelf</strong> and paste an
+address. The right thing happens:</p>
+
+<div class="scroll">
+<table>
+  <thead><tr><th>You paste</th><th>It becomes</th></tr></thead>
+  <tbody>
+    <tr><td>A feed address (<code>…/feed.xml</code>, <code>…/rss</code>)</td><td>A feed</td></tr>
+    <tr><td>A site's home page</td><td>A feed, if the page advertises one</td></tr>
+    <tr><td>A YouTube channel or video address</td><td>That channel</td></tr>
+    <tr><td>A Mastodon account (<code>@name@server</code>)</td><td>That account's posts</td></tr>
+    <tr><td>Any other page</td><td>The page itself, kept once</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Coming from another reader, <strong>Settings → Your data → Import and
+export</strong> takes an OPML file and everything in it arrives as a
+source.</p>
+
+<h2>Where summaries run</h2>
+
+<p>Nothing is configured on first run. The reader works with no language model
+at all, and the first time you ask for a summary is when you choose where it
+runs.</p>
+
+<div class="scroll">
+<table>
+  <tbody>
+    <tr><th>This device</th><td>Gemma, as an optional download of about 2.6 GB. Nothing leaves the machine. Slower, and it costs battery.</td></tr>
+    <tr><th>Your own server</th><td>Any OpenAI-compatible endpoint — Ollama, LM Studio, llama.cpp.</td></tr>
+    <tr><th>A cloud API</th><td>Your own key. Faster, costs money, and the only time an article's text goes anywhere.</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>The address and model are stored in the library; <strong>the API key goes to
+the system keychain</strong>, never beside your library. On Linux, if the
+Secret Service is unavailable or locked, it falls back to an owner-only file
+and says so rather than pretending otherwise.</p>
+
+<h2>How it works</h2>
+
+<h3>One item, one identity</h3>
+<p>An item's id is a hash of its canonical URL, so the same article arriving
+from a feed, from a share and from a Mastodon link is one item listed under
+each. That is also what makes merging two devices a set union rather than a
+reconciliation problem.</p>
+
+<h3>Summaries are chunked, mapped and reduced</h3>
+<p>Long transcripts are split to a prefill budget using a real tokenizer, not
+<code>chars / 4</code> — measured, that rule of thumb undercounts Slovak by
+about 43% and Czech by about 51%, which overflows the context and truncates the
+model's reply.</p>
+
+<h3>Retention is two-tier</h3>
+<p>The extracted text and the title picture go first, reclaiming almost all the
+space while metadata and summaries stay; the picture's <em>address</em> is
+kept, so opening the article later fetches it again. Items go later. Anything
+saved, pinned, annotated or awaiting a summary is never purged — highlights are
+user-authored and may exist nowhere else.</p>
+
+<h3>Sync is a log of encrypted entries plus content-addressed blobs</h3>
+<p>The server holds ciphertext against sequence numbers and cannot read any of
+it. Deletion travels as explicit tombstones; an empty server never causes local
+deletion, because a server can be empty for several reasons and only one of
+them means anything was deleted.</p>
+
+<h2>What works, and what does not</h2>
+
+<div class="scroll">
+<table>
+  <tbody>
+    <tr><td>Storage, canonical URLs, identity</td><td>works</td></tr>
+    <tr><td>Ingestion: RSS/Atom, web, YouTube, Mastodon</td><td>works</td></tr>
+    <tr><td>Nostr</td><td><strong>not yet</strong> — event parser written, no relay transport</td></tr>
+    <tr><td>Reading, saving, search, sources, settings</td><td>works</td></tr>
+    <tr><td>Retention and local notifications</td><td>works</td></tr>
+    <tr><td>Summarization, on-device model download</td><td>works</td></tr>
+    <tr><td>Encryption, keys, pairing, recovery</td><td>works</td></tr>
+    <tr><td>Sync: items, read state, summaries, highlights, article text, title pictures</td><td>works</td></tr>
+    <tr><td>Sync of subscriptions</td><td><strong>no</strong> — a feed added on one device stays there</td></tr>
+    <tr><td>Linux</td><td>builds and runs</td></tr>
+    <tr><td>Android</td><td>builds, installs and runs; share sheet arrives</td></tr>
+    <tr><td>Windows</td><td>scaffolded, never built</td></tr>
+    <tr><td>iOS</td><td>compiles, but there is no release build</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Two gaps worth naming. Pages that render their text in JavaScript fail
+cleanly rather than being extracted — there is no headless browser, on purpose.
+And chunk sizes are provisional until the prefill benchmark runs on real mobile
+hardware.</p>
+
+<h2>Getting it</h2>
+
+<div class="note">
+  <p><strong>SummaReader is not distributed publicly yet.</strong> There are no
+  downloads on this page and no waiting list to join — a waiting list is a
+  server holding your address, which is the thing this app exists to avoid.</p>
+  <p>If you want to follow it or try it, write to
+  <a href="mailto:development@dataiza.sk">development@dataiza.sk</a>.</p>
+</div>
+
+<p>The app is licensed under the <a href="https://www.mozilla.org/MPL/2.0/">Mozilla
+Public License 2.0</a> — chosen because this app's central claim, that your
+library never leaves your devices in readable form, is worth more when it can
+be checked. A privacy promise in a binary nobody can read is a promise you are
+asked to take on trust. The sync server is separate and AGPL-3.0.</p>
+
+<footer>
+  <p>SummaReader is made by Dataiza s. r. o. ·
+  <a href="guide.html">Guide</a> ·
+  <a href="privacy.html">Privacy</a> ·
+  <a href="terms.html">Terms</a> ·
+  <a href="mailto:development@dataiza.sk">development@dataiza.sk</a></p>
+  <p>This site sets no cookies, loads nothing from anywhere else, and counts
+  nothing. Set in Figtree and Caprasimo, both under the
+  <a href="fonts/OFL.txt">SIL Open Font License</a>.</p>
+</footer>
+
+</main>
+</body>
+</html>

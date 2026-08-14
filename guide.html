@@ -1,0 +1,559 @@
+<!doctype html>
+<!-- Reviewed against docs/USER_GUIDE.md @ sha256:3f8c92e0536c16a606d356a3896686385951c45ed7b2de9ecf6724b827d78062
+     If refresh.sh says that hash has moved, read what changed in the guide and
+     bring this page with it, then update the line above. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>User guide — SummaReader</title>
+<meta name="description" content="How to use SummaReader: adding sources, the window, reading, summaries, search, sync, and the keyboard.">
+<link rel="canonical" href="https://summareader.dataiza.sk/guide.html">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav>
+  <div>
+    <a class="wordmark" href="index.html">SummaReader</a>
+    <a href="guide.html" aria-current="page">Guide</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<h1>User guide</h1>
+
+<p class="lede">A reader that pulls in what you follow, writes a summary of each
+piece, and keeps what you have read in step across your own devices.</p>
+
+<p>Two things shape everything below. Your library stays on your devices. And a
+summary is written by a language model, which costs either your battery or your
+money depending on where you point it — so most of the settings here are about
+deciding how much of that happens without being asked.</p>
+
+<p class="muted">This guide covers the desktop app. Screenshots are the Linux
+build in its light theme, taken over a demo library — one of its sources is a
+Nostr account, which is the one kind that does not work yet.</p>
+
+<ol class="toc">
+  <li><a href="#getting-started">Getting started</a></li>
+  <li><a href="#the-window">The window</a></li>
+  <li><a href="#reading">Reading</a></li>
+  <li><a href="#summaries">Summaries</a></li>
+  <li><a href="#finding-things">Finding things</a></li>
+  <li><a href="#keeping-things">Keeping things</a></li>
+  <li><a href="#managing-sources">Managing sources</a></li>
+  <li><a href="#sync">Sync</a></li>
+  <li><a href="#keyboard">Keyboard</a></li>
+  <li><a href="#settings">Settings reference</a></li>
+  <li><a href="#where">Where things are kept</a></li>
+</ol>
+
+<h2 id="getting-started">Getting started</h2>
+
+<h3>Adding your first source</h3>
+
+<p>SummaReader is empty until you tell it what to follow. Press
+<strong>+</strong> beside <strong>Your shelf</strong>, or <strong>Add
+source</strong> on the empty Inbox, and paste an address.</p>
+
+<figure>
+  <a href="img/add-source.png">
+    <img src="img/add-source.png" width="1400" height="950" loading="lazy" decoding="async"
+         alt="The add-source dialog, with a pasted address and two buttons: Add source, and Save the page.">
+  </a>
+</figure>
+
+<p>You can paste any of these and the right thing happens:</p>
+
+<div class="scroll">
+<table>
+  <thead><tr><th>You paste</th><th>It becomes</th></tr></thead>
+  <tbody>
+    <tr><td>A feed address (<code>…/feed.xml</code>, <code>…/rss</code>)</td><td>A feed</td></tr>
+    <tr><td>A site's home page</td><td>A feed, if the page advertises one</td></tr>
+    <tr><td>A YouTube channel or video address</td><td>That channel</td></tr>
+    <tr><td>A Mastodon account (<code>@name@server</code>)</td><td>That account's posts</td></tr>
+    <tr><td>Any other page</td><td>The page itself, kept once</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Nostr is the one that is not ready: the event parser exists, the relay
+transport does not, so an <code>npub…</code> is refused rather than
+half-followed.</p>
+
+<p>The dialog offers both: <strong>Add source</strong> subscribes to something
+that keeps delivering, <strong>Save the page</strong> keeps one page and nothing
+more.</p>
+
+<h3>Importing what you already follow</h3>
+
+<p>Coming from another reader, <strong>Settings → Your data → Import and
+export</strong> takes an OPML file. Everything in it arrives as a source.</p>
+
+<h3>What happens on the first check</h3>
+
+<p>A feed's first poll delivers whatever archive it currently advertises —
+fifteen videos, thirty articles. None of that is new to you, so <strong>none of
+it is summarized automatically</strong>. Only things published after you
+subscribed are. Anything older can still be summarized whenever you want it:
+open it and press <strong>Summarize</strong>, or use the bulk button under
+<a href="#summaries">Summaries</a>.</p>
+
+<h2 id="the-window">The window</h2>
+
+<figure>
+  <a href="img/window.png">
+    <img src="img/window.png" width="1400" height="950" loading="lazy" decoding="async"
+         alt="The main window: the shelf of feeds on the left, the article list in the middle, the open article on the right.">
+  </a>
+</figure>
+
+<h3>The top bar</h3>
+
+<div class="scroll">
+<table>
+  <thead><tr><th>Control</th><th>What it does</th></tr></thead>
+  <tbody>
+    <tr><td>☀ / 🌙</td><td>Paper, night, or whatever the system says</td></tr>
+    <tr><td><strong>EN</strong></td><td>The interface language</td></tr>
+    <tr><td><strong>Check for new</strong></td><td>Fetches every source now</td></tr>
+    <tr><td><strong>Filter</strong></td><td>Shows and hides the filter panel</td></tr>
+    <tr><td><strong>Configuration</strong></td><td>Text size, density, thumbnails, layout</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><strong>Check for new</strong> and <strong>Filter</strong> appear while the
+list is on screen, which includes reading an article beside it. The Filter
+button fills in and reads <strong>Filtered</strong> whenever something is
+narrowing the list, so a list showing a fraction of itself always says why.</p>
+
+<h3>The shelf</h3>
+
+<p>Down the left: <strong>Inbox</strong>, <strong>Saved</strong>,
+<strong>Search</strong>, <strong>Sources</strong>, and then your feeds grouped
+by kind. Each feed shows <em>unread / total</em>.</p>
+
+<ul>
+  <li><strong>Click a feed</strong> to see only that feed.</li>
+  <li><strong>⋯</strong> opens that feed's own panel — see
+  <a href="#managing-sources">Managing sources</a>.</li>
+  <li><strong>The eye</strong> beside <strong>+</strong> hides every feed with
+  nothing waiting in it.</li>
+  <li><strong>«</strong> collapses the shelf to a strip of icons.
+  <kbd>b</kbd> does the same.</li>
+</ul>
+
+<h3>The filter panel</h3>
+
+<p>Press <strong>Filter</strong>. Everything that decides what the list shows is
+here, and it is closed by default so the first thing under the heading is the
+first article.</p>
+
+<figure>
+  <a href="img/filters.png">
+    <img src="img/filters.png" width="1400" height="950" loading="lazy" decoding="async"
+         alt="The filter panel open above the list, with read and summarized filters, a sort button, kind chips and a text box.">
+  </a>
+</figure>
+
+<div class="scroll">
+<table>
+  <thead><tr><th>Control</th><th>What it does</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Unread / Read / All</strong></td><td>Which items to show</td></tr>
+    <tr><td><strong>Any / Summarized / Not summarized</strong></td><td>Whether a summary exists</td></tr>
+    <tr><td><strong>Newest first</strong></td><td>Sorting — press to cycle through six</td></tr>
+    <tr><td><strong>Mark all read</strong></td><td>Marks everything the filter covers</td></tr>
+    <tr><td><strong>Summarize …</strong></td><td>Summarizes everything the filter covers</td></tr>
+    <tr><td>Kind chips</td><td>Videos, feeds, posts — click to narrow</td></tr>
+    <tr><td>The text box</td><td>Matches any word in what is loaded</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Sorting cycles: <strong>Newest first → Oldest first → Title A–Z → Title Z–A →
+Feed A–Z → Feed Z–A</strong>, and back.</p>
+
+<p>The read filter, the summarized filter and the sort are remembered between
+launches. Picking a feed is not — that is navigation, and opening into a library
+narrowed to one feed you chose last week reads as an empty app.</p>
+
+<h3>The counts under "Inbox"</h3>
+
+<p><code>Showing 18 of 5,878 · 52 unread · 812 to summarize</code></p>
+
+<ul>
+  <li><strong>Showing</strong> appears only when a filter is narrowing things,
+  and counts the rows actually on screen.</li>
+  <li><strong>to summarize</strong> is the same number as the Summarize button,
+  and is what pressing it would do.</li>
+</ul>
+
+<h3>Configuration</h3>
+
+<p>The handful of settings worth changing without leaving what you are
+reading: <strong>Text size</strong> (S/M/L/XL), <strong>List density</strong>,
+<strong>Thumbnails</strong> (None / Kind / Picture), line spacing and column
+width for the article, <strong>Reader layout</strong>, and <strong>Group by
+source</strong>.</p>
+
+<p><strong>List density</strong> decides how much of each item the list
+draws:</p>
+
+<div class="scroll">
+<table>
+  <thead><tr><th></th><th>Summary</th><th>Title</th><th>Picture</th></tr></thead>
+  <tbody>
+    <tr><th>Comfortable</th><td>shown</td><td>wraps freely</td><td>large</td></tr>
+    <tr><th>Compact (default)</th><td>—</td><td>two lines</td><td>small</td></tr>
+    <tr><th>Dense</th><td>—</td><td>one line</td><td>none</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><strong>Thumbnails: Picture</strong> shows each article's own image instead
+of a kind icon. It is the only one of the three that costs anything: pictures
+are downloaded a few at a time for the rows on screen, so a long backlog fills
+in gradually rather than all at once. Dense ignores the setting — a picture is
+three lines tall, which is not dense.</p>
+
+<h2 id="reading">Reading</h2>
+
+<p>Click an article, or press <kbd>↵</kbd>. Depending on the window and your
+<strong>Reader layout</strong> setting, it opens beside the list, above or below
+it, or takes the whole window.</p>
+
+<figure>
+  <a href="img/reader.png">
+    <img src="img/reader.png" width="1400" height="950" loading="lazy" decoding="async"
+         alt="An article open with its summary: a sentence at the top, key points below it, and the toolbar above.">
+  </a>
+</figure>
+
+<h3>The three tabs</h3>
+
+<ul>
+  <li><strong>Summary</strong> — what the model wrote: a sentence, key points,
+  and full notes. Points from a video carry timestamps that seek.</li>
+  <li><strong>Source</strong> — the article itself, or the transcript.</li>
+  <li><strong>Details</strong> — where it came from, when, which model
+  summarized it and what that cost.</li>
+</ul>
+
+<p><kbd>1</kbd>–<kbd>3</kbd> jump between them.</p>
+
+<h3>The toolbar</h3>
+
+<ul>
+  <li><strong>Save</strong> — keeps it. Press and hold to file it on a named
+  shelf instead.</li>
+  <li><strong>Mark read</strong> — on articles from a feed. With the unread
+  filter on, this moves you to the next one; the last one closes the
+  reader.</li>
+  <li><strong>Delete</strong> — only on articles you have kept. It asks twice,
+  and the second press says <strong>Delete everywhere?</strong> because it
+  removes the article from every device you sync with and stops any feed
+  bringing it back.</li>
+</ul>
+
+<h3>Moving between articles</h3>
+
+<p>Drag the article sideways, or use <kbd>j</kbd> / <kbd>k</kbd>. Dragging right
+at the first one goes back to the list. The gestures are configurable under
+<strong>Settings → Reading</strong>.</p>
+
+<h3>When there is no text</h3>
+
+<p>Not every article arrives with its words. The reader says which of these it
+is:</p>
+
+<div class="scroll">
+<table>
+  <thead><tr><th>It says</th><th>What happened</th></tr></thead>
+  <tbody>
+    <tr><td>This video has no captions</td><td>There is no transcript to read</td></tr>
+    <tr><td>The page arrived, but there was no article in it</td><td>The page builds its text in the browser</td></tr>
+    <tr><td>The site served a bot check</td><td>A "prove you are human" page</td></tr>
+    <tr><td>Behind a subscription wall</td><td>What arrived was the offer</td></tr>
+    <tr><td>The page is gone</td><td>Taken down or moved</td></tr>
+    <tr><td>Not on this device</td><td>Another device has it, or nobody has fetched it</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Only the last is worth retrying, and <strong>Fetch the text</strong> does
+that.</p>
+
+<h2 id="summaries">Summaries</h2>
+
+<h3>Where summarizing happens</h3>
+
+<p><strong>Settings → Summaries → Where summaries run.</strong></p>
+
+<ul>
+  <li><strong>On this device</strong> — a model you download. Nothing leaves the
+  machine. It is slower and costs battery.</li>
+  <li><strong>On a server</strong> — your own, or a cloud API. Faster, costs
+  money, and is the only time an article's text goes anywhere.</li>
+</ul>
+
+<p>On-device needs a model: <strong>Settings → Summaries → Models</strong>, then
+download one and switch it on.</p>
+
+<h3>Automatic summaries</h3>
+
+<p>Summarizing runs at the end of a check for new articles. There is no separate
+schedule — if <strong>Check for new</strong> is set to <em>Only when I ask</em>,
+nothing is summarized unless you ask. Two things decide what a check
+summarizes: each feed has a <strong>Summarize</strong> switch, off by default;
+and <strong>Settings → Summaries → At the same time</strong> sets how many one
+check may do, and which end of the queue it works through.</p>
+
+<div class="scroll">
+<table>
+  <thead><tr><th>Setting</th><th>Meaning</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Summaries per check</strong></td><td>Default 30. <strong>No limit</strong> does everything waiting</td></tr>
+    <tr><td><strong>Work through</strong></td><td><strong>Newest first</strong> keeps up with arrivals. <strong>Oldest first</strong> clears a backlog</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>An article's own text is fetched during the check, not later — up to twenty
+per feed per round, newest first. An article that arrives without its words has
+usually failed rather than been deferred, and the reader says which.</p>
+
+<p>Newest first is right day to day. If more arrives per check than the number
+allows, the ones it skips fall further behind every check —
+<strong>Oldest first</strong> is how you get back to them.</p>
+
+<blockquote>Every summary is a request. On a paid model, the number per check is
+what each check costs while you are not watching — worth choosing rather than
+arriving at.</blockquote>
+
+<h3>Summarizing by hand</h3>
+
+<ul>
+  <li><strong>One article</strong> — open it and press
+  <strong>Summarize</strong>.</li>
+  <li><strong>One feed</strong> — its <strong>⋯</strong> panel,
+  <strong>Summarize this feed</strong>.</li>
+  <li><strong>Whatever is filtered</strong> — the <strong>Summarize</strong>
+  button in the filter panel. It says how many it will do, and that number is
+  what it does.</li>
+</ul>
+
+<h3>What language a summary is in</h3>
+
+<p>By default, the language the article is written in. <strong>Settings →
+Summaries → Summary language</strong> overrides that if you would rather always
+read summaries in one language.</p>
+
+<h3>If nothing gets summarized</h3>
+
+<p>The most common cause is no model loaded. The toast says so, and
+<strong>Settings → Development → Activity log</strong> records the reason for
+every attempt.</p>
+
+<h2 id="finding-things">Finding things</h2>
+
+<p><strong>Search</strong> in the shelf, or <kbd>/</kbd>. Search covers titles,
+article text and video transcripts. A transcript hit is a <strong>moment</strong>
+— it names the time and seeks there when you open it.</p>
+
+<p>The text box in the filter panel is a different thing: it matches the rows
+already loaded, and is for narrowing what is in front of you rather than
+searching the library.</p>
+
+<h2 id="keeping-things">Keeping things</h2>
+
+<p><strong>Save</strong> in the reader, or <kbd>s</kbd> from the list. Saved
+articles live under <strong>Saved</strong> and are exempt from anything that
+clears space. Press and hold <strong>Save</strong> to put it on a named shelf
+instead, for filing by subject; an article can be on several.</p>
+
+<p>Removing a source leaves saved articles alone, and writes down where they
+came from before the source goes.</p>
+
+<h2 id="managing-sources">Managing sources</h2>
+
+<h3>One feed</h3>
+
+<p><strong>⋯</strong> on a shelf row opens that feed:</p>
+
+<figure>
+  <a href="img/feed-panel.png">
+    <img src="img/feed-panel.png" width="1400" height="950" loading="lazy" decoding="async"
+         alt="A feed's panel, listing check now, summarize this feed, mark all read, and its switches.">
+  </a>
+</figure>
+
+<div class="scroll">
+<table>
+  <tbody>
+    <tr><th>Check now</th><td>Fetch this feed</td></tr>
+    <tr><th>Summarize this feed</th><td>Everything of its waiting for one</td></tr>
+    <tr><th>Mark all read</th><td>Everything of its</td></tr>
+    <tr><th>Updates</th><td>Whether checks include it</td></tr>
+    <tr><th>Auto-summarize</th><td>Whether checks summarize it</td></tr>
+    <tr><th>Read articles again</th><td>Re-fetch text that failed</td></tr>
+    <tr><th>Summarize again</th><td>Discard its summaries and redo them</td></tr>
+    <tr><th>Remove</th><td>Asks first, and says what it costs</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><strong>Summarize again</strong> is what to use after changing the summary
+language or the model — an article that already has a summary is never redone
+otherwise.</p>
+
+<h3>Many feeds</h3>
+
+<p>The <strong>Sources</strong> screen is the same controls over the whole list,
+with a filter and a tick box, so "every YouTube channel I imported last week" is
+one action rather than three hundred.</p>
+
+<h2 id="sync">Sync</h2>
+
+<p><strong>Settings → Sync.</strong> Your devices keep each other in step: what
+you have read, what you saved, your highlights, and the articles
+themselves.</p>
+
+<p>It is end-to-end encrypted: the server stores ciphertext and cannot read your
+library. There is no hosted service to sign up for — the address you set is a
+server you run.</p>
+
+<h3>When it runs</h3>
+
+<p><strong>Settings → Sync → Syncing on its own</strong> offers a clock — every
+15 minutes through to once a day — and two moments instead:</p>
+
+<ul>
+  <li><strong>After a check</strong> — as soon as every source has been fetched,
+  before anything is summarized. On a local model summarizing can take twenty
+  minutes, and the articles are ready long before that.</li>
+  <li><strong>After summarizing</strong> — once the whole check is finished, so
+  one sync carries the articles and their summaries together.</li>
+</ul>
+
+<p>Whichever you pick, a metered connection or a battery interval that has not
+elapsed still holds it back.</p>
+
+<h3>Pairing a second device</h3>
+
+<ol>
+  <li>Turn sync on and set an address on the first device.</li>
+  <li><strong>Pair a device</strong> shows a code.</li>
+  <li>Scan or type it on the second.</li>
+</ol>
+
+<p>The first sync to a fresh server asks before uploading — a server that has
+never seen your library is a decision, not a detail.</p>
+
+<h3>The recovery code</h3>
+
+<p>Made once, under <strong>Sync</strong>. It is the only way back into your
+library if you lose every paired device. Nobody can reissue it.</p>
+
+<h3>Article text</h3>
+
+<p>Read state, highlights and the articles themselves travel automatically.
+Their <em>words and pictures</em> are the bulk, and by default they stay behind
+a pointer: sync tells this device that a copy exists, and it is fetched when you
+open the article.</p>
+
+<p><strong>Keep everything on this device</strong> changes that — each article's
+words and pictures are downloaded as they arrive. It is a setting per device
+rather than per library: worth it on a machine you read on offline, a lot of
+data on a phone for articles you will not open. Turning it on starts fetching
+whatever is already outstanding, a few seconds at a time, so a large library
+catches up over several syncs rather than in one long wait.</p>
+
+<h2 id="keyboard">Keyboard</h2>
+
+<p><kbd>?</kbd> shows this list in the app.</p>
+
+<div class="scroll">
+<table>
+  <tbody>
+    <tr><td>Next / previous item</td><td><kbd>j</kbd> <kbd>k</kbd> · <kbd>n</kbd> <kbd>p</kbd> · <kbd>↓</kbd> <kbd>↑</kbd></td></tr>
+    <tr><td>Open</td><td><kbd>↵</kbd></td></tr>
+    <tr><td>Open the original elsewhere</td><td><kbd>v</kbd></td></tr>
+    <tr><td>Mark read / unread</td><td><kbd>m</kbd></td></tr>
+    <tr><td>Mark everything read / unread</td><td><kbd>A</kbd> / <kbd>U</kbd></td></tr>
+    <tr><td>Save</td><td><kbd>s</kbd></td></tr>
+    <tr><td>Refresh what is on screen</td><td><kbd>r</kbd></td></tr>
+    <tr><td>Unread / read / all</td><td><kbd>R</kbd></td></tr>
+    <tr><td>Summarized or not</td><td><kbd>S</kbd></td></tr>
+    <tr><td>Next / previous source</td><td><kbd>J</kbd> <kbd>K</kbd> · <kbd>N</kbd> <kbd>P</kbd> · <kbd>⇧↑</kbd> <kbd>⇧↓</kbd></td></tr>
+    <tr><td>Jump to a section</td><td><kbd>1</kbd> – <kbd>3</kbd></td></tr>
+    <tr><td>Fold a summary section</td><td><kbd>⇧1</kbd> – <kbd>⇧3</kbd></td></tr>
+    <tr><td>Search</td><td><kbd>/</kbd></td></tr>
+    <tr><td>Show or hide the shelf</td><td><kbd>b</kbd></td></tr>
+    <tr><td>Focus on the item</td><td><kbd>f</kbd></td></tr>
+    <tr><td>Cycle the layout</td><td><kbd>l</kbd></td></tr>
+    <tr><td>This list</td><td><kbd>?</kbd></td></tr>
+    <tr><td>Back</td><td><kbd>esc</kbd></td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2 id="settings">Settings reference</h2>
+
+<dl>
+  <dt><strong>Reading</strong></dt>
+  <dd>Theme, interface language, dates and times, reader layout, gestures, when
+  an opened article counts as read, and whether the status strip is on screen.
+  <em>When an opened item counts as read</em> is worth knowing about:
+  <em>Never</em> means only you mark things read, <em>Immediately</em> means
+  opening counts, and <em>After a few seconds</em> means passing through does
+  not.</dd>
+
+  <dt><strong>Summaries</strong></dt>
+  <dd>Where summaries run, which model, how many at a time, how many per check
+  and from which end, the summary language, and what summarizing has cost so far
+  grouped by model.</dd>
+
+  <dt><strong>Sync</strong></dt>
+  <dd>Sync on or off, the server address, when it runs on its own, whether this
+  device keeps everything, paired devices, the recovery code, and the local API
+  — a door for a browser extension or another program on your machine to put
+  something in.</dd>
+
+  <dt><strong>Your data</strong></dt>
+  <dd>Import and export: OPML for sources, and your library in full.</dd>
+
+  <dt><strong>Development</strong></dt>
+  <dd>The activity log — everything that ran and everything that failed, which
+  is the first place to look when something did not happen. Also <strong>Fill in
+  missing details</strong>, which re-fetches metadata, and <strong>Erase
+  everything</strong>.</dd>
+
+  <dt><strong>About</strong></dt>
+  <dd>Version, and where the library file lives.</dd>
+</dl>
+
+<h2 id="where">Where things are kept</h2>
+
+<p>Your library is one SQLite file in the app's data directory.
+<strong>Settings → About</strong> names the path. Backing that file up backs up
+everything: articles, summaries, highlights and what you have read.</p>
+
+<footer>
+  <p>SummaReader is made by Dataiza s. r. o. ·
+  <a href="index.html">Home</a> ·
+  <a href="privacy.html">Privacy</a> ·
+  <a href="terms.html">Terms</a> ·
+  <a href="mailto:development@dataiza.sk">development@dataiza.sk</a></p>
+</footer>
+
+</main>
+</body>
+</html>

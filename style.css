@@ -1,0 +1,250 @@
+/* SummaReader — one stylesheet, no framework, nothing fetched from anywhere.
+   Colours are the app's own, from lib/src/ui/theme.dart. */
+
+@font-face {
+  font-family: 'Figtree';
+  src: url('fonts/Figtree-Variable.ttf') format('truetype-variations');
+  font-weight: 300 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Caprasimo';
+  src: url('fonts/Caprasimo-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  /* Caprasimo has 246 codepoints and no ě č ř ž ů ň ď ť. Bounding it to
+     Latin-1 means anything outside falls to Figtree by itself, so a heading
+     can never render half in one face and half in the other. */
+  unicode-range: U+0000-00FF;
+}
+
+:root {
+  color-scheme: light dark;
+  --bg: #F5EAD8;
+  --surface: #EBDDC5;
+  --text: #201E1D;
+  --muted: #6E6558;
+  --rule: #DCD3C4;
+  --accent: #C67139;
+  /* Links use the darker step: #C67139 on #F5EAD8 is about 3.2:1, which fails
+     body-text contrast. This is about 6.4:1. */
+  --link: #8C491A;
+  --accent2: #5E6B47;
+  --shot: #F5EAD8;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1A1613;
+    --surface: #241F1A;
+    --text: #F0E7D8;
+    --muted: #A19786;
+    --rule: #474238;
+    --accent: #E08C51;
+    --link: #E08C51;
+    --accent2: #9DAE7C;
+    --shot: #E8DECD;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Figtree', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* ---- shell ---- */
+
+.skip {
+  position: absolute;
+  left: -9999px;
+}
+.skip:focus {
+  left: 1rem;
+  top: 1rem;
+  z-index: 10;
+  padding: 0.5rem 0.75rem;
+  background: var(--surface);
+  border-radius: 6px;
+}
+
+nav {
+  border-bottom: 1px solid var(--rule);
+  background: var(--surface);
+}
+nav div {
+  max-width: 1100px;
+  margin-inline: auto;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  align-items: baseline;
+}
+nav .wordmark {
+  font-family: 'Caprasimo', 'Figtree', serif;
+  font-size: 1.25rem;
+  color: var(--text);
+  text-decoration: none;
+  margin-right: auto;
+}
+nav a { color: var(--link); }
+nav a[aria-current='page'] {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 2px solid var(--accent);
+}
+
+main {
+  max-width: 1100px;
+  margin-inline: auto;
+  padding: 2rem 1.25rem 4rem;
+}
+
+footer {
+  border-top: 1px solid var(--rule);
+  margin-top: 3rem;
+  padding: 1.5rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+footer p { max-width: none; }
+
+/* ---- text ---- */
+
+h1, h2, h3 { line-height: 1.2; }
+h1 {
+  font-family: 'Caprasimo', 'Figtree', serif;
+  font-weight: 400;
+  font-size: clamp(2rem, 6vw, 3rem);
+  margin: 0 0 0.5rem;
+}
+h2 {
+  font-family: 'Caprasimo', 'Figtree', serif;
+  font-weight: 400;
+  font-size: clamp(1.4rem, 3.5vw, 1.9rem);
+  margin: 2.5rem 0 0.75rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--rule);
+}
+h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 1.75rem 0 0.5rem;
+}
+/* For a heading the display face should not touch — a proper noun with a
+   diacritic in it, say. The app does the same thing in headingStyle(). */
+h1.plain, h2.plain {
+  font-family: 'Figtree', system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+p, li, dd { max-width: 68ch; }
+a { color: var(--link); }
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.lede {
+  font-size: 1.2rem;
+  max-width: 60ch;
+}
+.muted { color: var(--muted); }
+.small { font-size: 0.9rem; }
+
+blockquote {
+  margin: 1.5rem 0;
+  padding: 0.25rem 0 0.25rem 1rem;
+  border-left: 3px solid var(--accent2);
+  color: var(--text);
+}
+
+.claims {
+  list-style: none;
+  margin: 1.5rem 0;
+  padding: 0;
+}
+.claims li {
+  margin: 0.6rem 0;
+  padding-left: 1.25rem;
+  border-left: 3px solid var(--accent);
+  font-weight: 600;
+  max-width: 62ch;
+}
+
+.note {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+}
+.note :first-child { margin-top: 0; }
+.note :last-child { margin-bottom: 0; }
+
+/* ---- tables ---- */
+
+.scroll { overflow-x: auto; margin: 1rem 0; }
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 68ch;
+  font-size: 0.95rem;
+}
+th, td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--rule);
+}
+th { font-weight: 700; }
+thead th { border-bottom: 2px solid var(--rule); }
+kbd {
+  font: inherit;
+  font-size: 0.85em;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 0.05em 0.35em;
+  white-space: nowrap;
+}
+
+/* ---- screenshots ---- */
+
+figure {
+  margin: 1.5rem 0;
+}
+figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1400 / 950;
+  /* The shots are the light theme; a pale mat keeps them from glaring as bare
+     rectangles when the page is dark. */
+  background: var(--shot);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+}
+figcaption {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 0.4rem;
+}
+
+/* ---- contents list ---- */
+
+.toc {
+  columns: 2 16rem;
+  gap: 2rem;
+  padding-left: 1.25rem;
+}
+.toc li { max-width: none; }
