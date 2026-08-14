@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- Reviewed against docs/USER_GUIDE.md @ sha256:3f8c92e0536c16a606d356a3896686385951c45ed7b2de9ecf6724b827d78062
+<!-- Reviewed against docs/USER_GUIDE.md @ sha256:c283a7f4c47ca2b46f0a274247379ae40d64ad90f288450ec743561276a5ed99
      If refresh.sh says that hash has moved, read what changed in the guide and
      bring this page with it, then update the line above. -->
 <html lang="en">
@@ -137,8 +137,9 @@ narrowing the list, so a list showing a fraction of itself always says why.</p>
 <h3>The shelf</h3>
 
 <p>Down the left: <strong>Inbox</strong>, <strong>Saved</strong>,
-<strong>Search</strong>, <strong>Sources</strong>, and then your feeds grouped
-by kind. Each feed shows <em>unread / total</em>.</p>
+<strong>Search</strong>, <strong>Sources</strong>, then your
+<strong>Lists</strong>, then your feeds grouped by kind. Each feed shows
+<em>unread / total</em>; each list shows what it holds.</p>
 
 <ul>
   <li><strong>Click a feed</strong> to see only that feed.</li>
@@ -252,8 +253,10 @@ it, or takes the whole window.</p>
 <h3>The toolbar</h3>
 
 <ul>
-  <li><strong>Save</strong> — keeps it. Press and hold to file it on a named
-  shelf instead.</li>
+  <li><strong>Save</strong> — files it into the list the shelf shows filled
+  in, which is <strong>Saved</strong> until you choose another. The
+  <strong>▾</strong> beside it, a right-click or a press and hold picks a
+  different list or makes one.</li>
   <li><strong>Mark read</strong> — on articles from a feed. With the unread
   filter on, this moves you to the next one; the last one closes the
   reader.</li>
@@ -375,12 +378,44 @@ searching the library.</p>
 <h2 id="keeping-things">Keeping things</h2>
 
 <p><strong>Save</strong> in the reader, or <kbd>s</kbd> from the list. Saved
-articles live under <strong>Saved</strong> and are exempt from anything that
-clears space. Press and hold <strong>Save</strong> to put it on a named shelf
-instead, for filing by subject; an article can be on several.</p>
+articles are exempt from anything that clears space.</p>
 
-<p>Removing a source leaves saved articles alone, and writes down where they
-came from before the source goes.</p>
+<h3>Lists</h3>
+
+<p><strong>Saved</strong> is one list, and you can make as many more as you
+like — by subject, by what you mean to do with them, however you file. They
+live in the shelf on the left, under <strong>Lists</strong>, with what each
+holds beside its name.</p>
+
+<div class="scroll">
+<table>
+  <thead><tr><th>To</th><th>Do</th></tr></thead>
+  <tbody>
+    <tr><td>Make one</td><td><strong>+</strong> on the Lists heading, or <strong>New list</strong> in the save menu</td></tr>
+    <tr><td>Put something on it</td><td><strong>Save</strong> files into the list shown filled in the shelf</td></tr>
+    <tr><td>Choose a different list</td><td>The <strong>▾</strong> beside Save, a right-click, or press and hold</td></tr>
+    <tr><td>Take it off again</td><td><strong>Save</strong> again, on the list it is filed under</td></tr>
+    <tr><td>Rename or remove one</td><td><strong>⋯</strong> beside its name, the same as a feed</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><strong>Save goes to the list you last chose.</strong> Picking a list from
+the menu files the article <em>and</em> makes that list the one plain saving
+uses from then on — the shelf shows which by filling in its bookmark. Until you
+choose otherwise that is <strong>Saved</strong>, which is what saving has always
+meant.</p>
+
+<p>An article can be on several lists at once, and taking it off one leaves the
+others alone. <strong>Saved</strong> itself cannot be renamed or removed: plain
+saving has to have somewhere to go, and every device agrees on that one.</p>
+
+<p>Removing a list leaves the articles on it, as long as a feed or another list
+still holds them — the same rule as removing a feed. Removing a source leaves
+saved articles alone, and writes down where they came from before the source
+goes.</p>
+
+<p>Lists travel between your devices, with the articles on them.</p>
 
 <h2 id="managing-sources">Managing sources</h2>
 
