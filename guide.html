@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- Reviewed against docs/USER_GUIDE.md @ sha256:c283a7f4c47ca2b46f0a274247379ae40d64ad90f288450ec743561276a5ed99
+<!-- Reviewed against docs/USER_GUIDE.md @ sha256:f56627260bb545121f02e3d358cf7ec22c8d635006f108df581de52b26ff7fb7
      If refresh.sh says that hash has moved, read what changed in the guide and
      bring this page with it, then update the line above. -->
 <html lang="en">
@@ -307,8 +307,24 @@ that.</p>
   money, and is the only time an article's text goes anywhere.</li>
 </ul>
 
-<p>On-device needs a model: <strong>Settings → Summaries → Models</strong>, then
-download one and switch it on.</p>
+<p>Whichever you pick gets its own tab beside <strong>Summaries</strong>, and
+only that one: <strong>Model</strong> for this device, <strong>LLM
+server</strong> for a server.</p>
+
+<h3>Choosing a model</h3>
+
+<p><strong>Settings → Model.</strong> Search below the list, open a result's
+<strong>Variants</strong> to see the files inside it — they differ in size, and
+size is what decides whether one fits — and download the one you want.</p>
+
+<p>Downloaded models are listed at the top. <strong>Select</strong> makes one the
+chosen model and loads it. Only one runs at a time, so choosing another one asks
+first: the model in memory has to go before the next arrives. The choice is
+remembered, and <strong>Load it when the app starts</strong> brings it back on
+its own.</p>
+
+<p>Some models will not run at all here — a file can require graphics support
+this build has no way to ask for, and the app says so rather than retrying.</p>
 
 <h3>Automatic summaries</h3>
 
