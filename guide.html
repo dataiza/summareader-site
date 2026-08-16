@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- Reviewed against docs/USER_GUIDE.md @ sha256:91f75e8a2150bdb048502440d6f713ec440fbad073be090cab91fb171a10dd61
+<!-- Reviewed against docs/USER_GUIDE.md @ sha256:681620d2e2e2245ced52bad5dd887e0615191b251449efc3531955b16062d671
      If refresh.sh says that hash has moved, read what changed in the guide and
      bring this page with it, then update the line above. -->
 <html lang="en">
@@ -174,7 +174,7 @@ first article.</p>
     <tr><td><strong>Mark all read</strong></td><td>Marks everything the filter covers</td></tr>
     <tr><td><strong>Summarize …</strong></td><td>Summarizes everything the filter covers</td></tr>
     <tr><td>Kind chips</td><td>Videos, feeds, posts — click to narrow</td></tr>
-    <tr><td>The text box</td><td>Matches any word in what is loaded</td></tr>
+    <tr><td>The text box</td><td>Matches any word in what is loaded, or <code>tag:name</code></td></tr>
   </tbody>
 </table>
 </div>
@@ -400,6 +400,25 @@ article text and video transcripts. A transcript hit is a <strong>moment</strong
 <p>The text box in the filter panel is a different thing: it matches the rows
 already loaded, and is for narrowing what is in front of you rather than
 searching the library.</p>
+
+<p><strong><code>tag:</code> is the exception</strong>, and asks the whole
+library rather than the loaded rows. <code>tag:linux</code> finds everything
+carrying that tag however old it is; two of them narrow rather than widen. A
+value with a space goes in quotes: <code>tag:"machine learning"</code>.</p>
+
+<h3>Tags</h3>
+
+<p>An article's tags are the subjects its summary picked out, and they are
+yours to change: the chips under <strong>In short</strong> in the reader add and
+remove, and clicking one shows everything carrying it.</p>
+
+<p>A <strong>source</strong> can be tagged too, in its <code>⋯</code> panel —
+and an article is filtered by its source's tags as well as its own, so tagging a
+feed organises the hundred articles already in it rather than only the ones that
+arrive next.</p>
+
+<p>Every tag in use is listed under <strong>Tags</strong> in the shelf, with
+what it holds. Clicking one narrows the list; clicking it again clears it.</p>
 
 <h2 id="keeping-things">Keeping things</h2>
 
