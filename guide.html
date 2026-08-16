@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- Reviewed against docs/USER_GUIDE.md @ sha256:681620d2e2e2245ced52bad5dd887e0615191b251449efc3531955b16062d671
+<!-- Reviewed against docs/USER_GUIDE.md @ sha256:036f6eecdb18dca627be6df71ca42f5777ecddd54ad77a7f011f4d8ca6704020
      If refresh.sh says that hash has moved, read what changed in the guide and
      bring this page with it, then update the line above. -->
 <html lang="en">
@@ -174,7 +174,7 @@ first article.</p>
     <tr><td><strong>Mark all read</strong></td><td>Marks everything the filter covers</td></tr>
     <tr><td><strong>Summarize …</strong></td><td>Summarizes everything the filter covers</td></tr>
     <tr><td>Kind chips</td><td>Videos, feeds, posts — click to narrow</td></tr>
-    <tr><td>The text box</td><td>Matches any word in what is loaded, or <code>tag:name</code></td></tr>
+    <tr><td>The text box</td><td>Matches a word in the title, source or summary, or <code>tag:name</code></td></tr>
   </tbody>
 </table>
 </div>
@@ -397,14 +397,17 @@ every attempt.</p>
 article text and video transcripts. A transcript hit is a <strong>moment</strong>
 — it names the time and seeks there when you open it.</p>
 
-<p>The text box in the filter panel is a different thing: it matches the rows
-already loaded, and is for narrowing what is in front of you rather than
-searching the library.</p>
+<p>The text box in the filter panel is a different thing: it narrows the list
+in front of you rather than opening results of its own. It matches the title,
+the source's name and the summary — Search also reads article text and
+transcripts.</p>
 
-<p><strong><code>tag:</code> is the exception</strong>, and asks the whole
-library rather than the loaded rows. <code>tag:linux</code> finds everything
-carrying that tag however old it is; two of them narrow rather than widen. A
-value with a space goes in quotes: <code>tag:"machine learning"</code>.</p>
+<p>Every filter asks the whole library, not the part of it on screen. A word, a
+tag, <strong>Unread</strong>, <strong>Not summarized</strong>, a feed, a kind:
+each one is answered from storage, so the number above the list is the number
+of things there are. <code>tag:linux</code> finds everything carrying that tag
+however old it is; two tags narrow rather than widen, and a value with a space
+goes in quotes: <code>tag:"machine learning"</code>.</p>
 
 <h3>Tags</h3>
 
