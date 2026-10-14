@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- Reviewed against PRIVACY.md @ sha256:d2d76fb7b3a9aea0b88d9c94300366457a2a679323a6bd1f24f00ae9befda7ba
+<!-- Reviewed against PRIVACY.md @ sha256:fe0dd7e0b672511f520aa806aef800fe2b80f7be66ac3162ad3ee2613faeb7f0
      The app repository holds that file and this page publishes it. If
      refresh.sh says the hash has moved, they have diverged. Fix both, then
      update the line above. -->
@@ -47,8 +47,8 @@
 <h2 id="who-is-responsible">Who is responsible</h2>
 
 <p>Data controller: <strong>Dataiza s. r. o.</strong>, Slovakia<br>
-Company ID (IČO): [company ID — to be filled]<br>
-Registered address: [registered address — to be filled]<br>
+Company ID (IČO): 57113432<br>
+Registered address: Tabaková 5382/5, 949 01 Nitra, Slovenská republika<br>
 Contact: <strong><a href="mailto:development@dataiza.sk">development@dataiza.sk</a></strong></p>
 
 <h2 id="the-two-editions">The two editions</h2>
@@ -304,7 +304,7 @@ Contact: <strong><a href="mailto:development@dataiza.sk">development@dataiza.sk<
 
 <h2 id="purchases">Purchases</h2>
 
-<p>The Premium edition is a separate paid build. [How Premium is sold, its price and the payment provider — to be filled.] We do not receive your payment card details; the store or payment provider handles the payment under its own privacy policy. The app itself has no purchase code and no licence key.</p>
+<p>The Premium edition is a separate paid build. It is sold in the Apple App Store and in Google Play, at the price the store shows. We do not receive your payment card details; the store handles the payment under its own privacy policy. The app itself has no purchase code and no licence key.</p>
 
 <h2 id="how-long-things-are-kept">How long things are kept</h2>
 
@@ -347,7 +347,7 @@ Contact: <strong><a href="mailto:development@dataiza.sk">development@dataiza.sk<
   <li><strong>Anything else</strong>: write to <a href="mailto:development@dataiza.sk">development@dataiza.sk</a>.</li>
 </ul>
 
-<p>You also have the right to complain to the supervisory authority, the Úrad na ochranu osobných údajov Slovenskej republiky (Office for Personal Data Protection of the Slovak Republic), or to the authority of the EU country where you live. [Contact details of the authority — to be filled.]</p>
+<p>You also have the right to complain to the supervisory authority, the Úrad na ochranu osobných údajov Slovenskej republiky (Office for Personal Data Protection of the Slovak Republic), or to the authority of the EU country where you live. The Slovak authority is at Galvaniho 7/B, 821 04 Bratislava, and at <a href="https://dataprotection.gov.sk">https://dataprotection.gov.sk</a>.</p>
 
 <h2 id="children">Children</h2>
 
@@ -370,7 +370,7 @@ Contact: <strong><a href="mailto:development@dataiza.sk">development@dataiza.sk<
 <p>This section is for the lawyer's review (card 858). Remove it before publishing.</p>
 
 <ul>
-  <li><strong>Placeholders:</strong> company ID (IČO); registered address; legal basis; the supervisory authority's contact details; how Premium is sold, its price and payment provider.</li>
+  <li><strong>Placeholders:</strong> legal basis.</li>
   <li><strong>(lawyer)</strong> Legal basis for each processing (GDPR art. 6), and whether Dataiza is a controller at all for data that stays on the user's device.</li>
   <li><strong>(lawyer)</strong> Supervisory authority and the right to complain: confirm the wording and add the contact details of the Úrad na ochranu osobných údajov Slovenskej republiky.</li>
   <li><strong>(lawyer)</strong> Whether the disclosure of MediaPipe's Google data-transport component is enough while it is not known what it sends. Card 870 checks this on Android; MediaPipe on iOS has not been checked. If card 870 removes the component, change "Third-party components" and "What we collect".</li>
@@ -379,7 +379,7 @@ Contact: <strong><a href="mailto:development@dataiza.sk">development@dataiza.sk<
   <li><strong>(lawyer)</strong> The local servers default to plain HTTP when set to listen on the network.</li>
   <li><strong>Open fact:</strong> the "Check for updates" source, GitHub releases of <code>dataiza/summareader-release</code>, is described in the code as public. Confirm.</li>
   <li><strong>Open fact:</strong> the User-Agent names <code>summareader.app</code>, which is not the product domain. If Dataiza does not own it, change the code before publishing.</li>
-  <li><strong>Open fact:</strong> Gemma models in the documents folder are still in the system backup; the app's own text at System backup says "The models are never copied", which is not fully true.</li>
+  <li><strong>Open fact:</strong> Gemma models in the documents folder are still in the system backup. The app's text at System backup says only that llama.cpp models are never copied, which is true.</li>
   <li><strong>Store answers:</strong> the Play data-safety form must match this policy, including the MediaPipe component. <code>ITSAppUsesNonExemptEncryption</code> is false while the app has its own encryption (card 858).</li>
   <li><strong>Publishing:</strong> when this policy is published, move <code>privacyPolicyDate</code> in <code>lib/src/legal.dart</code> to <code>2026-10-14</code> in the same commit, so that the app shows the change notice.</li>
   <li>Windows is not built and is not covered.</li>
