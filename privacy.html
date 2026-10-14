@@ -1,14 +1,14 @@
 <!doctype html>
-<!-- Reviewed against PRIVACY.md @ sha256:91481bcc6c2f0d9bade1e33b6090b1c929e53bf1fa880c0dd60211be4ba918f6
-     The app ships that file and this page publishes it. If refresh.sh says the
-     hash has moved, they have diverged — which is the failure a store review
-     finds. Fix both, then update the line above. -->
+<!-- Reviewed against PRIVACY.md @ sha256:7c97ef3c4c9102b4125d26ade7e38b5632788a13e518527a49b68b1a6e709493
+     The app repository holds that file and this page publishes it. If
+     refresh.sh says the hash has moved, they have diverged. Fix both, then
+     update the line above. -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy policy — SummaReader</title>
-<meta name="description" content="SummaReader collects nothing about you. No account, no analytics, no telemetry, no crash reporting. This page says what leaves your device and who sees it.">
+<meta name="description" content="What the SummaReader app keeps on your device, what leaves it, and who sees it. No account, no analytics, no crash reporting.">
 <link rel="canonical" href="https://summareader.dataiza.sk/privacy.html">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -26,186 +26,370 @@
 
 <main id="main">
 
+<div class="note">
+  <p><strong>Draft, not yet reviewed by a lawyer.</strong></p>
+</div>
+
 <h1>Privacy policy</h1>
 
-<p class="muted"><strong>Last updated:</strong> 14 August 2026 · Applies to the
-SummaReader app for Linux and Android, and to these pages.</p>
+<p class="muted"><strong>Last updated:</strong> 14 October 2026 · Applies to the SummaReader app for Linux, Android, iOS and macOS, in its free and its Premium edition, and to these pages.</p>
 
-<h2>The short version</h2>
+<h2 id="the-short-version">The short version</h2>
 
-<p>SummaReader collects nothing about you. There is no account, no analytics, no
-telemetry, no crash reporting and no advertising. Your reading library is stored
-on your own devices, and when it is synced between them it is encrypted so that
-the server carrying it cannot read it.</p>
+<p>We do not collect data about you. The app has no account, no analytics, no crash reporting and no advertising, and we operate no server that receives your library.</p>
 
-<p>The app does talk to the internet, because a reader must. This document is
-mostly about who it talks to and what they can see.</p>
+<p>Your library is kept on your own devices. When you sync it between your devices, it is encrypted on the device before it leaves, and the sync server cannot read it. We do not operate a sync server; you or a person you trust operates it.</p>
 
-<h2>What stays on your device</h2>
+<p>The app must use the internet to get what you follow. This policy is mostly about where the app connects, and what each of those places can see.</p>
 
-<p>Everything, unless a section below says otherwise:</p>
+<p>Some things leave the device only because you switch them on. Others happen on their own, and this policy names them: the system backup of your phone, the hidden page renderer, and one Google component in the Android app.</p>
+
+<h2 id="who-is-responsible">Who is responsible</h2>
+
+<p>Data controller: <strong>Dataiza s. r. o.</strong>, Slovakia<br>
+Company ID (IČO): [company ID — to be filled]<br>
+Registered address: [registered address — to be filled]<br>
+Contact: <strong><a href="mailto:development@dataiza.sk">development@dataiza.sk</a></strong></p>
+
+<h2 id="the-two-editions">The two editions</h2>
+
+<p>SummaReader comes in two editions, which are two different apps:</p>
 
 <ul>
-  <li>the articles, feeds, videos and posts you follow, and their text</li>
-  <li>summaries, whether made on your device or elsewhere</li>
-  <li>your highlights, notes, read state and saved items</li>
-  <li>your settings, including any API keys you enter</li>
+  <li><strong>Free.</strong> A reader: it gets what you follow, you read it, you keep it, and you can summarize one item when you ask.</li>
+  <li><strong>Premium.</strong> A separate paid build. It adds, among other things, automatic summaries, search, tags, lists, highlights, <strong>site sign-ins</strong> and the <strong>local servers</strong> (REST, MCP and metrics).</li>
 </ul>
 
-<p>None of this is sent to us. <strong>We operate no service that receives
-it</strong> — including sync, which is described below and which we do not
-host.</p>
+<p>The free build does not contain the code for site sign-ins or for the local servers. The sections about them apply only to Premium.</p>
 
-<h2>What leaves your device, and who sees it</h2>
+<h2 id="what-stays-on-your-device">What stays on your device</h2>
+
+<p>Unless a section below says otherwise, all of this stays on the device:</p>
+
+<ul>
+  <li>the sources you follow (feeds, sites, YouTube, PeerTube, Mastodon, Nostr), and the articles, videos and posts they bring, with their text and pictures</li>
+  <li>summaries, on-device or from an endpoint you set</li>
+  <li>your highlights, notes, tags, lists, read state and saved items</li>
+  <li>your settings</li>
+  <li><strong>the activity trace</strong> (see <a href="#the-trace">The trace</a>)</li>
+  <li>these secrets, in the system keychain:
+  <ul>
+    <li>any API key for a summary endpoint</li>
+    <li>a Hugging Face token, if you enter one</li>
+    <li>the tokens for the local servers (Premium)</li>
+    <li>the cookies of the sites you sign in to (Premium)</li>
+    <li>the sync keys and the device key</li>
+  </ul></li>
+</ul>
+
+<p>On Linux, if the system keychain (Secret Service) is missing or locked, the app writes these secrets to a file that only your user account can read, and tells you so.</p>
+
+<p><strong>The library itself is not encrypted by the app on the device.</strong> It is protected by the device: your login, the disk encryption of the device, and the app's own storage area. Anyone with access to your unlocked device or to an unencrypted copy of its files can read it.</p>
+
+<p>None of this is sent to us.</p>
+
+<h2 id="what-leaves-your-device-and-who-sees-it">What leaves your device, and who sees it</h2>
 
 <div class="scroll">
 <table>
+
   <thead><tr><th>When</th><th>Where it goes</th><th>What they can see</th></tr></thead>
   <tbody>
-    <tr><td>You follow a source</td><td>The publisher's own server</td><td>Your IP address, and that something fetched their feed</td></tr>
-    <tr><td>You follow a YouTube channel</td><td>YouTube, and <code>i.ytimg.com</code> for thumbnails</td><td>Your IP address, and which channel or video was asked for</td></tr>
+
+    <tr><td>The app gets a feed or a page</td><td>The publisher's server</td><td>Your IP address, and which address was asked for</td></tr>
+
+    <tr><td>The app gets a picture or a PDF</td><td>The server that holds it, often a content-delivery network</td><td>Your IP address, and which file was asked for</td></tr>
+
+    <tr><td>A page has no text without its scripts</td><td>The publisher, through the hidden page renderer (see below)</td><td>The same as a visit in a browser, scripts included</td></tr>
+
+    <tr><td>You follow a YouTube channel</td><td>YouTube, and <code>i.ytimg.com</code> for pictures</td><td>Your IP address, and which channel, video or transcript was asked for</td></tr>
+
+    <tr><td>A source fetches as a signed-in account (Premium)</td><td>That site</td><td>Your account on that site, through its cookies</td></tr>
+
+    <tr><td>You follow a PeerTube channel</td><td>The server that the channel is on</td><td>Your IP address, and which channel or video was asked for</td></tr>
+
     <tr><td>You follow a Mastodon account</td><td>The server that account is on</td><td>Your IP address, and which account was asked for</td></tr>
+
     <tr><td>You open a Nostr link</td><td><code>njump.me</code></td><td>Your IP address, and which note was asked for</td></tr>
-    <tr><td>You open an article</td><td>That website</td><td>The same as any browser visiting it</td></tr>
+
     <tr><td>You summarize on your device</td><td>Nowhere</td><td>Nothing leaves</td></tr>
-    <tr><td>You summarize using an endpoint you configured</td><td>That provider</td><td>The text of the article being summarized</td></tr>
-    <tr><td>You download a model</td><td>Hugging Face</td><td>Your IP address and which model you chose</td></tr>
-    <tr><td>You turn on sync</td><td>The sync server you run</td><td>Encrypted data it cannot read — see below</td></tr>
+
+    <tr><td>You summarize with an endpoint you set</td><td>That provider</td><td>The title, description and text of the item, and your tag names when tags are asked for</td></tr>
+
+    <tr><td>You search for or download a model</td><td>Hugging Face</td><td>Your IP address, what you searched for, which model, and your Hugging Face token if you entered one</td></tr>
+
+    <tr><td>You press "Check for updates" (Linux, free)</td><td>GitHub</td><td>Your IP address, and that a copy of the app asked for the latest release</td></tr>
+
+    <tr><td>You look for a sync server on your network</td><td>Your local network only</td><td>That this device is looking</td></tr>
+
+    <tr><td>Sync is on</td><td>The sync server that you set</td><td>Encrypted data, plus the metadata in <a href="#sync">Sync</a></td></tr>
+
+    <tr><td>Your phone makes a system backup</td><td>Apple's or Google's backup service</td><td>The library, unless you switch it off (see <a href="#backups">Backups</a>)</td></tr>
+
   </tbody>
 </table>
 </div>
 
-<p>Two of these are worth stating plainly.</p>
+<h3 id="fetching-is-direct">Fetching is direct</h3>
 
-<p><strong>Fetching is direct.</strong> The app talks to publishers itself.
-There is no proxy in between, so publishers see your IP address exactly as they
-would if you visited in a browser — and we see nothing at all.</p>
+<p>The app connects to publishers itself. There is no proxy between them and you. Publishers see your IP address, as they do when you visit them in a browser. We see nothing. The app's own requests name the program (SummaReader) in their User-Agent header.</p>
 
-<p><strong>Remote summarization sends the article.</strong> If you point the app
-at OpenAI, OpenRouter, Anthropic, your own server or anything else, the text
-being summarized is sent there and that provider's terms apply to it. This is
-off by default; summarizing on your device sends nothing anywhere. The app tells
-you which of the two it is using.</p>
+<h3 id="the-hidden-page-renderer">The hidden page renderer</h3>
 
-<h2>Sync</h2>
+<p>Some pages give no text until their scripts run. For those pages only, the app opens the page once in the system's own web engine, without showing it, and reads the text from the result. This happens automatically, after the normal fetch found no article. On Android and iOS it happens only while the app is open or the phone is charging.</p>
 
-<p>Sync is off until you turn it on, there is no address in the box until you
-put one there, and it works between your own devices.</p>
+<p>When it happens, the page's scripts run, <strong>including advertising and tracking scripts</strong>, as in a browser. They can see your IP address and your device's web engine, and they can send what they find to the hosts they use.</p>
 
-<p><strong>We operate no sync service.</strong> There is no hosted option and no
-default server: the only sync server your app talks to is one you or somebody
-you trust runs. The software for it is published separately, under
-AGPL-3.0.</p>
+<p>After each page, success or failure, the app clears the web engine's cookies, stored data and cache. A site that you did not sign in to keeps nothing from one page to the next. On Linux the renderer is a separate process that uses a new, empty temporary folder for each page. The renderer never loads addresses on your local network.</p>
 
-<p><strong>A sync server cannot read your library.</strong> Everything is
-encrypted on your device before it is sent, with a key that exists only on your
-devices and is never transmitted to the server. That is a property of the design
-rather than a promise about anybody's conduct, which is the point: it holds even
-if the server is hostile.</p>
+<h3 id="site-sign-ins-premium">Site sign-ins (Premium)</h3>
 
-<p>What a sync server does hold:</p>
+<p>In Premium you can sign in to a site, for example a newspaper you subscribe to, or YouTube with your Google account. The app then keeps that site's cookies:</p>
 
 <ul>
-  <li>your encrypted data, which is opaque to it</li>
-  <li>one token per device, so it can tell your devices apart and you can revoke
-  one</li>
-  <li><strong>a label for each device, in the clear</strong> — by default your
-  Android device model or your computer's hostname, so the paired-devices list
-  can name them. You can change it, and it is the one piece of unencrypted
-  metadata about your hardware</li>
-  <li>the timing and size of what you sync, which is unavoidable for anything
-  that stores data — it can see that you synced and roughly how much, never
-  what</li>
+  <li>in the system keychain, filed under an account name that you choose</li>
+  <li><strong>never in sync</strong>: the account name syncs, the cookies do not. Each device signs in for itself</li>
+  <li>in a library backup file only if you ask for it there, sealed with a passphrase that you choose (see <a href="#backups">Backups</a>)</li>
 </ul>
 
-<p><strong>If you lose your recovery code, nobody can recover your data</strong>
-— not you and not us. That is what "we cannot read it" means in practice.</p>
+<p>The cookies are sent to that site when a source that uses the account is fetched, and they are put into the hidden page renderer for that one page. The app keeps a session cookie until the site's own expiry date, or until you remove the sign-in at <strong>Configuration › Advanced › Accounts</strong>. The app does not end a session when it closes.</p>
 
-<h2>What we collect: nothing</h2>
+<p><strong>YouTube access is unofficial.</strong> The app reads YouTube's public pages and the same internal interface that YouTube's own web page uses. It does not use an official YouTube interface or key. With a signed-in Google account, YouTube sees that account when the app lists your subscriptions or fetches as it.</p>
 
-<p>No analytics. No usage statistics. No crash reports. No device identifiers.
-No advertising identifiers. No third-party SDKs that collect anything.</p>
+<h3 id="summaries">Summaries</h3>
 
-<p>The Android app requests three permissions: internet access, permission to
-show notifications if you enable them, and the camera.</p>
+<p><strong>On your device, nothing leaves.</strong> The app can run a model on the device: a downloaded model (through llama.cpp, LiteRT-LM, or MediaPipe on Android and iOS), or the system model on iOS 26 and macOS 26 that Apple Intelligence provides.</p>
 
-<p><strong>The camera is used for exactly one thing:</strong> scanning the
-pairing code shown by a device you already use, when you add a second device.
-The scanner reads one code and closes. Nothing is photographed, stored, or sent
-anywhere, and the same pairing code can be pasted as text instead if you would
-rather never grant it.</p>
+<p><strong>An endpoint you set gets the item.</strong> If you point the app at a provider (the presets are OpenAI, OpenRouter, Anthropic and Ollama Cloud) or at your own server, the app sends the item's title, description and text there, and the names of your tags when it asks the model for tags. That provider's terms and privacy policy apply. With automatic summaries (Premium) switched on, this happens without a press, each time new items arrive.</p>
 
-<h2>The local API</h2>
+<p>When no model and no endpoint is set, the app summarizes nothing.</p>
 
-<p>The app can serve a small HTTP API on your own machine — a door for a browser
-extension or a script to put something into your library, and a
-<code>/metrics</code> endpoint for a dashboard. It is <strong>off by
-default</strong>, there is no default token and no default port, and nothing
-listens until you switch it on.</p>
+<h3 id="models-from-hugging-face">Models from Hugging Face</h3>
 
-<p>Two things to know if you do. It requires a token you set, and it <strong>can
-be bound to every network interface rather than only this machine</strong> —
-which is useful and is also your decision to make, because behind that token is
-your library in plaintext.</p>
+<p>The model search, the model information and the downloads come from <code>huggingface.co</code> and the download hosts it sends the app to. A Hugging Face token is sent only to Hugging Face, and only if you enter one (for gated models).</p>
 
-<h2>Purchases</h2>
+<h3 id="the-update-check-linux">The update check (Linux)</h3>
 
-<p>There are none. The app has no store code, no licence keys and no payments,
-so there is nothing here about billing. If that changes, this section is where
-it will say so.</p>
+<p>The free Linux AppImage can check GitHub for a newer release. It checks only when you press <strong>Check for updates</strong> at <strong>Configuration › About</strong>. Premium and the other platforms update through their stores and do not use this.</p>
 
-<h2>How long things are kept</h2>
+<h3 id="finding-a-sync-server-on-your-network">Finding a sync server on your network</h3>
 
-<p>On your device, by default: article text for 14 days, and items for 180 days,
-after which the app tidies them away. Saved items are never removed
-automatically. You can change both, and you can delete everything at once from
-Settings.</p>
+<p>When you press the button that looks for a sync server, the app listens on your local network for a server that announces itself (mDNS, the service <code>_summareader-sync._tcp</code>). Nothing leaves your local network. iOS and macOS ask your permission for this the first time.</p>
 
-<p>On a sync server, until you delete it. There is a wipe operation that removes
-your synced copy; it is deliberately separate from switching servers and from
-anything else, so it cannot happen by accident.</p>
+<h2 id="third-party-components">Third-party components</h2>
 
-<h2>Your rights</h2>
+<p><strong>The Android app includes a Google component that can send data.</strong> MediaPipe, the library that one of the on-device engines uses on Android, includes Google's data-transport component (<code>com.google.android.datatransport</code>) and the Firebase encoders. These are the parts that Google's libraries use to send usage information to Google. They are in every Android build, in both editions, whether or not you use that engine. We have not yet confirmed what, if anything, they send. When we know, this section will say so.</p>
 
-<p>Under the GDPR you have rights of access, correction, erasure, portability
-and objection. They are unusually simple to exercise here, because we hold
-almost nothing:</p>
+<p>The pairing scanner uses no Google library. It is built on zxing-cpp on Android and iOS, and on the system camera on macOS.</p>
+
+<p>Other than this, the app contains no analytics, advertising, crash-reporting or tracking component.</p>
+
+<h2 id="what-we-collect">What we collect</h2>
+
+<p>We collect no analytics, no usage statistics, no crash reports, no device identifiers and no advertising identifiers. See <a href="#third-party-components">Third-party components</a> for the one component that we have not yet cleared.</p>
+
+<h2 id="permissions">Permissions</h2>
+
+<p><strong>Android</strong> asks for or declares:</p>
 
 <ul>
-  <li><strong>Access and portability</strong>: your library is on your device
-  already, and Settings exports your subscriptions in standard formats.</li>
-  <li><strong>Erasure</strong>: deleting the app removes everything on that
-  device. If you used sync, the wipe operation removes the synced copy.</li>
-  <li><strong>Anything else</strong>: write to the address below.</li>
+  <li>internet, and the network state (to know if the device is online)</li>
+  <li>notifications, if you enable them</li>
+  <li>the camera, to scan a pairing code (the camera is optional; a device without one pairs by code)</li>
+  <li>a foreground service (data sync, and short tasks), a wake lock, and starting after the device boots, so that scheduled fetches and summaries can continue with the screen off</li>
+  <li>vibrate, for notifications</li>
 </ul>
 
-<h2>Children</h2>
+<p><strong>iOS</strong> asks for the camera (pairing code) and the local network (to find a sync server), and uses background refresh. It also shows a photo-library text, because the scanner library can read codes from pictures; the app never opens your photos.</p>
 
-<p>The app is not directed at children and collects nothing from anybody,
-including them.</p>
+<p><strong>macOS</strong> asks for the camera (pairing code) and the local network. The app runs in the macOS sandbox, with network access, a local server permission for Premium's local servers, and access only to files that you choose.</p>
 
-<h2>These pages</h2>
+<p><strong>Linux</strong> has no permission system for apps; the app runs with your user's rights.</p>
 
-<p>There is no service here to sign in to — a product page and a user guide is
-all this is. They set no cookies, run no analytics and load nothing from any
-other host: no fonts, no scripts, no embedded anything. Whoever serves them
-records what any web server records in order to hand over a page, and nothing
-is added to that.</p>
+<h3 id="the-camera">The camera</h3>
 
-<h2>Changes</h2>
+<p>The camera is used for one thing only: to scan the pairing code that your other device shows, when you add a device to sync. The scanner reads one code and closes. No picture is stored or sent. You can type the pairing code instead.</p>
 
-<p>If this policy changes in a way that affects what leaves your device, the app
-will say so rather than relying on you re-reading this page.</p>
+<h2 id="sync">Sync</h2>
 
-<h2>Who is responsible, and how to reach us</h2>
+<p>Sync is off until you turn it on. There is no default server. It works only between your own devices.</p>
 
-<p>Data controller: <strong>Dataiza s. r. o.</strong>, Slovakia<br>
-Contact: <a href="mailto:development@dataiza.sk">development@dataiza.sk</a></p>
+<p><strong>We operate no sync service.</strong> The only sync server the app connects to is one that you or a person you trust operates. The server software is published separately, under AGPL-3.0.</p>
+
+<p><strong>A sync server cannot read your library.</strong> Everything is encrypted on your device before it is sent, with a key that only your devices have. The key is never sent to the server. This is a property of the design: it holds even if the server is hostile.</p>
+
+<p>What syncs: your sources and their groups, items, what you read and saved, summaries, highlights, article text and title pictures, and the names of your sign-in accounts. Site cookies, API keys and tokens do not sync.</p>
+
+<p>What a sync server holds and sees:</p>
+
+<ul>
+  <li>your encrypted data, which it cannot read</li>
+  <li>one token per device, so that it can tell your devices apart and you can revoke one</li>
+  <li><strong>a label for each device, in clear text</strong>: by default your Android device model or your computer's host name. You can change it</li>
+  <li><strong>a list of account events, in clear text</strong>: a device was added, a device used the recovery code, the recovery code was replaced, the library was wiped. Each event has the device, the device label, which device did it, and the time</li>
+  <li><strong>the last time each device synced</strong></li>
+  <li><strong>your IP address</strong>, as any web server sees it. The server uses it to limit repeated attempts, and its request log can keep it. The operator of the server decides how long</li>
+  <li>the time and size of each sync</li>
+</ul>
+
+<p><strong>If you lose your recovery code, nobody can recover your data</strong>, not you and not us.</p>
+
+<p><strong>On iOS, the sync key goes into the device backup.</strong> The key is in the iOS keychain in a form that is included in an encrypted device backup (iCloud or computer), so that a restored phone can read its library. Whoever can open that backup can get the key.</p>
+
+<h2 id="backups">Backups</h2>
+
+<h3 id="the-system-backup-of-your-phone">The system backup of your phone</h3>
+
+<p>On Android and iOS, the system backup (Google's backup on Android, iCloud or a computer backup on iOS) <strong>copies the library by default</strong>: your reading history, highlights, notes and the activity trace. A new phone then gets your library back. The library is not encrypted by the app inside that backup; the backup service's own protection applies.</p>
+
+<p>To keep the library out of the system backup, switch off <strong>Configuration › Advanced › Your data › System backup › Include the library in the system backup</strong>. On Android the change takes effect at the next start of the app.</p>
+
+<p>These are never in the system backup, whatever the switch says:</p>
+
+<ul>
+  <li>the key store's files (the keychain values themselves follow the system's rules; see the iOS sync key above)</li>
+  <li>the models in the app's model folder</li>
+</ul>
+
+<p><strong>One exception:</strong> models that the Gemma engine (flutter_gemma) downloads are kept in the app's documents folder, and the system backup can still copy them. A backup that large can also make Android's cloud backup fail for the whole app.</p>
+
+<p>On macOS, a computer backup (such as Time Machine) copies the app's folder, the library included; the model folder is excluded. On Linux the app makes no backup arrangement; your own backup tool decides.</p>
+
+<h3 id="the-library-backup-file">The library backup file</h3>
+
+<p>At <strong>Configuration › Advanced › Your data › Backup and restore</strong> you can save the whole library to one file. It is a plain copy of the library database: your reading history, highlights, summaries and the activity trace, <strong>not encrypted</strong>. It holds no secrets, unless you choose to include the sign-ins and tokens; then they are sealed with a passphrase that you type, and a restore asks for it. Where you keep that file is your choice.</p>
+
+<h2 id="the-trace">The trace</h2>
+
+<p>The app keeps an activity trace, a record of what it did, so that you can see why an article was not fetched or summarized:</p>
+
+<ul>
+  <li><strong>always on</strong>, kept in the library database</li>
+  <li><strong>limited to about 4 MB</strong>; the oldest lines go first</li>
+  <li>it holds <strong>article titles, addresses, what the app did, and error text</strong>; at the level DEBUG, chosen by you, it also records the decisions inside each job, in memory only</li>
+  <li>it is in the system backup and in the library backup file, like the rest of the library</li>
+</ul>
+
+<p>You see it at <strong>Configuration › Advanced › Debug › Trace</strong>. From there you can <strong>Copy</strong> it, <strong>Copy without titles</strong> (titles and addresses replaced), save it to a file, or <strong>Clear</strong> it. <strong>Erase everything</strong> clears it too. In Premium, an agent can read it over MCP only with a token that has the <code>read_trace</code> tool, which must be ticked on its own. The trace leaves the device only when you copy, save or share it, or through that token.</p>
+
+<h2 id="the-local-servers-premium">The local servers (Premium)</h2>
+
+<p>Premium can serve three local servers, each with its own switch and port:</p>
+
+<ul>
+  <li><strong>REST</strong> (port 8765): a browser extension or a script puts a link or a passage into your library</li>
+  <li><strong>MCP</strong> (port 8766): an agent on your machine can search and read your library and, if allowed, change it</li>
+  <li><strong>metrics</strong> (port 8767): counters for a dashboard</li>
+</ul>
+
+<p>Each is <strong>off by default</strong>, and nothing listens until you switch it on. Each needs a token. By default each listens <strong>only on this machine</strong>; you can set it to listen on your network, at <strong>Configuration › Advanced › API &amp; MCP</strong>.</p>
+
+<p><strong>They use plain HTTP unless you switch on TLS</strong>, at <strong>Configuration › Advanced › API &amp; MCP › TLS › Use TLS (HTTPS)</strong>. Without TLS, anyone on the same network can read a token, and what it opens, when the server listens on the network. With TLS, the app makes its own certificate and shows its fingerprint so that a client can check it.</p>
+
+<p>An MCP token can read the whole library. Some tools are never in a preset and must be ticked on their own: removing things, <code>set_endpoint</code> and <code>set_api_key</code> (which can send your article text to a different provider), and <code>read_trace</code>. The MCP settings tool never returns your API key, Hugging Face token, sync token or endpoint address.</p>
+
+<p>Nothing from these servers reaches us.</p>
+
+<h2 id="the-browser-extension">The browser extension</h2>
+
+<p>The SummaReader browser extension sends the address and title of the page you are on, and any text you selected, to the app's REST server, only when you press its button. Unless the app uses TLS, it sends them over plain HTTP. The extension keeps the server address and the token in the browser's sync storage, so your browser can copy them to your other browsers through your browser account.</p>
+
+<h2 id="background-work">Background work</h2>
+
+<p>The app fetches and summarizes on a schedule that you set at <strong>Configuration › Basic › Background work</strong> and <strong>Configuration › Basic › Fetching</strong>. On Android it uses a foreground service with a notification, and restarts its schedule after the device boots. On iOS it uses the system's background tasks. Background work connects to the same places as the table above, and the hidden page renderer does not run in the background.</p>
+
+<h2 id="notifications">Notifications</h2>
+
+<p>Notifications are made on the device, from the decrypted library. No push service is used.</p>
+
+<h2 id="purchases">Purchases</h2>
+
+<p>The Premium edition is a separate paid build. [How Premium is sold, its price and the payment provider — to be filled.] We do not receive your payment card details; the store or payment provider handles the payment under its own privacy policy. The app itself has no purchase code and no licence key.</p>
+
+<h2 id="how-long-things-are-kept">How long things are kept</h2>
+
+<p>On your device, by default:</p>
+
+<ul>
+  <li>article text: 14 days</li>
+  <li>full title pictures: 30 days (a small copy stays)</li>
+  <li>items: 180 days</li>
+  <li>saved, pinned, highlighted items, and items that wait for a summary, are never removed automatically</li>
+  <li>the trace: about 4 MB, oldest lines first</li>
+</ul>
+
+<p>You can change the defaults at <strong>Configuration › Advanced › Your data</strong>, and set limits for each source.</p>
+
+<p>On a sync server: until you delete it. A wipe removes your synced copy.</p>
+
+<p>In a system backup or a backup file: as long as that backup exists.</p>
+
+<h2 id="deleting-your-data">Deleting your data</h2>
+
+<ul>
+  <li><strong>Erase everything</strong>, at <strong>Configuration › Advanced › Development › Erase everything</strong>, deletes every source, item, summary and highlight on this device, and the trace. It <strong>keeps</strong> your settings, your keys, your sync pairing and your site sign-ins.</li>
+  <li>To remove site sign-ins: <strong>Configuration › Advanced › Accounts</strong>.</li>
+  <li>To remove the synced copy: the wipe in <strong>Configuration › Advanced › Sync</strong>.</li>
+  <li>Uninstalling the app removes its data from that device. It does not remove copies in a system backup, in a library backup file, or on a sync server. On iOS and macOS, items in the system keychain can stay after the app is removed.</li>
+</ul>
+
+<h2 id="legal-basis">Legal basis</h2>
+
+<p>[Legal basis for each processing — to be filled by the reviewer.] We process almost nothing ourselves: the app runs on your device, and the services it connects to are ones that you choose. When you write to us, we use your e-mail to answer you.</p>
+
+<h2 id="your-rights">Your rights</h2>
+
+<p>Under the GDPR you have the right of access, correction, erasure, restriction, portability and objection. Most of your data is only on your device, so you use most of these rights in the app:</p>
+
+<ul>
+  <li><strong>Access and portability</strong>: the library is on your device. <strong>Configuration › Advanced › Your data</strong> exports your sources (OPML) and the whole library (backup file).</li>
+  <li><strong>Erasure</strong>: see <a href="#deleting-your-data">Deleting your data</a>.</li>
+  <li><strong>Anything else</strong>: write to <a href="mailto:development@dataiza.sk">development@dataiza.sk</a>.</li>
+</ul>
+
+<p>You also have the right to complain to the supervisory authority, the Úrad na ochranu osobných údajov Slovenskej republiky (Office for Personal Data Protection of the Slovak Republic), or to the authority of the EU country where you live. [Contact details of the authority — to be filled.]</p>
+
+<h2 id="children">Children</h2>
+
+<p>The app is not made for children, and it collects nothing from anyone, children included.</p>
+
+<h2 id="these-pages">These pages</h2>
+
+<p>The pages at summareader.dataiza.sk set no cookies, run no analytics, and load nothing from other hosts. The web server records what web servers record to deliver a page.</p>
+
+<h2 id="apple-privacy-manifest-and-store-forms">Apple privacy manifest and store forms</h2>
+
+<p>The iOS and macOS apps carry an Apple privacy manifest. It declares no tracking, no tracking domains and no collected data, and one system interface used for a required reason (file timestamps). The Google Play data-safety form and Apple's privacy labels give the same information as this policy.</p>
+
+<h2 id="changes">Changes</h2>
+
+<p>The app links this policy at <strong>Configuration › About › Privacy policy</strong>, next to the end-user licence and the terms. When a new release of the app carries a newer date for this policy, the app puts a notice in its bell with a link here. The app does not connect to anything to find this out: the notice comes with the update. The date at the top of this page is the date of the change.</p>
+
+<h2 id="notes-for-the-reviewer">Notes for the reviewer</h2>
+
+<p>This section is for the lawyer's review (card 858). Remove it before publishing.</p>
+
+<ul>
+  <li><strong>Placeholders:</strong> company ID (IČO); registered address; legal basis; the supervisory authority's contact details; how Premium is sold, its price and payment provider.</li>
+  <li><strong>(lawyer)</strong> Legal basis for each processing (GDPR art. 6), and whether Dataiza is a controller at all for data that stays on the user's device.</li>
+  <li><strong>(lawyer)</strong> Supervisory authority and the right to complain: confirm the wording and add the contact details of the Úrad na ochranu osobných údajov Slovenskej republiky.</li>
+  <li><strong>(lawyer)</strong> Whether the disclosure of MediaPipe's Google data-transport component is enough while it is not known what it sends. Card 870 checks this on Android; MediaPipe on iOS has not been checked. If card 870 removes the component, change "Third-party components" and "What we collect".</li>
+  <li><strong>(lawyer)</strong> The hidden page renderer runs third-party tracking scripts on the user's device. Is the disclosure enough, or is a switch or consent needed?</li>
+  <li><strong>(lawyer)</strong> Default-on system backup of an unencrypted library, and the iOS sync key in the device backup.</li>
+  <li><strong>(lawyer)</strong> The local servers default to plain HTTP when set to listen on the network.</li>
+  <li><strong>Open fact:</strong> the "Check for updates" source, GitHub releases of <code>dataiza/summareader-release</code>, is described in the code as public. Confirm.</li>
+  <li><strong>Open fact:</strong> the User-Agent names <code>summareader.app</code>, which is not the product domain. If Dataiza does not own it, change the code before publishing.</li>
+  <li><strong>Open fact:</strong> Gemma models in the documents folder are still in the system backup; the app's own text at System backup says "The models are never copied", which is not fully true.</li>
+  <li><strong>Store answers:</strong> the Play data-safety form must match this policy, including the MediaPipe component. <code>ITSAppUsesNonExemptEncryption</code> is false while the app has its own encryption (card 858).</li>
+  <li><strong>Publishing:</strong> when this policy is published, move <code>privacyPolicyDate</code> in <code>lib/src/legal.dart</code> to <code>2026-10-14</code> in the same commit, so that the app shows the change notice.</li>
+  <li>Windows is not built and is not covered.</li>
+</ul>
 
 <footer>
   <p>SummaReader is made by Dataiza s. r. o. ·
   <a href="index.html">Home</a> ·
   <a href="guide.html">Guide</a> ·
+  <a href="eula.html">Licence</a> ·
   <a href="terms.html">Terms</a></p>
 </footer>
 

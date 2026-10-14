@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SummaReader — a reader that summarizes what you follow</title>
-<meta name="description" content="A reader that pulls in feeds, articles, YouTube and Mastodon, summarizes them on your own device, and keeps the result in step across your devices. Your library never leaves your devices in readable form.">
+<meta name="description" content="A reader that pulls in feeds, articles, YouTube and Mastodon, summarizes them, and keeps the result in step across your devices with end-to-end encrypted sync.">
 <link rel="canonical" href="https://summareader.dataiza.sk/">
 <link rel="stylesheet" href="style.css">
 <meta property="og:title" content="SummaReader">
@@ -33,16 +33,20 @@ YouTube, Mastodon, Nostr — summarizes it, and keeps the result in step across
 your own devices.</p>
 
 <ul class="claims">
-  <li>Your library never leaves your devices in readable form.</li>
-  <li>Summarization runs on-device by default. You can point it at your own
-  server or a cloud API instead — that is the only time content goes anywhere,
-  and only if you choose it.</li>
+  <li>Your library is kept on your devices. We run no server that receives
+  it.</li>
+  <li>Summaries run on this device by default, once you download a model. You
+  can point them at your own server or a cloud API instead, and then the
+  article's text goes there. Other things also connect out — the hidden page
+  renderer, Hugging Face, the update check, the phone's system backup, the
+  local servers — and the <a href="privacy.html">privacy policy</a> lists
+  them all.</li>
   <li>Sync is end-to-end encrypted: the server holds ciphertext against
   sequence numbers and cannot read any of it.</li>
 </ul>
 
 <p>There is no server-side summarization, no server-side search, and no web
-reader. Those are not missing features; they are what the first line costs.</p>
+reader. Those are not missing features; they follow from the first line.</p>
 
 <figure>
   <a href="img/window.png">
@@ -72,22 +76,23 @@ address. The right thing happens:</p>
 </table>
 </div>
 
-<p>Coming from another reader, <strong>Settings → Your data → Import and
-export</strong> takes an OPML file and everything in it arrives as a
+<p>Coming from another reader, <strong>Configuration › Advanced › Your data ›
+Import</strong> takes an OPML file and everything in it arrives as a
 source.</p>
 
 <h2>Where summaries run</h2>
 
-<p>Nothing is configured on first run. The reader works with no language model
-at all, and the first time you ask for a summary is when you choose where it
-runs.</p>
+<p>Summaries run on this device by default, but no model is downloaded on
+first run. The reader works with no language model at all until you download
+one, or set your own server or a cloud API.</p>
 
 <div class="scroll">
 <table>
   <tbody>
     <tr><th>This device</th><td>Gemma, as an optional download of about 2.6 GB. Nothing leaves the machine. Slower, and it costs battery.</td></tr>
+    <tr><th>The system model</th><td>On iOS 26 and macOS 26, where Apple Intelligence is on. Nothing to download, and nothing leaves the device.</td></tr>
     <tr><th>Your own server</th><td>Any OpenAI-compatible endpoint — Ollama, LM Studio, llama.cpp.</td></tr>
-    <tr><th>A cloud API</th><td>Your own key. Faster, costs money, and the only time an article's text goes anywhere.</td></tr>
+    <tr><th>A cloud API</th><td>Your own key. Faster, costs money, and the article's title, description and text go to that provider.</td></tr>
   </tbody>
 </table>
 </div>
@@ -137,40 +142,44 @@ them means anything was deleted.</p>
     <tr><td>Summarization, on-device model download</td><td>works</td></tr>
     <tr><td>Encryption, keys, pairing, recovery</td><td>works</td></tr>
     <tr><td>Sync: items, read state, summaries, highlights, article text, title pictures</td><td>works</td></tr>
-    <tr><td>Sync of subscriptions</td><td><strong>no</strong> — a feed added on one device stays there</td></tr>
+    <tr><td>Sync of sources and their groups</td><td>works</td></tr>
     <tr><td>Linux</td><td>builds and runs</td></tr>
     <tr><td>Android</td><td>builds, installs and runs; share sheet arrives</td></tr>
-    <tr><td>Windows</td><td>scaffolded, never built</td></tr>
-    <tr><td>iOS</td><td>compiles, but there is no release build</td></tr>
+    <tr><td>iOS</td><td>builds; in testing through TestFlight</td></tr>
+    <tr><td>macOS</td><td>builds; in testing through TestFlight</td></tr>
+    <tr><td>Windows</td><td>not built</td></tr>
   </tbody>
 </table>
 </div>
 
-<p>Two gaps worth naming. Pages that render their text in JavaScript fail
-cleanly rather than being extracted — there is no headless browser, on purpose.
-And chunk sizes are provisional until the prefill benchmark runs on real mobile
+<p>Two things worth naming. A page that builds its text with scripts is
+opened once in the system's own web engine, without showing it, and the text
+is read from the result. The page's scripts run then, trackers included, and
+the engine forgets the site after each page; the
+<a href="privacy.html">privacy policy</a> says more. And chunk sizes are provisional until the prefill benchmark runs on real mobile
 hardware.</p>
 
 <h2>Getting it</h2>
 
 <div class="note">
-  <p><strong>SummaReader is not distributed publicly yet.</strong> There are no
-  downloads on this page and no waiting list to join — a waiting list is a
+  <p><strong>SummaReader is in testing.</strong> Builds go out through GitHub
+  releases (free edition, Linux and Android), Google Play, Apple's TestFlight
+  and the App Store, and not every edition is on every channel yet. There are
+  no downloads on this page and no waiting list to join — a waiting list is a
   server holding your address, which is the thing this app exists to avoid.</p>
   <p>If you want to follow it or try it, write to
   <a href="mailto:development@dataiza.sk">development@dataiza.sk</a>.</p>
 </div>
 
-<p>The app is licensed under the <a href="https://www.mozilla.org/MPL/2.0/">Mozilla
-Public License 2.0</a> — chosen because this app's central claim, that your
-library never leaves your devices in readable form, is worth more when it can
-be checked. A privacy promise in a binary nobody can read is a promise you are
-asked to take on trust. The sync server is separate and AGPL-3.0.</p>
+<p>SummaReader is proprietary; see the <a href="eula.html">end-user
+licence</a>. It comes in two editions: a free one, and Premium, a separate
+paid build. The sync server is a separate program under AGPL-3.0.</p>
 
 <footer>
   <p>SummaReader is made by Dataiza s. r. o. ·
   <a href="guide.html">Guide</a> ·
   <a href="privacy.html">Privacy</a> ·
+  <a href="eula.html">Licence</a> ·
   <a href="terms.html">Terms</a> ·
   <a href="mailto:development@dataiza.sk">development@dataiza.sk</a></p>
   <p>These pages set no cookies, load nothing from anywhere else, and count

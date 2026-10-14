@@ -24,6 +24,8 @@ check() {  # <file in the app repo> <page here that was written from it>
 }
 check docs/USER_GUIDE.md guide.html
 check PRIVACY.md privacy.html
+check EULA.md eula.html
+check TERMS.md terms.html
 
 if [ "$(git status --porcelain img fonts)" ]; then
   echo "img/ or fonts/ changed — commit the new ones."
