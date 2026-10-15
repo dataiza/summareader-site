@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SummaReader — um leitor que resume o que segue</title>
+<meta name="description" content="Um leitor que recolhe feeds, artigos, YouTube e Mastodon, os resume e mantém o resultado igual em todos os seus dispositivos, com sincronização cifrada de ponta a ponta.">
+<link rel="canonical" href="https://summareader.dataiza.sk/pt/">
+<link rel="alternate" hreflang="en" href="https://summareader.dataiza.sk/">
+<link rel="alternate" hreflang="cs" href="https://summareader.dataiza.sk/cs/">
+<link rel="alternate" hreflang="sk" href="https://summareader.dataiza.sk/sk/">
+<link rel="alternate" hreflang="de" href="https://summareader.dataiza.sk/de/">
+<link rel="alternate" hreflang="es" href="https://summareader.dataiza.sk/es/">
+<link rel="alternate" hreflang="it" href="https://summareader.dataiza.sk/it/">
+<link rel="alternate" hreflang="pt" href="https://summareader.dataiza.sk/pt/">
+<link rel="stylesheet" href="../style.css">
+<meta property="og:title" content="SummaReader">
+<meta property="og:description" content="Um leitor que resume o que segue, no seu próprio dispositivo.">
+<meta property="og:url" content="https://summareader.dataiza.sk/pt/">
+<meta property="og:type" content="website">
+</head>
+<body>
+<a class="skip" href="#main">Saltar para o conteúdo</a>
+
+<nav>
+  <div>
+    <a class="wordmark" href="index.html">SummaReader</a>
+    <a href="guide.html">Guia</a>
+    <a href="help.html">Ajuda</a>
+    <a href="../privacy.html">Privacidade</a>
+    <a href="../terms.html">Termos</a>
+    <ul class="langs" aria-label="Idioma">
+      <li><a href="../index.html" hreflang="en" lang="en">EN<span class="sr"> English</span></a></li>
+      <li><a href="../cs/index.html" hreflang="cs" lang="cs">CS<span class="sr"> Čeština</span></a></li>
+      <li><a href="../sk/index.html" hreflang="sk" lang="sk">SK<span class="sr"> Slovenčina</span></a></li>
+      <li><a href="../de/index.html" hreflang="de" lang="de">DE<span class="sr"> Deutsch</span></a></li>
+      <li><a href="../es/index.html" hreflang="es" lang="es">ES<span class="sr"> Español</span></a></li>
+      <li><a href="../it/index.html" hreflang="it" lang="it">IT<span class="sr"> Italiano</span></a></li>
+      <li><a href="index.html" hreflang="pt" lang="pt" aria-current="true">PT<span class="sr"> Português</span></a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main">
+
+<h1>SummaReader</h1>
+
+<p class="lede">Um leitor que recolhe o que segue — feeds, artigos, YouTube,
+Mastodon, Nostr —, o resume e mantém o resultado igual em todos os seus
+dispositivos.</p>
+
+<ul class="claims">
+  <li>A sua biblioteca fica nos seus dispositivos. Não temos nenhum servidor
+  que a receba.</li>
+  <li>Os resumos são feitos neste dispositivo por predefinição, assim que
+  transferir um modelo. Pode, em vez disso, apontá-los para o seu próprio
+  servidor ou para uma API na nuvem, e então o texto do artigo vai para lá.
+  Outras coisas também se ligam ao exterior — o renderizador oculto de
+  páginas, o Hugging Face, a verificação de atualizações, a cópia de segurança
+  do sistema do telefone, os servidores locais — e a
+  <a href="../privacy.html">política de privacidade</a> enumera-as
+  todas.</li>
+  <li>A sincronização é cifrada de ponta a ponta: o servidor guarda texto
+  cifrado sob números de sequência e não consegue ler nada dele.</li>
+</ul>
+
+<p>Não há resumos no servidor, nem pesquisa no servidor, nem leitor web. Não
+são funcionalidades em falta; decorrem do primeiro ponto.</p>
+
+<figure>
+  <a href="../img/window.png">
+    <img src="../img/window.png" width="1400" height="950" loading="lazy" decoding="async"
+         alt="A janela principal: uma estante de fontes à esquerda, uma lista de artigos ao centro com resumos sob cada título e o artigo aberto ao lado.">
+  </a>
+  <figcaption>A janela principal. As capturas são da versão para Linux com o
+  tema claro, sobre uma biblioteca de demonstração — que inclui uma fonte
+  Nostr, a única coisa abaixo que ainda não funciona.</figcaption>
+</figure>
+
+<h2>O que pode colar</h2>
+
+<p>Prima <strong>+</strong> ao lado de <strong>A sua estante</strong> e cole
+um endereço. Acontece o que deve acontecer:</p>
+
+<div class="scroll">
+<table>
+  <thead><tr><th>Cola</th><th>Torna-se</th></tr></thead>
+  <tbody>
+    <tr><td>O endereço de um feed (<code>…/feed.xml</code>, <code>…/rss</code>)</td><td>Um feed</td></tr>
+    <tr><td>A página inicial de um site</td><td>Um feed, se a página anunciar um</td></tr>
+    <tr><td>O endereço de um canal ou vídeo do YouTube</td><td>Esse canal</td></tr>
+    <tr><td>Uma conta do Mastodon (<code>@name@server</code>)</td><td>As publicações dessa conta</td></tr>
+    <tr><td>Qualquer outra página</td><td>A própria página, guardada uma vez</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Se vem de outro leitor, <strong>Definições › Avançado › Os seus dados ›
+Import</strong> aceita um ficheiro OPML e tudo o que nele estiver chega como
+fonte.</p>
+
+<h2>Onde os resumos são feitos</h2>
+
+<p>Os resumos são feitos neste dispositivo por predefinição, mas nenhum modelo
+é transferido no primeiro arranque. O leitor funciona sem qualquer modelo de
+linguagem até transferir um, ou configurar o seu próprio servidor ou uma API
+na nuvem.</p>
+
+<div class="scroll">
+<table>
+  <tbody>
+    <tr><th>Este dispositivo</th><td>Gemma, como transferência opcional de cerca de 2,6 GB. Nada sai da máquina. Mais lento, e gasta bateria.</td></tr>
+    <tr><th>O modelo do sistema</th><td>No iOS 26 e no macOS 26, com o Apple Intelligence ativo. Nada a transferir, e nada sai do dispositivo.</td></tr>
+    <tr><th>O seu próprio servidor</th><td>Qualquer ponto de acesso compatível com OpenAI — Ollama, LM Studio, llama.cpp.</td></tr>
+    <tr><th>Uma API na nuvem</th><td>A sua própria chave. Mais rápido, custa dinheiro, e o título, a descrição e o texto do artigo vão para esse fornecedor.</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>O endereço e o modelo ficam guardados na biblioteca; <strong>a chave de API
+vai para o porta-chaves do sistema</strong>, nunca para junto da sua
+biblioteca. No Linux, se o Secret Service não estiver disponível ou estiver
+bloqueado, recorre a um ficheiro que só o proprietário pode ler, e diz isso em
+vez de fingir o contrário.</p>
+
+<h2>Como funciona</h2>
+
+<h3>Um item, uma identidade</h3>
+<p>O id de um item é um hash do seu URL canónico, por isso o mesmo artigo que
+chega de um feed, de uma partilha e de uma ligação do Mastodon é um só item,
+listado sob cada um. É também isso que faz da junção de dois dispositivos uma
+união de conjuntos e não um problema de reconciliação.</p>
+
+<h3>Os resumos são divididos, processados e reunidos</h3>
+<p>As transcrições longas são divididas segundo um orçamento de prefill com um
+tokenizador real, não com <code>chars / 4</code> — medida, essa regra prática
+subestima o eslovaco em cerca de 43 % e o checo em cerca de 51 %, o que
+transborda o contexto e corta a resposta do modelo.</p>
+
+<h3>A retenção tem dois níveis</h3>
+<p>Primeiro saem o texto extraído e a imagem de título, o que liberta quase
+todo o espaço enquanto os metadados e os resumos ficam; o <em>endereço</em> da
+imagem é guardado, por isso abrir o artigo mais tarde volta a obtê-la. Os
+itens saem depois. Nada que esteja guardado, fixado, anotado ou à espera de um
+resumo é alguma vez apagado — os destaques são obra do utilizador e podem não
+existir em mais lado nenhum.</p>
+
+<h3>A sincronização é um registo de entradas cifradas mais blobs endereçados pelo conteúdo</h3>
+<p>O servidor guarda texto cifrado sob números de sequência e não consegue ler
+nada dele. As eliminações viajam como lápides explícitas; um servidor vazio
+nunca causa eliminação local, porque um servidor pode estar vazio por várias
+razões e só uma significa que algo foi apagado.</p>
+
+<h2>O que funciona, e o que não funciona</h2>
+
+<div class="scroll">
+<table>
+  <tbody>
+    <tr><td>Armazenamento, URLs canónicos, identidade</td><td>funciona</td></tr>
+    <tr><td>Recolha: RSS/Atom, web, YouTube, Mastodon</td><td>funciona</td></tr>
+    <tr><td>Nostr</td><td><strong>ainda não</strong> — analisador de eventos escrito, sem transporte por relay</td></tr>
+    <tr><td>Leitura, guardar, pesquisa, fontes, definições</td><td>funciona</td></tr>
+    <tr><td>Retenção e notificações locais</td><td>funciona</td></tr>
+    <tr><td>Resumos, transferência do modelo para o dispositivo</td><td>funciona</td></tr>
+    <tr><td>Cifra, chaves, emparelhamento, recuperação</td><td>funciona</td></tr>
+    <tr><td>Sincronização: itens, estado de leitura, resumos, destaques, texto dos artigos, imagens de título</td><td>funciona</td></tr>
+    <tr><td>Sincronização das fontes e dos seus grupos</td><td>funciona</td></tr>
+    <tr><td>Linux</td><td>compila e funciona</td></tr>
+    <tr><td>Android</td><td>compila, instala e funciona; as partilhas de outras apps chegam</td></tr>
+    <tr><td>iOS</td><td>compila; em testes através do TestFlight</td></tr>
+    <tr><td>macOS</td><td>compila; em testes através do TestFlight</td></tr>
+    <tr><td>Windows</td><td>não compilado</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Duas coisas que vale a pena dizer. Uma página que constrói o texto com
+scripts é aberta uma vez no motor web do próprio sistema, sem ser mostrada, e
+o texto é lido do resultado. Os scripts da página correm nessa altura,
+rastreadores incluídos, e o motor esquece o site depois de cada página; a
+<a href="../privacy.html">política de privacidade</a> diz mais. E os
+tamanhos dos blocos são provisórios até o teste de prefill correr em hardware
+móvel real.</p>
+
+<h2>Como obter</h2>
+
+<div class="note">
+  <p><strong>O SummaReader está em testes.</strong> As versões saem pelas
+  publicações no GitHub (edição gratuita, Linux e Android), Google Play,
+  TestFlight da Apple e App Store, e nem todas as edições estão ainda em todos
+  os canais. Nesta página não há transferências nem lista de espera — uma
+  lista de espera é um servidor a guardar o seu endereço, exatamente o que
+  esta app existe para evitar.</p>
+  <p>Se quiser acompanhá-lo ou experimentá-lo, escreva para
+  <a href="mailto:development@dataiza.sk">development@dataiza.sk</a>.</p>
+</div>
+
+<p>O SummaReader é proprietário; veja a <a href="../eula.html">licença de
+utilizador final</a>. Existe em duas edições: uma gratuita e a Premium, uma
+versão paga à parte. O servidor de sincronização é um programa à parte sob
+AGPL-3.0.</p>
+
+<footer>
+  <p>O SummaReader é desenvolvido pela Dataiza s. r. o. ·
+  <a href="guide.html">Guia</a> ·
+  <a href="../privacy.html">Privacidade</a> ·
+  <a href="../eula.html">Licença</a> ·
+  <a href="../terms.html">Termos</a> ·
+  <a href="mailto:development@dataiza.sk">development@dataiza.sk</a></p>
+  <p>Estas páginas não definem cookies, não carregam nada de outro lado e não contam nada. Compostas em Figtree e Caprasimo, ambas sob a <a href="../fonts/OFL.txt">SIL Open Font License</a>.</p>
+</footer>
+
+</main>
+</body>
+</html>

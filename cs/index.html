@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SummaReader — čtečka, která shrnuje, co sledujete</title>
+<meta name="description" content="Čtečka, která stahuje feedy, články, YouTube a Mastodon, shrnuje je a udržuje výsledek stejný na všech vašich zařízeních díky end-to-end šifrované synchronizaci.">
+<link rel="canonical" href="https://summareader.dataiza.sk/cs/">
+<link rel="alternate" hreflang="en" href="https://summareader.dataiza.sk/">
+<link rel="alternate" hreflang="cs" href="https://summareader.dataiza.sk/cs/">
+<link rel="alternate" hreflang="sk" href="https://summareader.dataiza.sk/sk/">
+<link rel="alternate" hreflang="de" href="https://summareader.dataiza.sk/de/">
+<link rel="alternate" hreflang="es" href="https://summareader.dataiza.sk/es/">
+<link rel="alternate" hreflang="it" href="https://summareader.dataiza.sk/it/">
+<link rel="alternate" hreflang="pt" href="https://summareader.dataiza.sk/pt/">
+<link rel="stylesheet" href="../style.css">
+<meta property="og:title" content="SummaReader">
+<meta property="og:description" content="Čtečka, která shrnuje, co sledujete, přímo ve vašem zařízení.">
+<meta property="og:url" content="https://summareader.dataiza.sk/cs/">
+<meta property="og:type" content="website">
+</head>
+<body>
+<a class="skip" href="#main">Přejít na obsah</a>
+
+<nav>
+  <div>
+    <a class="wordmark" href="index.html">SummaReader</a>
+    <a href="guide.html">Příručka</a>
+    <a href="help.html">Nápověda</a>
+    <a href="../privacy.html">Soukromí</a>
+    <a href="../terms.html">Podmínky</a>
+    <ul class="langs" aria-label="Jazyk">
+      <li><a href="../index.html" hreflang="en" lang="en">EN<span class="sr"> English</span></a></li>
+      <li><a href="index.html" hreflang="cs" lang="cs" aria-current="true">CS<span class="sr"> Čeština</span></a></li>
+      <li><a href="../sk/index.html" hreflang="sk" lang="sk">SK<span class="sr"> Slovenčina</span></a></li>
+      <li><a href="../de/index.html" hreflang="de" lang="de">DE<span class="sr"> Deutsch</span></a></li>
+      <li><a href="../es/index.html" hreflang="es" lang="es">ES<span class="sr"> Español</span></a></li>
+      <li><a href="../it/index.html" hreflang="it" lang="it">IT<span class="sr"> Italiano</span></a></li>
+      <li><a href="../pt/index.html" hreflang="pt" lang="pt">PT<span class="sr"> Português</span></a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main">
+
+<h1>SummaReader</h1>
+
+<p class="lede">Čtečka, která stahuje, co sledujete — feedy, články, YouTube,
+Mastodon, Nostr —, shrne to a udržuje výsledek stejný na všech vašich
+zařízeních.</p>
+
+<ul class="claims">
+  <li>Vaše knihovna je uložena ve vašich zařízeních. Neprovozujeme žádný
+  server, který by ji přijímal.</li>
+  <li>Shrnutí se ve výchozím stavu vytvářejí v tomto zařízení, jakmile
+  stáhnete model. Můžete je místo toho nasměrovat na vlastní server nebo
+  cloudové API a text článku pak putuje tam. Ven se připojují i další věci —
+  skrytý vykreslovač stránek, Hugging Face, kontrola aktualizací, systémová
+  záloha telefonu, místní servery — a
+  <a href="../privacy.html">zásady ochrany soukromí</a> je uvádějí
+  všechny.</li>
+  <li>Synchronizace je šifrovaná end-to-end: server uchovává šifrovaný text
+  pod pořadovými čísly a nic z něj nepřečte.</li>
+</ul>
+
+<p>Není tu shrnování na serveru, vyhledávání na serveru ani webová čtečka.
+Nejsou to chybějící funkce; vyplývají z prvního bodu.</p>
+
+<figure>
+  <a href="../img/window.png">
+    <img src="../img/window.png" width="1400" height="950" loading="lazy" decoding="async"
+         alt="Hlavní okno: vlevo police se zdroji, uprostřed seznam článků se shrnutím pod každým nadpisem a vedle otevřený článek.">
+  </a>
+  <figcaption>Hlavní okno. Snímky jsou z verze pro Linux ve světlém motivu nad
+  ukázkovou knihovnou — včetně zdroje Nostr, jediné věci níže, která zatím
+  nefunguje.</figcaption>
+</figure>
+
+<h2>Co můžete vložit</h2>
+
+<p>Stiskněte <strong>+</strong> vedle <strong>Vaše police</strong> a vložte
+adresu. Stane se to správné:</p>
+
+<div class="scroll">
+<table>
+  <thead><tr><th>Vložíte</th><th>Stane se z toho</th></tr></thead>
+  <tbody>
+    <tr><td>Adresu feedu (<code>…/feed.xml</code>, <code>…/rss</code>)</td><td>Feed</td></tr>
+    <tr><td>Domovskou stránku webu</td><td>Feed, pokud ho stránka nabízí</td></tr>
+    <tr><td>Adresu kanálu nebo videa na YouTube</td><td>Ten kanál</td></tr>
+    <tr><td>Účet na Mastodonu (<code>@name@server</code>)</td><td>Příspěvky toho účtu</td></tr>
+    <tr><td>Jakoukoli jinou stránku</td><td>Stránku samotnou, uloženou jednou</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Pokud přecházíte z jiné čtečky, <strong>Nastavení › Pokročilé › Vaše data ›
+Import</strong> přijme soubor OPML a vše v něm dorazí jako zdroj.</p>
+
+<h2>Kde se shrnutí vytvářejí</h2>
+
+<p>Shrnutí se ve výchozím stavu vytvářejí v tomto zařízení, ale při prvním
+spuštění se žádný model nestahuje. Čtečka funguje i úplně bez jazykového
+modelu, dokud nějaký nestáhnete nebo nenastavíte vlastní server či cloudové
+API.</p>
+
+<div class="scroll">
+<table>
+  <tbody>
+    <tr><th>Toto zařízení</th><td>Gemma, jako volitelné stažení o velikosti asi 2,6 GB. Nic neopustí počítač. Pomalejší a stojí baterii.</td></tr>
+    <tr><th>Systémový model</th><td>V iOS 26 a macOS 26, kde je zapnutá Apple Intelligence. Nic se nestahuje a nic neopustí zařízení.</td></tr>
+    <tr><th>Vlastní server</th><td>Jakýkoli koncový bod kompatibilní s OpenAI — Ollama, LM Studio, llama.cpp.</td></tr>
+    <tr><th>Cloudové API</th><td>Váš vlastní klíč. Rychlejší, stojí peníze a nadpis, popis a text článku putují k tomuto poskytovateli.</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Adresa a model se ukládají v knihovně; <strong>klíč API jde do systémové
+klíčenky</strong>, nikdy vedle knihovny. Pokud je v Linuxu Secret Service
+nedostupná nebo zamčená, uloží se klíč do souboru přístupného jen vlastníkovi
+a aplikace to řekne, místo aby předstírala opak.</p>
+
+<h2>Jak to funguje</h2>
+
+<h3>Jedna položka, jedna identita</h3>
+<p>Id položky je hash její kanonické URL, takže tentýž článek, který přijde
+z feedu, ze sdílení i z odkazu na Mastodonu, je jedna položka uvedená u
+každého z nich. Díky tomu je i sloučení dvou zařízení sjednocením množin,
+ne problémem k usmiřování.</p>
+
+<h3>Shrnutí se dělí na části, zpracují a sloučí</h3>
+<p>Dlouhé přepisy se dělí podle rozpočtu pro prefill pomocí skutečného
+tokenizéru, ne <code>chars / 4</code> — změřeno, toto pravidlo od oka
+podhodnocuje slovenštinu asi o 43 % a češtinu asi o 51 %, což přeplní kontext
+a ořízne odpověď modelu.</p>
+
+<h3>Uchovávání má dvě úrovně</h3>
+<p>Nejdřív odchází extrahovaný text a titulní obrázek, což uvolní skoro
+všechno místo, zatímco metadata a shrnutí zůstávají; <em>adresa</em> obrázku
+se uchová, takže pozdější otevření článku ho stáhne znovu. Položky odcházejí
+později. Nic uloženého, připnutého, opatřeného poznámkou nebo čekajícího na
+shrnutí se nikdy nemaže — zvýraznění jsou dílem uživatele a nemusí existovat
+nikde jinde.</p>
+
+<h3>Synchronizace je log šifrovaných záznamů a bloby adresované obsahem</h3>
+<p>Server uchovává šifrovaný text pod pořadovými čísly a nic z něj nepřečte.
+Mazání putuje jako výslovné náhrobky; prázdný server nikdy nezpůsobí místní
+mazání, protože server může být prázdný z několika důvodů a jen jeden z nich
+znamená, že se něco smazalo.</p>
+
+<h2>Co funguje a co ne</h2>
+
+<div class="scroll">
+<table>
+  <tbody>
+    <tr><td>Úložiště, kanonické URL, identita</td><td>funguje</td></tr>
+    <tr><td>Příjem: RSS/Atom, web, YouTube, Mastodon</td><td>funguje</td></tr>
+    <tr><td>Nostr</td><td><strong>zatím ne</strong> — parser událostí je napsaný, přenos přes relay chybí</td></tr>
+    <tr><td>Čtení, ukládání, vyhledávání, zdroje, nastavení</td><td>funguje</td></tr>
+    <tr><td>Uchovávání a místní oznámení</td><td>funguje</td></tr>
+    <tr><td>Shrnování, stažení modelu do zařízení</td><td>funguje</td></tr>
+    <tr><td>Šifrování, klíče, párování, obnova</td><td>funguje</td></tr>
+    <tr><td>Synchronizace: položky, stav přečtení, shrnutí, zvýraznění, text článků, titulní obrázky</td><td>funguje</td></tr>
+    <tr><td>Synchronizace zdrojů a jejich skupin</td><td>funguje</td></tr>
+    <tr><td>Linux</td><td>sestaví se a běží</td></tr>
+    <tr><td>Android</td><td>sestaví se, nainstaluje a běží; sdílení ze systému dorazí</td></tr>
+    <tr><td>iOS</td><td>sestaví se; testuje se přes TestFlight</td></tr>
+    <tr><td>macOS</td><td>sestaví se; testuje se přes TestFlight</td></tr>
+    <tr><td>Windows</td><td>nesestavuje se</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Dvě věci stojí za zmínku. Stránka, která skládá svůj text skripty, se
+jednou otevře v systémovém webovém jádru, aniž by se zobrazila, a text se
+přečte z výsledku. Skripty stránky se přitom spustí, sledovače také, a jádro
+po každé stránce web zapomene; víc řeknou
+<a href="../privacy.html">zásady ochrany soukromí</a>. A velikosti částí jsou
+předběžné, dokud neproběhne měření prefillu na skutečném mobilním
+hardwaru.</p>
+
+<h2>Jak ho získat</h2>
+
+<div class="note">
+  <p><strong>SummaReader je ve fázi testování.</strong> Sestavení vycházejí
+  přes vydání na GitHubu (bezplatná edice, Linux a Android), Google Play,
+  TestFlight od Applu a App Store a ne každá edice je zatím v každém kanálu.
+  Na této stránce nejsou žádná stažení ani pořadník — pořadník je server,
+  který drží vaši adresu, a právě tomu se tato aplikace vyhýbá.</p>
+  <p>Pokud ho chcete sledovat nebo vyzkoušet, napište na
+  <a href="mailto:development@dataiza.sk">development@dataiza.sk</a>.</p>
+</div>
+
+<p>SummaReader je proprietární; viz <a href="../eula.html">licenci pro
+koncové uživatele</a>. Dodává se ve dvou edicích: bezplatné a Premium,
+samostatném placeném sestavení. Synchronizační server je samostatný program
+pod licencí AGPL-3.0.</p>
+
+<footer>
+  <p>SummaReader vyvíjí Dataiza s. r. o. ·
+  <a href="guide.html">Příručka</a> ·
+  <a href="../privacy.html">Soukromí</a> ·
+  <a href="../eula.html">Licence</a> ·
+  <a href="../terms.html">Podmínky</a> ·
+  <a href="mailto:development@dataiza.sk">development@dataiza.sk</a></p>
+  <p>Tyto stránky nenastavují žádné cookies, nic odjinud nenačítají a nic nepočítají. Sázeno písmy Figtree a Caprasimo, obě pod licencí <a href="../fonts/OFL.txt">SIL Open Font License</a>.</p>
+</footer>
+
+</main>
+</body>
+</html>
