@@ -20,15 +20,18 @@
     <a href="help.html">Help</a>
     <a href="privacy.html" aria-current="page">Privacy</a>
     <a href="terms.html">Terms</a>
-    <ul class="langs" aria-label="Language">
-      <li><a href="privacy.html" hreflang="en" lang="en" aria-current="true">EN<span class="sr"> English</span></a></li>
-      <li><a href="cs/index.html" hreflang="cs" lang="cs">CS<span class="sr"> Čeština</span></a></li>
-      <li><a href="sk/index.html" hreflang="sk" lang="sk">SK<span class="sr"> Slovenčina</span></a></li>
-      <li><a href="de/index.html" hreflang="de" lang="de">DE<span class="sr"> Deutsch</span></a></li>
-      <li><a href="es/index.html" hreflang="es" lang="es">ES<span class="sr"> Español</span></a></li>
-      <li><a href="it/index.html" hreflang="it" lang="it">IT<span class="sr"> Italiano</span></a></li>
-      <li><a href="pt/index.html" hreflang="pt" lang="pt">PT<span class="sr"> Português</span></a></li>
-    </ul>
+    <details class="langs">
+      <summary><span class="sr">Language: </span>EN<span aria-hidden="true"> ▾</span></summary>
+      <ul aria-label="Language">
+        <li><a href="privacy.html" hreflang="en" lang="en" aria-current="true">English</a></li>
+        <li><a href="cs/index.html" hreflang="cs" lang="cs">Čeština</a></li>
+        <li><a href="sk/index.html" hreflang="sk" lang="sk">Slovenčina</a></li>
+        <li><a href="de/index.html" hreflang="de" lang="de">Deutsch</a></li>
+        <li><a href="es/index.html" hreflang="es" lang="es">Español</a></li>
+        <li><a href="it/index.html" hreflang="it" lang="it">Italiano</a></li>
+        <li><a href="pt/index.html" hreflang="pt" lang="pt">Português</a></li>
+      </ul>
+    </details>
   </div>
 </nav>
 
@@ -105,6 +108,7 @@
 <tr><td>The app gets a picture or a PDF</td><td>The server that holds it, often a content-delivery network</td><td>Your IP address, and which file was asked for</td></tr>
 <tr><td>A page has no text without its scripts</td><td>The publisher, through the hidden page renderer (see below)</td><td>The same as a visit in a browser, scripts included</td></tr>
 <tr><td>You follow a YouTube channel</td><td>YouTube, and <code>i.ytimg.com</code> for pictures</td><td>Your IP address, and which channel, video or transcript was asked for</td></tr>
+<tr><td>YouTube refuses a transcript download (Linux)</td><td>YouTube, through the hidden page renderer (see below)</td><td>The same as a visit to the video's page in a browser, scripts included, with no account</td></tr>
 <tr><td>A source fetches as a signed-in account (Premium)</td><td>That site</td><td>Your account on that site, through its cookies</td></tr>
 <tr><td>You follow a PeerTube channel</td><td>The server that the channel is on</td><td>Your IP address, and which channel or video was asked for</td></tr>
 <tr><td>You follow a Mastodon account</td><td>The server that account is on</td><td>Your IP address, and which account was asked for</td></tr>
@@ -129,6 +133,8 @@
 <p>When it happens, the page's scripts run, <strong>including advertising and tracking scripts</strong>, as in a browser. They can see your IP address and your device's web engine, and they can send what they find to the hosts they use.</p>
 
 <p>After each page, success or failure, the app clears the web engine's cookies, stored data and cache. A site that you did not sign in to keeps nothing from one page to the next. On Linux the renderer is a separate process that uses a new, empty temporary folder for each page. The renderer never loads addresses on your local network.</p>
+
+<p><strong>YouTube transcripts (Linux).</strong> When YouTube refuses to send a video's transcript to the app, the app opens the video's page on YouTube in the hidden page renderer, one video at a time, and keeps the transcript that the page's own player gets. After a refusal, the app goes to the page first for the next hour. YouTube sees the page address, which names the video, and a page load with its scripts, the player and its advertising included, as in a browser. The renderer sends no cookies for this, not even those of a signed-in account, so YouTube does not see your account.</p>
 
 <h3 id="site-sign-ins-premium">Site sign-ins (Premium)</h3>
 
@@ -359,7 +365,7 @@
   <a href="privacy.html">Privacy</a> ·
   <a href="eula.html">Licence</a> ·
   <a href="terms.html">Terms</a></p>
-  <p>Describes SummaReader 0.108.2, published 15 October 2026.</p>
+  <p>Describes SummaReader 0.109.0, published 15 October 2026.</p>
 </footer>
 
 </main>

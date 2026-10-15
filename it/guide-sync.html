@@ -27,19 +27,24 @@
     <a href="help.html">Aiuto</a>
     <a href="../privacy.html">Privacy</a>
     <a href="../terms.html">Termini</a>
-    <ul class="langs" aria-label="Lingua">
-      <li><a href="../guide-sync.html" hreflang="en" lang="en">EN<span class="sr"> English</span></a></li>
-      <li><a href="../cs/guide-sync.html" hreflang="cs" lang="cs">CS<span class="sr"> Čeština</span></a></li>
-      <li><a href="../sk/guide-sync.html" hreflang="sk" lang="sk">SK<span class="sr"> Slovenčina</span></a></li>
-      <li><a href="../de/guide-sync.html" hreflang="de" lang="de">DE<span class="sr"> Deutsch</span></a></li>
-      <li><a href="../es/guide-sync.html" hreflang="es" lang="es">ES<span class="sr"> Español</span></a></li>
-      <li><a href="guide-sync.html" hreflang="it" lang="it" aria-current="true">IT<span class="sr"> Italiano</span></a></li>
-      <li><a href="../pt/guide-sync.html" hreflang="pt" lang="pt">PT<span class="sr"> Português</span></a></li>
-    </ul>
+    <details class="langs">
+      <summary><span class="sr">Lingua: </span>IT<span aria-hidden="true"> ▾</span></summary>
+      <ul aria-label="Lingua">
+        <li><a href="../guide-sync.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="../cs/guide-sync.html" hreflang="cs" lang="cs">Čeština</a></li>
+        <li><a href="../sk/guide-sync.html" hreflang="sk" lang="sk">Slovenčina</a></li>
+        <li><a href="../de/guide-sync.html" hreflang="de" lang="de">Deutsch</a></li>
+        <li><a href="../es/guide-sync.html" hreflang="es" lang="es">Español</a></li>
+        <li><a href="guide-sync.html" hreflang="it" lang="it" aria-current="true">Italiano</a></li>
+        <li><a href="../pt/guide-sync.html" hreflang="pt" lang="pt">Português</a></li>
+      </ul>
+    </details>
   </div>
 </nav>
 
 <main id="main">
+
+<p class="muted small"><a href="guide-managing-sources.html">← Gestire le fonti</a> · <a href="guide.html">Indice</a> · <a href="guide-keyboard.html">Tastiera →</a></p>
 
 <h1 id="sync">Sincronizzazione</h1>
 
@@ -47,16 +52,16 @@
 
 <p>È cifrata end-to-end: il server conserva testo cifrato e non può leggere la tua libreria. Non c’è un servizio ospitato a cui iscriversi: l’indirizzo che imposti è un server gestito da te.</p>
 
-<figure><a href="../img/phone-settings-sync.png"><img src="../img/phone-settings-sync.png" alt="Le impostazioni di sincronizzazione su un telefono" loading="lazy"></a></figure>
+<figure><a href="../img/it/phone-settings-sync.png"><img src="../img/it/phone-settings-sync.png" alt="Le impostazioni di sincronizzazione su un telefono" loading="lazy"></a></figure>
 
 <h2 id="when-it-runs">Quando avviene</h2>
 
 <p><strong>Configurazione › Avanzate › Sincronizzazione › Sincronizzazione › Ogni quanto</strong> offre un orologio (da ogni 15 minuti fino a una volta al giorno) e, in alternativa, dei momenti:</p>
 
 <ul>
-<li><strong>After a check</strong>: appena tutte le fonti sono state controllate, prima che venga riassunto qualcosa. Con un modello locale il riassunto può durare venti minuti, e gli articoli sono pronti molto prima.</li>
-<li><strong>After summarizing</strong>: quando l’intero controllo è finito, così una sola sincronizzazione porta insieme gli articoli e i loro riassunti.</li>
-<li><strong>After each change</strong>: poco dopo che leggi, salvi o etichetti qualcosa.</li>
+<li><strong>Dopo un controllo</strong>: appena tutte le fonti sono state controllate, prima che venga riassunto qualcosa. Con un modello locale il riassunto può durare venti minuti, e gli articoli sono pronti molto prima.</li>
+<li><strong>Dopo i riassunti</strong>: quando l’intero controllo è finito, così una sola sincronizzazione porta insieme gli articoli e i loro riassunti.</li>
+<li><strong>Dopo ogni modifica</strong>: poco dopo che leggi, salvi o etichetti qualcosa.</li>
 </ul>
 
 <p>Qualunque scelta tu faccia, una connessione a consumo o una regola sulla batteria la trattiene comunque.</p>
@@ -73,7 +78,7 @@
 
 <h2 id="the-recovery-code">Il codice di recupero</h2>
 
-<p>Si crea una volta, in <strong>Configurazione › Avanzate › Sincronizzazione › Rientrare</strong>. È l’unico modo per rientrare nella tua libreria se perdi tutti i dispositivi abbinati. Nessuno può riemetterlo.</p>
+<p>Si crea una volta, in <strong>Configurazione › Avanzate › Sincronizzazione › Chiave di recupero</strong>. È l’unico modo per rientrare nella tua libreria se perdi tutti i dispositivi abbinati. Nessuno può riemetterlo.</p>
 
 <h2 id="article-text">Il testo degli articoli</h2>
 
@@ -91,7 +96,7 @@
   <a href="../privacy.html">Privacy</a> ·
   <a href="../eula.html">Licenza</a> ·
   <a href="../terms.html">Termini</a></p>
-  <p>Descrive SummaReader 0.108.2, pubblicato il 15 ottobre 2026.</p>
+  <p>Descrive SummaReader 0.109.0, pubblicato il 15 ottobre 2026.</p>
 </footer>
 
 </main>

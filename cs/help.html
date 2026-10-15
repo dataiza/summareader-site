@@ -27,15 +27,18 @@
     <a href="help.html" aria-current="page">Nápověda</a>
     <a href="../privacy.html">Soukromí</a>
     <a href="../terms.html">Podmínky</a>
-    <ul class="langs" aria-label="Jazyk">
-      <li><a href="../help.html" hreflang="en" lang="en">EN<span class="sr"> English</span></a></li>
-      <li><a href="help.html" hreflang="cs" lang="cs" aria-current="true">CS<span class="sr"> Čeština</span></a></li>
-      <li><a href="../sk/help.html" hreflang="sk" lang="sk">SK<span class="sr"> Slovenčina</span></a></li>
-      <li><a href="../de/help.html" hreflang="de" lang="de">DE<span class="sr"> Deutsch</span></a></li>
-      <li><a href="../es/help.html" hreflang="es" lang="es">ES<span class="sr"> Español</span></a></li>
-      <li><a href="../it/help.html" hreflang="it" lang="it">IT<span class="sr"> Italiano</span></a></li>
-      <li><a href="../pt/help.html" hreflang="pt" lang="pt">PT<span class="sr"> Português</span></a></li>
-    </ul>
+    <details class="langs">
+      <summary><span class="sr">Jazyk: </span>CS<span aria-hidden="true"> ▾</span></summary>
+      <ul aria-label="Jazyk">
+        <li><a href="../help.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="help.html" hreflang="cs" lang="cs" aria-current="true">Čeština</a></li>
+        <li><a href="../sk/help.html" hreflang="sk" lang="sk">Slovenčina</a></li>
+        <li><a href="../de/help.html" hreflang="de" lang="de">Deutsch</a></li>
+        <li><a href="../es/help.html" hreflang="es" lang="es">Español</a></li>
+        <li><a href="../it/help.html" hreflang="it" lang="it">Italiano</a></li>
+        <li><a href="../pt/help.html" hreflang="pt" lang="pt">Português</a></li>
+      </ul>
+    </details>
   </div>
 </nav>
 
@@ -76,12 +79,12 @@
 <p>It is also where a newer build is asked for, which is the only thing on the page that does anything. Nothing arrives on its own: a version is offered and then waits, because replacing the program somebody is using is not something to do because they pressed check.</p>
 <p>Which build this is is worth having to hand before reporting anything that looks wrong, since what the app does moves between them.</p>
 
-<h3 id="appearance">Appearance</h3>
+<h3 id="vzhled">Vzhled</h3>
 
 <p>How the app is drawn on this device: the theme, the text, the list, the article and the layout. The text size and the font apply everywhere, not only to articles. None of it touches an article, a summary, or what gets fetched — it decides what you are looking at, not what is there.</p>
 <p>The language and the way dates are written are on Language and region; the status strip is on Background work. How the article sits against the list is a preference for a window with room for both; a narrow one shows one at a time regardless.</p>
 
-<h3 id="language-and-region">Language and region</h3>
+<h3 id="jazyk-a-oblast">Jazyk a oblast</h3>
 
 <p>Which language the app itself speaks on this device, and how it writes dates and times. Neither touches an article or a summary.</p>
 <p>The language set here is the interface&#x27;s own. What your articles are written in is up to whoever published them, and what a summary comes back in is a separate setting under Summaries.</p>
@@ -96,22 +99,22 @@
 <p>What each key does, for a device with a keyboard attached: a desktop, or a tablet or phone with one paired. Nothing here can be changed; it is a reference, the same list the question mark draws over whatever you are doing.</p>
 <p>Most keys act on whichever pane has the focus, and Tab moves the focus between the shelf, the list and the article. A key that seems to do nothing is usually going to a pane other than the one you are looking at.</p>
 
-<h3 id="share">Share</h3>
+<h3 id="sdílet">Sdílet</h3>
 
 <p>Sending an article somewhere else. On a phone or a Mac that means the system sheet, and what you pick here is what the sheet is handed. Elsewhere there is no sheet, so the same three switches decide what is copied to the clipboard, and a message says when it has been.</p>
 <p>The switches are about content, not about the destination: a link on its own travels as a link, which is what a chat window turns into a preview, while asking for the summary composes one block of text and puts the link inside it. One of the three always stays on, because handing anything an empty message is worse than handing it the wrong thing.</p>
 
-<h3 id="fetching">Fetching</h3>
+<h3 id="stahování">Stahování</h3>
 
 <p>How often this device goes looking, and how many sources it is willing to talk to at a time. Nothing arrives without a check: the interval here, or the button in the bar.</p>
 <p>Checking more often does not make anyone publish more, it only shortens the wait. Raising how many run at once finishes a long list sooner and is the first number to lower if a provider starts refusing you. Whether a check may happen at all on battery or on a metered connection is set beside the interval, and a refusal there outranks the interval.</p>
 
-<h3 id="accounts">Accounts</h3>
+<h3 id="účty">Účty</h3>
 
 <p>Names to keep sign-ins under, for the sites that will not serve an article to a stranger. One name can hold several sites, and a source is pointed at a name rather than told a password.</p>
 <p>None of it is shared. A session belongs to the device that signed in, so the same site must be signed into again on every device, however completely the rest is syncing. Emptying a name signs out every site under it at once.</p>
 
-<h3 id="notifications">Notifications</h3>
+<h3 id="oznámení">Oznámení</h3>
 
 <p>Two different things the app says out loud, and where each of them is said. An announcement reports work that has finished — a check, a sync, a summary — and can arrive in the app, as a notification from the system, or not at all. In the app it reports only work that started on its own; work you started shows its end in the status strip. A notice is a condition the library would like an answer to, and it goes on saying so until it stops being true.</p>
 <p>Worth telling apart before switching anything off. An announcement is a moment and is then gone; a notice is a standing question, and a kind switched off here is not looked for at all rather than looked for quietly. Nothing reaches you as a system notification while the app is the thing in front of you, because what you are watching has already been said on the screen.</p>
@@ -121,7 +124,7 @@
 <p>This page is an order, not a list. Nothing is summarized until summarizing is switched on, and nothing can be summarized until whatever does the work has been chosen under Summarize on — this device, or a server somewhere. The line under that choice says what is set up for it, and its button opens the page where it is set up: On-device model, or LLM server. Both of those are under Advanced.</p>
 <p>Everything below the switch is inert while it is off, which is how the page can look thoroughly configured and still produce nothing. How many summaries run at once and which language they come back in are refinements of a summarizer that already works, which is why they come after the choice. What summarizing has used so far is on Statistics, not here.</p>
 
-<h3 id="background-work">Background work</h3>
+<h3 id="práce-na-pozadí">Práce na pozadí</h3>
 
 <p>What the app shows while it works, and whether that work goes on once the screen is off. The status strip at the foot of the window is where a check, a sync, a summary or a model download shows how far it has got, and where work you started shows that it has finished.</p>
 <p>On a phone, the switch below it keeps the app running while any of that work is under way: a notification on Android, a progress item on iOS. Without it the phone may stop the app soon after the screen goes off, and the work waits until you come back. It does not start anything; what runs, and how often, is still set on Fetching, Summaries and Sync.</p>
@@ -136,7 +139,7 @@
 <p>Summarizing on a server: one you run, or one somebody else runs. It wants an address, the name of a model that address serves, and a key if it asks for one: three things that have to agree with each other, and a mistake in any of them looks identical from here.</p>
 <p>Test it once after setting it up, because otherwise the first sign of a wrong answer is a summary that never arrives. What is being summarized leaves this device. It can all be filled in before Summarize on is set to the server; the line at the top says when this page is not the one in use.</p>
 
-<h3 id="tags">Tags</h3>
+<h3 id="štítky">Štítky</h3>
 
 <p>Every word this library files things under, in one place: how far each one reaches, a way to correct a spelling everywhere at once, and the only place a word can be written down before anything carries it. One made here shows a zero until something does, and stays on this device until then.</p>
 <p>What the summarizer may do with a word it proposes is not here. That is a setting about the model and sits under Summaries, because switching it on changes what gets written rather than what the library knows. Renaming onto a word that already exists merges the two rather than refusing, which is usually why the page was opened: one subject filed under two spellings.</p>
@@ -151,12 +154,12 @@
 <p>Your own devices kept in step with each other, through a server you point all of them at. It is not a backup, and it is not a way to show anybody else what you are reading. Switched off, nothing leaves this machine and nothing is asked of any server.</p>
 <p>There is an order to it. Switch it on and give this device somewhere to sync to; make the recovery key while you still have a working device to make it from; then bring the other devices in one at a time with a code from here. Only the middle step cannot be done later, which is the reason it is not left until it is needed.</p>
 
-<h3 id="api--mcp">API &amp; MCP</h3>
+<h3 id="api-a-mcp">API a MCP</h3>
 
 <p>Ways for something that is not this app to reach your library: a plain HTTP door that scripts and browser extensions post links through, and one that agents on this machine talk to. Each is opened on its own and neither needs the other.</p>
 <p>Whatever can reach the address a door answers on can reach the door, so the thing keeping it yours is the credential rather than the port number. The credentials are on Tokens, apart from the metrics door&#x27;s one secret, which is on its own card here: a door standing open and nothing being allowed through it are two separate settings, and that is the safe way round to leave it.</p>
 
-<h3 id="tokens">Tokens</h3>
+<h3 id="tokeny">Tokeny</h3>
 
 <p>One list, because a credential does not belong to a door. The same token can be ticked for several, and it opens exactly what it is ticked for and nothing else.</p>
 <p>Make one per client rather than one to share, so that withdrawing a client&#x27;s access does not lock out everything else at the same time. A token is shown once, when it is made, and cannot be read back afterwards.</p>
@@ -166,7 +169,7 @@
 <p>Three operations over the whole library rather than three settings: moving a list of sources between readers, taking a copy of what this device holds, and finding the sources you are following twice.</p>
 <p>The two copies are not the same copy. An export is the list of what you follow, which any reader can take; a backup is the library itself — the articles, the summaries, the highlights — and only this app can read one back. Neither of them is sync, and sync is not a substitute for either.</p>
 
-<h3 id="debug">Debug</h3>
+<h3 id="ladění">Ladění</h3>
 
 <p>For working out why something behaved the way it did. Nothing here is needed to use the app, and the recording is off by default because it is chatty and it writes down what you have been reading.</p>
 <p>The order is switch it on, do the thing that went wrong, then read it back: a recording started afterwards has nothing in it. An article&#x27;s own trace, opened from the article, arrives here already narrowed to that article.</p>
@@ -189,7 +192,7 @@
   <a href="../privacy.html">Soukromí</a> ·
   <a href="../eula.html">Licence</a> ·
   <a href="../terms.html">Podmínky</a></p>
-  <p>Popisuje SummaReader 0.108.2, vydáno 15. října 2026.</p>
+  <p>Popisuje SummaReader 0.109.0, vydáno 15. října 2026.</p>
 </footer>
 
 </main>

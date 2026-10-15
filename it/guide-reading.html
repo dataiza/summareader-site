@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lettura — SummaReader</title>
-<meta name="description" content="Fai clic su un articolo, oppure premi ↵. A seconda della finestra e della disposizione scelta in Configurazione › Basic › Appearance › Disposizione, si apre…">
+<meta name="description" content="Fai clic su un articolo, oppure premi ↵. A seconda della finestra e della disposizione scelta in Configurazione › Base › Aspetto › Disposizione, si apre…">
 <link rel="canonical" href="https://summareader.dataiza.sk/it/guide-reading.html">
 <link rel="alternate" hreflang="en" href="https://summareader.dataiza.sk/guide-reading.html">
 <link rel="alternate" hreflang="cs" href="https://summareader.dataiza.sk/cs/guide-reading.html">
@@ -27,25 +27,30 @@
     <a href="help.html">Aiuto</a>
     <a href="../privacy.html">Privacy</a>
     <a href="../terms.html">Termini</a>
-    <ul class="langs" aria-label="Lingua">
-      <li><a href="../guide-reading.html" hreflang="en" lang="en">EN<span class="sr"> English</span></a></li>
-      <li><a href="../cs/guide-reading.html" hreflang="cs" lang="cs">CS<span class="sr"> Čeština</span></a></li>
-      <li><a href="../sk/guide-reading.html" hreflang="sk" lang="sk">SK<span class="sr"> Slovenčina</span></a></li>
-      <li><a href="../de/guide-reading.html" hreflang="de" lang="de">DE<span class="sr"> Deutsch</span></a></li>
-      <li><a href="../es/guide-reading.html" hreflang="es" lang="es">ES<span class="sr"> Español</span></a></li>
-      <li><a href="guide-reading.html" hreflang="it" lang="it" aria-current="true">IT<span class="sr"> Italiano</span></a></li>
-      <li><a href="../pt/guide-reading.html" hreflang="pt" lang="pt">PT<span class="sr"> Português</span></a></li>
-    </ul>
+    <details class="langs">
+      <summary><span class="sr">Lingua: </span>IT<span aria-hidden="true"> ▾</span></summary>
+      <ul aria-label="Lingua">
+        <li><a href="../guide-reading.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="../cs/guide-reading.html" hreflang="cs" lang="cs">Čeština</a></li>
+        <li><a href="../sk/guide-reading.html" hreflang="sk" lang="sk">Slovenčina</a></li>
+        <li><a href="../de/guide-reading.html" hreflang="de" lang="de">Deutsch</a></li>
+        <li><a href="../es/guide-reading.html" hreflang="es" lang="es">Español</a></li>
+        <li><a href="guide-reading.html" hreflang="it" lang="it" aria-current="true">Italiano</a></li>
+        <li><a href="../pt/guide-reading.html" hreflang="pt" lang="pt">Português</a></li>
+      </ul>
+    </details>
   </div>
 </nav>
 
 <main id="main">
 
+<p class="muted small"><a href="guide-the-window.html">← La finestra</a> · <a href="guide.html">Indice</a> · <a href="guide-summaries.html">Riassunti →</a></p>
+
 <h1 id="reading">Lettura</h1>
 
-<p>Fai clic su un articolo, oppure premi <code>↵</code>. A seconda della finestra e della disposizione scelta in <strong>Configurazione › Basic › Appearance › Disposizione</strong>, si apre accanto all’elenco, sopra o sotto di esso, oppure occupa tutta la finestra. Su un telefono occupa sempre tutto lo schermo.</p>
+<p>Fai clic su un articolo, oppure premi <code>↵</code>. A seconda della finestra e della disposizione scelta in <strong>Configurazione › Base › Aspetto › Disposizione</strong>, si apre accanto all’elenco, sopra o sotto di esso, oppure occupa tutta la finestra. Su un telefono occupa sempre tutto lo schermo.</p>
 
-<figure><a href="../img/reader.png"><img src="../img/reader.png" alt="Lettura di un articolo" loading="lazy"></a></figure>
+<figure><a href="../img/it/reader.png"><img src="../img/it/reader.png" alt="Lettura di un articolo" loading="lazy"></a></figure>
 
 <h2 id="the-three-tabs">Le tre schede</h2>
 
@@ -69,7 +74,7 @@
 
 <h2 id="moving-between-articles">Passare da un articolo all’altro</h2>
 
-<p>Trascina l’articolo di lato, oppure usa <code>j</code> / <code>k</code>. Trascinando verso destra sul primo si torna all’elenco. I gesti si configurano in <strong>Configurazione › Basic › Navigazione › Scorrimento nel lettore</strong>.</p>
+<p>Trascina l’articolo di lato, oppure usa <code>j</code> / <code>k</code>. Trascinando verso destra sul primo si torna all’elenco. I gesti si configurano in <strong>Configurazione › Base › Navigazione › Gesti di scorrimento</strong>.</p>
 
 <h2 id="when-there-is-no-text">Quando non c’è testo</h2>
 
@@ -79,7 +84,7 @@
 <thead><tr><th>Dice</th><th>Che cosa è successo</th></tr></thead>
 <tbody>
 <tr><td>Questo video non ha sottotitoli</td><td>Non c’è una trascrizione da leggere</td></tr>
-<tr><td>YouTube ha chiesto all’app di rallentare</td><td>YouTube per ora ha rifiutato i sottotitoli</td></tr>
+<tr><td>YouTube ha chiesto all’app di rallentare</td><td>YouTube per ora ha rifiutato i sottotitoli. Su Linux, l’app prova prima a prenderli dalla pagina del video, nel suo renderer di pagine nascosto</td></tr>
 <tr><td>La pagina è arrivata, ma non conteneva un articolo</td><td>La pagina costruisce il testo nel browser</td></tr>
 <tr><td>Il sito ha mostrato un controllo anti-bot</td><td>Una pagina «dimostra di essere umano»</td></tr>
 <tr><td>Dietro un abbonamento</td><td>È arrivata l’offerta, non l’articolo</td></tr>
@@ -99,7 +104,7 @@
   <a href="../privacy.html">Privacy</a> ·
   <a href="../eula.html">Licenza</a> ·
   <a href="../terms.html">Termini</a></p>
-  <p>Descrive SummaReader 0.108.2, pubblicato il 15 ottobre 2026.</p>
+  <p>Descrive SummaReader 0.109.0, pubblicato il 15 ottobre 2026.</p>
 </footer>
 
 </main>

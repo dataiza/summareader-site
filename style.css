@@ -8,15 +8,22 @@
   font-display: swap;
 }
 
+/* Caprasimo draws only the SummaReader wordmark, which is the app's logo and
+   plain ASCII. It has no ě č ř ž ů ň ď ť, so the headings left it (card 882). */
 @font-face {
   font-family: 'Caprasimo';
   src: url('fonts/Caprasimo-Regular.ttf') format('truetype');
   font-weight: 400;
   font-display: swap;
-  /* Caprasimo has 246 codepoints and no ě č ř ž ů ň ď ť. Bounding it to
-     Latin-1 means anything outside falls to Figtree by itself, so a heading
-     can never render half in one face and half in the other. */
-  unicode-range: U+0000-00FF;
+}
+
+/* The heading face (card 882): it covers all of Latin Extended-A, so a Czech
+   or Slovak heading is drawn in one face from end to end. */
+@font-face {
+  font-family: 'Abril Fatface';
+  src: url('fonts/AbrilFatface-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
 }
 
 :root {
@@ -101,20 +108,45 @@ nav a[aria-current='page'] {
   text-decoration: none;
   border-bottom: 2px solid var(--accent);
 }
-/* The language switcher: the codes as a plain list of links, which wraps
-   onto its own line on a phone rather than pushing the page sideways. The
-   native name of each language is there for screen readers. */
-nav .langs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0 0.6rem;
+/* The language switcher (card 881): one <details> menu, the current code on
+   its button and each language in its own name, so it works without
+   JavaScript and from the keyboard. The list is placed against the bar, not
+   the button, so it opens over the page at the bar's right edge wherever the
+   button has wrapped to on a phone. */
+nav div { position: relative; }
+nav .langs summary {
+  cursor: pointer;
   list-style: none;
-  margin: 0;
-  padding: 0;
+  color: var(--link);
   font-size: 0.85rem;
   letter-spacing: 0.03em;
+  font-weight: 700;
 }
-nav .langs a { text-decoration: none; }
+nav .langs summary::-webkit-details-marker { display: none; }
+nav .langs summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+nav .langs ul {
+  position: absolute;
+  top: 100%;
+  right: 1.25rem;
+  z-index: 5;
+  list-style: none;
+  margin: 0;
+  padding: 0.4rem 0;
+  min-width: 10rem;
+  max-width: calc(100vw - 2.5rem);
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.15);
+}
+nav .langs a {
+  display: block;
+  padding: 0.35rem 1rem;
+  text-decoration: none;
+}
 nav .langs a:hover { text-decoration: underline; }
 nav .langs a[aria-current] {
   color: var(--text);
@@ -148,13 +180,13 @@ footer p { max-width: none; }
 
 h1, h2, h3 { line-height: 1.2; }
 h1 {
-  font-family: 'Caprasimo', 'Figtree', serif;
+  font-family: 'Abril Fatface', 'Figtree', serif;
   font-weight: 400;
   font-size: clamp(2rem, 6vw, 3rem);
   margin: 0 0 0.5rem;
 }
 h2 {
-  font-family: 'Caprasimo', 'Figtree', serif;
+  font-family: 'Abril Fatface', 'Figtree', serif;
   font-weight: 400;
   font-size: clamp(1.4rem, 3.5vw, 1.9rem);
   margin: 2.5rem 0 0.75rem;

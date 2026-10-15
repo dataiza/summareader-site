@@ -27,25 +27,30 @@
     <a href="help.html">Pomocník</a>
     <a href="../privacy.html">Súkromie</a>
     <a href="../terms.html">Podmienky</a>
-    <ul class="langs" aria-label="Jazyk">
-      <li><a href="../guide-summaries.html" hreflang="en" lang="en">EN<span class="sr"> English</span></a></li>
-      <li><a href="../cs/guide-summaries.html" hreflang="cs" lang="cs">CS<span class="sr"> Čeština</span></a></li>
-      <li><a href="guide-summaries.html" hreflang="sk" lang="sk" aria-current="true">SK<span class="sr"> Slovenčina</span></a></li>
-      <li><a href="../de/guide-summaries.html" hreflang="de" lang="de">DE<span class="sr"> Deutsch</span></a></li>
-      <li><a href="../es/guide-summaries.html" hreflang="es" lang="es">ES<span class="sr"> Español</span></a></li>
-      <li><a href="../it/guide-summaries.html" hreflang="it" lang="it">IT<span class="sr"> Italiano</span></a></li>
-      <li><a href="../pt/guide-summaries.html" hreflang="pt" lang="pt">PT<span class="sr"> Português</span></a></li>
-    </ul>
+    <details class="langs">
+      <summary><span class="sr">Jazyk: </span>SK<span aria-hidden="true"> ▾</span></summary>
+      <ul aria-label="Jazyk">
+        <li><a href="../guide-summaries.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="../cs/guide-summaries.html" hreflang="cs" lang="cs">Čeština</a></li>
+        <li><a href="guide-summaries.html" hreflang="sk" lang="sk" aria-current="true">Slovenčina</a></li>
+        <li><a href="../de/guide-summaries.html" hreflang="de" lang="de">Deutsch</a></li>
+        <li><a href="../es/guide-summaries.html" hreflang="es" lang="es">Español</a></li>
+        <li><a href="../it/guide-summaries.html" hreflang="it" lang="it">Italiano</a></li>
+        <li><a href="../pt/guide-summaries.html" hreflang="pt" lang="pt">Português</a></li>
+      </ul>
+    </details>
   </div>
 </nav>
 
 <main id="main">
 
+<p class="muted small"><a href="guide-reading.html">← Čítanie</a> · <a href="guide.html">Obsah</a> · <a href="guide-finding-things.html">Hľadanie →</a></p>
+
 <h1 id="summaries">Zhrnutia</h1>
 
 <h2 id="where-summarizing-happens">Kde prebieha zhŕňanie</h2>
 
-<p><strong>Nastavenia › Basic › Zhrnutia › Kde beží zhŕňanie.</strong></p>
+<p><strong>Nastavenia › Základné › Zhrnutia › Zhrnutia vytvára.</strong></p>
 
 <ul>
 <li><strong>Toto zariadenie</strong> — model, ktorý si stiahnete. Nič neopustí zariadenie. Je to pomalšie a stojí to batériu: niekoľko minút na každú časť článku a v starších telefónoch a tabletoch oveľa dlhšie.</li>
@@ -54,7 +59,7 @@
 
 <p>Každá možnosť má vlastnú stránku v časti <strong>Pokročilé</strong>: <strong>Model v zariadení</strong> pre toto zariadenie a <strong>LLM server</strong> pre server. Obe stránky sú tam vždy; tá, ktorá sa nepoužíva, to hore uvádza.</p>
 
-<figure><a href="../img/phone-settings-summaries.png"><img src="../img/phone-settings-summaries.png" alt="Nastavenia zhrnutí v telefóne" loading="lazy"></a></figure>
+<figure><a href="../img/sk/phone-settings-summaries.png"><img src="../img/sk/phone-settings-summaries.png" alt="Nastavenia zhrnutí v telefóne" loading="lazy"></a></figure>
 
 <h2 id="choosing-a-model">Výber modelu</h2>
 
@@ -66,13 +71,13 @@
 
 <h2 id="automatic-summaries-premium-only">Automatické zhrnutia (len Premium)</h2>
 
-<p>Automatické zhrnutia sú v Premium. Zhŕňanie beží na konci kontroly nových článkov. Samostatný plán nemá — ak je <strong>Nastavenia › Basic › Fetching › Kontrola nových položiek</strong> nastavené na <em>Iba keď o to požiadam</em>, nič sa nezhrnie, kým o to nepožiadate.</p>
+<p>Automatické zhrnutia sú v Premium. Zhŕňanie beží na konci kontroly nových článkov. Samostatný plán nemá — ak je <strong>Nastavenia › Základné › Sťahovanie › Ako často kontrolovať</strong> nastavené na <em>Iba keď o to požiadam</em>, nič sa nezhrnie, kým o to nepožiadate.</p>
 
 <p>O tom, čo kontrola zhrnie, rozhodujú dve veci:</p>
 
 <ul>
-<li><strong>Podľa zdroja.</strong> Každý kanál má prepínač <strong>Zhrnúť</strong>, predvolene vypnutý. Nastavíte ho v <a href="guide-managing-sources.html#managing-sources">paneli kanála</a> alebo v <strong>Nastavenia › Basic › Zdroje › Zdroje</strong>.</li>
-<li><strong>Podľa kontroly.</strong> <strong>Nastavenia › Basic › Zhrnutia › Naraz</strong> určuje, koľko ich jedna kontrola smie urobiť a z ktorého konca frontu postupuje.</li>
+<li><strong>Podľa zdroja.</strong> Každý kanál má prepínač <strong>Zhrnúť</strong>, predvolene vypnutý. Nastavíte ho v <a href="guide-managing-sources.html#managing-sources">paneli kanála</a> alebo v <strong>Nastavenia › Základné › Zdroje › Zdroje</strong>.</li>
+<li><strong>Podľa kontroly.</strong> <strong>Nastavenia › Základné › Zhrnutia › Zhrnutí naraz</strong> určuje, koľko ich jedna kontrola smie urobiť a z ktorého konca frontu postupuje.</li>
 </ul>
 
 <div class="scroll"><table>
@@ -100,11 +105,11 @@
 
 <h2 id="what-language-a-summary-is-in">V akom jazyku je zhrnutie</h2>
 
-<p>Predvolene v jazyku, v ktorom je článok napísaný. <strong>Nastavenia › Basic › Zhrnutia › Zhrnutia v jazyku</strong> to zmení, ak chcete zhrnutia čítať vždy v jednom jazyku.</p>
+<p>Predvolene v jazyku, v ktorom je článok napísaný. <strong>Nastavenia › Základné › Zhrnutia › Jazyk zhrnutí</strong> to zmení, ak chcete zhrnutia čítať vždy v jednom jazyku.</p>
 
 <h2 id="if-nothing-gets-summarized">Ak sa nič nezhŕňa</h2>
 
-<p>Najčastejšia príčina je, že nie je načítaný žiadny model. Upozornenie to povie a <strong>Nastavenia › Pokročilé › Debug › Trace</strong> zaznamená dôvod každého pokusu.</p>
+<p>Najčastejšia príčina je, že nie je načítaný žiadny model. Upozornenie to povie a <strong>Nastavenia › Pokročilé › Ladenie › Trasovanie</strong> zaznamená dôvod každého pokusu.</p>
 
 <p class="muted small"><a href="guide-reading.html">← Čítanie</a> · <a href="guide.html">Obsah</a> · <a href="guide-finding-things.html">Hľadanie →</a></p>
 
@@ -116,7 +121,7 @@
   <a href="../privacy.html">Súkromie</a> ·
   <a href="../eula.html">Licencia</a> ·
   <a href="../terms.html">Podmienky</a></p>
-  <p>Opisuje SummaReader 0.108.2, vydané 15. októbra 2026.</p>
+  <p>Opisuje SummaReader 0.109.0, vydané 15. októbra 2026.</p>
 </footer>
 
 </main>

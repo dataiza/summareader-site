@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Správa zdrojov — SummaReader</title>
-<meta name="description" content="Koliesko na riadku police (zobrazí ho Select several alebo dlhé stlačenie) alebo koliesko vedľa mena zdroja v otvorenom článku otvorí kanál:">
+<meta name="description" content="Koliesko na riadku police (zobrazí ho Vybrať viac alebo dlhé stlačenie) alebo koliesko vedľa mena zdroja v otvorenom článku otvorí kanál:">
 <link rel="canonical" href="https://summareader.dataiza.sk/sk/guide-managing-sources.html">
 <link rel="alternate" hreflang="en" href="https://summareader.dataiza.sk/guide-managing-sources.html">
 <link rel="alternate" hreflang="cs" href="https://summareader.dataiza.sk/cs/guide-managing-sources.html">
@@ -27,29 +27,34 @@
     <a href="help.html">Pomocník</a>
     <a href="../privacy.html">Súkromie</a>
     <a href="../terms.html">Podmienky</a>
-    <ul class="langs" aria-label="Jazyk">
-      <li><a href="../guide-managing-sources.html" hreflang="en" lang="en">EN<span class="sr"> English</span></a></li>
-      <li><a href="../cs/guide-managing-sources.html" hreflang="cs" lang="cs">CS<span class="sr"> Čeština</span></a></li>
-      <li><a href="guide-managing-sources.html" hreflang="sk" lang="sk" aria-current="true">SK<span class="sr"> Slovenčina</span></a></li>
-      <li><a href="../de/guide-managing-sources.html" hreflang="de" lang="de">DE<span class="sr"> Deutsch</span></a></li>
-      <li><a href="../es/guide-managing-sources.html" hreflang="es" lang="es">ES<span class="sr"> Español</span></a></li>
-      <li><a href="../it/guide-managing-sources.html" hreflang="it" lang="it">IT<span class="sr"> Italiano</span></a></li>
-      <li><a href="../pt/guide-managing-sources.html" hreflang="pt" lang="pt">PT<span class="sr"> Português</span></a></li>
-    </ul>
+    <details class="langs">
+      <summary><span class="sr">Jazyk: </span>SK<span aria-hidden="true"> ▾</span></summary>
+      <ul aria-label="Jazyk">
+        <li><a href="../guide-managing-sources.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="../cs/guide-managing-sources.html" hreflang="cs" lang="cs">Čeština</a></li>
+        <li><a href="guide-managing-sources.html" hreflang="sk" lang="sk" aria-current="true">Slovenčina</a></li>
+        <li><a href="../de/guide-managing-sources.html" hreflang="de" lang="de">Deutsch</a></li>
+        <li><a href="../es/guide-managing-sources.html" hreflang="es" lang="es">Español</a></li>
+        <li><a href="../it/guide-managing-sources.html" hreflang="it" lang="it">Italiano</a></li>
+        <li><a href="../pt/guide-managing-sources.html" hreflang="pt" lang="pt">Português</a></li>
+      </ul>
+    </details>
   </div>
 </nav>
 
 <main id="main">
 
+<p class="muted small"><a href="guide-keeping-things.html">← Uchovávanie</a> · <a href="guide.html">Obsah</a> · <a href="guide-sync.html">Synchronizácia →</a></p>
+
 <h1 id="managing-sources">Správa zdrojov</h1>
 
 <h2 id="one-feed">Jeden kanál</h2>
 
-<p>Koliesko na riadku police (zobrazí ho <strong>Select several</strong> alebo dlhé stlačenie) alebo koliesko vedľa mena zdroja v otvorenom článku otvorí kanál:</p>
+<p>Koliesko na riadku police (zobrazí ho <strong>Vybrať viac</strong> alebo dlhé stlačenie) alebo koliesko vedľa mena zdroja v otvorenom článku otvorí kanál:</p>
 
-<figure><a href="../img/feed-panel.png"><img src="../img/feed-panel.png" alt="Panel kanála" loading="lazy"></a></figure>
+<figure><a href="../img/sk/feed-panel.png"><img src="../img/sk/feed-panel.png" alt="Panel kanála" loading="lazy"></a></figure>
 
-<figure><a href="../img/phone-feed-panel.png"><img src="../img/phone-feed-panel.png" alt="Panel kanála v telefóne" loading="lazy"></a></figure>
+<figure><a href="../img/sk/phone-feed-panel.png"><img src="../img/sk/phone-feed-panel.png" alt="Panel kanála v telefóne" loading="lazy"></a></figure>
 
 <div class="scroll"><table>
 <tbody>
@@ -59,7 +64,7 @@
 <tr><td><strong>Aktualizovať</strong></td><td>Či ho kontroly zahŕňajú</td></tr>
 <tr><td><strong>Zhrnúť</strong></td><td>Či ho kontroly zhŕňajú</td></tr>
 <tr><td><strong>Synchronizácia</strong></td><td>Či sa jeho články prenášajú na vaše ďalšie zariadenia</td></tr>
-<tr><td><strong>Group</strong>, <strong>Zhrnutia v jazyku</strong></td><td>Kde je na polici a jeho vlastný jazyk zhrnutí</td></tr>
+<tr><td><strong>Skupina</strong>, <strong>Jazyk zhrnutí</strong></td><td>Kde je na polici a jeho vlastný jazyk zhrnutí</td></tr>
 <tr><td><strong>Znova načítať články</strong></td><td>Znova stiahne text, ktorý zlyhal</td></tr>
 <tr><td><strong>Znova zhrnúť</strong></td><td>Zahodí jeho zhrnutia a urobí ich znova</td></tr>
 <tr><td><strong>Odstrániť</strong></td><td>Najprv sa opýta a povie, čo to bude stáť</td></tr>
@@ -69,7 +74,7 @@
 
 <h2 id="many-feeds">Mnoho kanálov</h2>
 
-<p><strong>Nastavenia › Basic › Zdroje › Zdroje</strong> ponúka rovnaké ovládacie prvky pre celý zoznam, s filtrom a začiarkávacím políčkom, takže „každý kanál na YouTube, ktorý som importoval minulý týždeň“ je jedna akcia, nie tristo.</p>
+<p><strong>Nastavenia › Základné › Zdroje › Zdroje</strong> ponúka rovnaké ovládacie prvky pre celý zoznam, s filtrom a začiarkávacím políčkom, takže „každý kanál na YouTube, ktorý som importoval minulý týždeň“ je jedna akcia, nie tristo.</p>
 
 <p class="muted small"><a href="guide-keeping-things.html">← Uchovávanie</a> · <a href="guide.html">Obsah</a> · <a href="guide-sync.html">Synchronizácia →</a></p>
 
@@ -81,7 +86,7 @@
   <a href="../privacy.html">Súkromie</a> ·
   <a href="../eula.html">Licencia</a> ·
   <a href="../terms.html">Podmienky</a></p>
-  <p>Opisuje SummaReader 0.108.2, vydané 15. októbra 2026.</p>
+  <p>Opisuje SummaReader 0.109.0, vydané 15. októbra 2026.</p>
 </footer>
 
 </main>

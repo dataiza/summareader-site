@@ -27,25 +27,30 @@
     <a href="help.html">Ajuda</a>
     <a href="../privacy.html">Privacidade</a>
     <a href="../terms.html">Termos</a>
-    <ul class="langs" aria-label="Idioma">
-      <li><a href="../guide-summaries.html" hreflang="en" lang="en">EN<span class="sr"> English</span></a></li>
-      <li><a href="../cs/guide-summaries.html" hreflang="cs" lang="cs">CS<span class="sr"> Čeština</span></a></li>
-      <li><a href="../sk/guide-summaries.html" hreflang="sk" lang="sk">SK<span class="sr"> Slovenčina</span></a></li>
-      <li><a href="../de/guide-summaries.html" hreflang="de" lang="de">DE<span class="sr"> Deutsch</span></a></li>
-      <li><a href="../es/guide-summaries.html" hreflang="es" lang="es">ES<span class="sr"> Español</span></a></li>
-      <li><a href="../it/guide-summaries.html" hreflang="it" lang="it">IT<span class="sr"> Italiano</span></a></li>
-      <li><a href="guide-summaries.html" hreflang="pt" lang="pt" aria-current="true">PT<span class="sr"> Português</span></a></li>
-    </ul>
+    <details class="langs">
+      <summary><span class="sr">Idioma: </span>PT<span aria-hidden="true"> ▾</span></summary>
+      <ul aria-label="Idioma">
+        <li><a href="../guide-summaries.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="../cs/guide-summaries.html" hreflang="cs" lang="cs">Čeština</a></li>
+        <li><a href="../sk/guide-summaries.html" hreflang="sk" lang="sk">Slovenčina</a></li>
+        <li><a href="../de/guide-summaries.html" hreflang="de" lang="de">Deutsch</a></li>
+        <li><a href="../es/guide-summaries.html" hreflang="es" lang="es">Español</a></li>
+        <li><a href="../it/guide-summaries.html" hreflang="it" lang="it">Italiano</a></li>
+        <li><a href="guide-summaries.html" hreflang="pt" lang="pt" aria-current="true">Português</a></li>
+      </ul>
+    </details>
   </div>
 </nav>
 
 <main id="main">
 
+<p class="muted small"><a href="guide-reading.html">← Ler</a> · <a href="guide.html">Índice</a> · <a href="guide-finding-things.html">Encontrar coisas →</a></p>
+
 <h1 id="summaries">Resumos</h1>
 
 <h2 id="where-summarizing-happens">Onde se fazem os resumos</h2>
 
-<p><strong>Configuração › Basic › Resumos › Onde correm os resumos.</strong></p>
+<p><strong>Configuração › Básico › Resumos › Onde correm os resumos.</strong></p>
 
 <ul>
 <li><strong>Este dispositivo</strong> — um modelo que transfere. Nada sai da máquina. É mais lento e gasta bateria: alguns minutos por cada parte de um artigo, e muito mais em telemóveis e tablets antigos.</li>
@@ -54,7 +59,7 @@
 
 <p>Cada um tem a sua página em <strong>Avançado</strong>: <strong>Modelo no dispositivo</strong> para este dispositivo, <strong>Servidor LLM</strong> para um servidor. As duas páginas estão sempre lá; a que não está em uso diz isso no topo.</p>
 
-<figure><a href="../img/phone-settings-summaries.png"><img src="../img/phone-settings-summaries.png" alt="Definições de resumos num telemóvel" loading="lazy"></a></figure>
+<figure><a href="../img/pt/phone-settings-summaries.png"><img src="../img/pt/phone-settings-summaries.png" alt="Definições de resumos num telemóvel" loading="lazy"></a></figure>
 
 <h2 id="choosing-a-model">Escolher um modelo</h2>
 
@@ -66,13 +71,13 @@
 
 <h2 id="automatic-summaries-premium-only">Resumos automáticos (só Premium)</h2>
 
-<p>Os resumos automáticos fazem parte da Premium. Os resumos correm no fim de uma verificação de artigos novos. Não há um horário próprio — se <strong>Configuração › Basic › Fetching › Procura de novidades</strong> estiver em <em>Só quando eu pedir</em>, nada é resumido a não ser que o peça.</p>
+<p>Os resumos automáticos fazem parte da Premium. Os resumos correm no fim de uma verificação de artigos novos. Não há um horário próprio — se <strong>Configuração › Básico › Obtenção › Com que frequência procurar novidades</strong> estiver em <em>Só quando eu pedir</em>, nada é resumido a não ser que o peça.</p>
 
 <p>Duas coisas decidem o que uma verificação resume:</p>
 
 <ul>
-<li><strong>Por fonte.</strong> Cada feed tem um interruptor <strong>Resumir</strong>, desligado por omissão. Defina-o no <a href="guide-managing-sources.html#managing-sources">painel do feed</a> ou em <strong>Configuração › Basic › Fontes › Fontes</strong>.</li>
-<li><strong>Por verificação.</strong> <strong>Configuração › Basic › Resumos › Ao mesmo tempo</strong> define quantos uma verificação pode fazer e por que ponta da fila começa.</li>
+<li><strong>Por fonte.</strong> Cada feed tem um interruptor <strong>Resumir</strong>, desligado por omissão. Defina-o no <a href="guide-managing-sources.html#managing-sources">painel do feed</a> ou em <strong>Configuração › Básico › Fontes › Fontes</strong>.</li>
+<li><strong>Por verificação.</strong> <strong>Configuração › Básico › Resumos › Resumos ao mesmo tempo</strong> define quantos uma verificação pode fazer e por que ponta da fila começa.</li>
 </ul>
 
 <div class="scroll"><table>
@@ -94,17 +99,17 @@
 
 <ul>
 <li><strong>Um artigo</strong> — abra-o e prima <strong>Resumir</strong>.</li>
-<li><strong>Um feed</strong> — no painel dele, <strong>Resumir este canal</strong>.</li>
+<li><strong>Um feed</strong> — no painel dele, <strong>Resumir esta fonte</strong>.</li>
 <li><strong>O que estiver filtrado</strong> — o botão <strong>Resumir tudo</strong> no painel de filtros. Diz quantos vai fazer, e esse número é o que faz.</li>
 </ul>
 
 <h2 id="what-language-a-summary-is-in">Em que idioma fica um resumo</h2>
 
-<p>Por omissão, no idioma em que o artigo está escrito. <strong>Configuração › Basic › Resumos › Resumos em</strong> sobrepõe-se a isso se preferir ler sempre os resumos num só idioma.</p>
+<p>Por omissão, no idioma em que o artigo está escrito. <strong>Configuração › Básico › Resumos › Idioma dos resumos</strong> sobrepõe-se a isso se preferir ler sempre os resumos num só idioma.</p>
 
 <h2 id="if-nothing-gets-summarized">Se nada for resumido</h2>
 
-<p>A causa mais comum é não haver nenhum modelo carregado. A notificação diz isso, e <strong>Configuração › Avançado › Debug › Trace</strong> regista o motivo de cada tentativa.</p>
+<p>A causa mais comum é não haver nenhum modelo carregado. A notificação diz isso, e <strong>Configuração › Avançado › Depuração › Rastreio</strong> regista o motivo de cada tentativa.</p>
 
 <p class="muted small"><a href="guide-reading.html">← Ler</a> · <a href="guide.html">Índice</a> · <a href="guide-finding-things.html">Encontrar coisas →</a></p>
 
@@ -116,7 +121,7 @@
   <a href="../privacy.html">Privacidade</a> ·
   <a href="../eula.html">Licença</a> ·
   <a href="../terms.html">Termos</a></p>
-  <p>Descreve o SummaReader 0.108.2, publicado a 15 de outubro de 2026.</p>
+  <p>Descreve o SummaReader 0.109.0, publicado a 15 de outubro de 2026.</p>
 </footer>
 
 </main>

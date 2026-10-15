@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Quellen verwalten — SummaReader</title>
-<meta name="description" content="Das Zahnrad an einer Zeile im Regal (sichtbar durch Select several oder langes Drücken) oder das Zahnrad neben dem Namen der Quelle in einem geöffneten…">
+<meta name="description" content="Das Zahnrad an einer Zeile im Regal (sichtbar durch Mehrere auswählen oder langes Drücken) oder das Zahnrad neben dem Namen der Quelle in einem geöffneten…">
 <link rel="canonical" href="https://summareader.dataiza.sk/de/guide-managing-sources.html">
 <link rel="alternate" hreflang="en" href="https://summareader.dataiza.sk/guide-managing-sources.html">
 <link rel="alternate" hreflang="cs" href="https://summareader.dataiza.sk/cs/guide-managing-sources.html">
@@ -27,29 +27,34 @@
     <a href="help.html">Hilfe</a>
     <a href="../privacy.html">Datenschutz</a>
     <a href="../terms.html">Bedingungen</a>
-    <ul class="langs" aria-label="Sprache">
-      <li><a href="../guide-managing-sources.html" hreflang="en" lang="en">EN<span class="sr"> English</span></a></li>
-      <li><a href="../cs/guide-managing-sources.html" hreflang="cs" lang="cs">CS<span class="sr"> Čeština</span></a></li>
-      <li><a href="../sk/guide-managing-sources.html" hreflang="sk" lang="sk">SK<span class="sr"> Slovenčina</span></a></li>
-      <li><a href="guide-managing-sources.html" hreflang="de" lang="de" aria-current="true">DE<span class="sr"> Deutsch</span></a></li>
-      <li><a href="../es/guide-managing-sources.html" hreflang="es" lang="es">ES<span class="sr"> Español</span></a></li>
-      <li><a href="../it/guide-managing-sources.html" hreflang="it" lang="it">IT<span class="sr"> Italiano</span></a></li>
-      <li><a href="../pt/guide-managing-sources.html" hreflang="pt" lang="pt">PT<span class="sr"> Português</span></a></li>
-    </ul>
+    <details class="langs">
+      <summary><span class="sr">Sprache: </span>DE<span aria-hidden="true"> ▾</span></summary>
+      <ul aria-label="Sprache">
+        <li><a href="../guide-managing-sources.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="../cs/guide-managing-sources.html" hreflang="cs" lang="cs">Čeština</a></li>
+        <li><a href="../sk/guide-managing-sources.html" hreflang="sk" lang="sk">Slovenčina</a></li>
+        <li><a href="guide-managing-sources.html" hreflang="de" lang="de" aria-current="true">Deutsch</a></li>
+        <li><a href="../es/guide-managing-sources.html" hreflang="es" lang="es">Español</a></li>
+        <li><a href="../it/guide-managing-sources.html" hreflang="it" lang="it">Italiano</a></li>
+        <li><a href="../pt/guide-managing-sources.html" hreflang="pt" lang="pt">Português</a></li>
+      </ul>
+    </details>
   </div>
 </nav>
 
 <main id="main">
 
+<p class="muted small"><a href="guide-keeping-things.html">← Dinge aufbewahren</a> · <a href="guide.html">Inhalt</a> · <a href="guide-sync.html">Sync →</a></p>
+
 <h1 id="managing-sources">Quellen verwalten</h1>
 
 <h2 id="one-feed">Ein Feed</h2>
 
-<p>Das Zahnrad an einer Zeile im Regal (sichtbar durch <strong>Select several</strong> oder langes Drücken) oder das Zahnrad neben dem Namen der Quelle in einem geöffneten Artikel öffnet diesen Feed:</p>
+<p>Das Zahnrad an einer Zeile im Regal (sichtbar durch <strong>Mehrere auswählen</strong> oder langes Drücken) oder das Zahnrad neben dem Namen der Quelle in einem geöffneten Artikel öffnet diesen Feed:</p>
 
-<figure><a href="../img/feed-panel.png"><img src="../img/feed-panel.png" alt="Das Feld eines Feeds" loading="lazy"></a></figure>
+<figure><a href="../img/de/feed-panel.png"><img src="../img/de/feed-panel.png" alt="Das Feld eines Feeds" loading="lazy"></a></figure>
 
-<figure><a href="../img/phone-feed-panel.png"><img src="../img/phone-feed-panel.png" alt="Das Feld eines Feeds auf einem Smartphone" loading="lazy"></a></figure>
+<figure><a href="../img/de/phone-feed-panel.png"><img src="../img/de/phone-feed-panel.png" alt="Das Feld eines Feeds auf einem Smartphone" loading="lazy"></a></figure>
 
 <div class="scroll"><table>
 <tbody>
@@ -59,7 +64,7 @@
 <tr><td><strong>Aktualisieren</strong></td><td>Ob Prüfungen ihn einschließen</td></tr>
 <tr><td><strong>Zusammenfassen</strong></td><td>Ob Prüfungen ihn zusammenfassen</td></tr>
 <tr><td><strong>Sync</strong></td><td>Ob seine Artikel zu Ihren anderen Geräten reisen</td></tr>
-<tr><td><strong>Group</strong>, <strong>Zusammenfassungen in</strong></td><td>Wo er im Regal steht, und seine eigene Sprache für Zusammenfassungen</td></tr>
+<tr><td><strong>Gruppe</strong>, <strong>Sprache der Zusammenfassungen</strong></td><td>Wo er im Regal steht, und seine eigene Sprache für Zusammenfassungen</td></tr>
 <tr><td><strong>Artikel erneut laden</strong></td><td>Gescheiterten Text neu abrufen</td></tr>
 <tr><td><strong>Erneut zusammenfassen</strong></td><td>Seine Zusammenfassungen verwerfen und neu schreiben</td></tr>
 <tr><td><strong>Entfernen</strong></td><td>Fragt zuerst und sagt, was es kostet</td></tr>
@@ -69,7 +74,7 @@
 
 <h2 id="many-feeds">Viele Feeds</h2>
 
-<p><strong>Konfiguration › Basic › Quellen › Quellen</strong> bietet dieselben Elemente für die ganze Liste, mit einem Filter und einem Ankreuzfeld. So ist „jeder YouTube-Kanal, den ich letzte Woche importiert habe“ ein einziger Schritt statt dreihundert.</p>
+<p><strong>Konfiguration › Grundlegend › Quellen › Quellen</strong> bietet dieselben Elemente für die ganze Liste, mit einem Filter und einem Ankreuzfeld. So ist „jeder YouTube-Kanal, den ich letzte Woche importiert habe“ ein einziger Schritt statt dreihundert.</p>
 
 <p class="muted small"><a href="guide-keeping-things.html">← Dinge aufbewahren</a> · <a href="guide.html">Inhalt</a> · <a href="guide-sync.html">Sync →</a></p>
 
@@ -81,7 +86,7 @@
   <a href="../privacy.html">Datenschutz</a> ·
   <a href="../eula.html">Lizenz</a> ·
   <a href="../terms.html">Bedingungen</a></p>
-  <p>Beschreibt SummaReader 0.108.2, veröffentlicht am 15. Oktober 2026.</p>
+  <p>Beschreibt SummaReader 0.109.0, veröffentlicht am 15. Oktober 2026.</p>
 </footer>
 
 </main>

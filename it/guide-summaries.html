@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Riassunti — SummaReader</title>
-<meta name="description" content="Configurazione › Basic › Riassunti › Dove girano i riassunti.">
+<meta name="description" content="Configurazione › Base › Riassunti › Dove girano i riassunti.">
 <link rel="canonical" href="https://summareader.dataiza.sk/it/guide-summaries.html">
 <link rel="alternate" hreflang="en" href="https://summareader.dataiza.sk/guide-summaries.html">
 <link rel="alternate" hreflang="cs" href="https://summareader.dataiza.sk/cs/guide-summaries.html">
@@ -27,25 +27,30 @@
     <a href="help.html">Aiuto</a>
     <a href="../privacy.html">Privacy</a>
     <a href="../terms.html">Termini</a>
-    <ul class="langs" aria-label="Lingua">
-      <li><a href="../guide-summaries.html" hreflang="en" lang="en">EN<span class="sr"> English</span></a></li>
-      <li><a href="../cs/guide-summaries.html" hreflang="cs" lang="cs">CS<span class="sr"> Čeština</span></a></li>
-      <li><a href="../sk/guide-summaries.html" hreflang="sk" lang="sk">SK<span class="sr"> Slovenčina</span></a></li>
-      <li><a href="../de/guide-summaries.html" hreflang="de" lang="de">DE<span class="sr"> Deutsch</span></a></li>
-      <li><a href="../es/guide-summaries.html" hreflang="es" lang="es">ES<span class="sr"> Español</span></a></li>
-      <li><a href="guide-summaries.html" hreflang="it" lang="it" aria-current="true">IT<span class="sr"> Italiano</span></a></li>
-      <li><a href="../pt/guide-summaries.html" hreflang="pt" lang="pt">PT<span class="sr"> Português</span></a></li>
-    </ul>
+    <details class="langs">
+      <summary><span class="sr">Lingua: </span>IT<span aria-hidden="true"> ▾</span></summary>
+      <ul aria-label="Lingua">
+        <li><a href="../guide-summaries.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="../cs/guide-summaries.html" hreflang="cs" lang="cs">Čeština</a></li>
+        <li><a href="../sk/guide-summaries.html" hreflang="sk" lang="sk">Slovenčina</a></li>
+        <li><a href="../de/guide-summaries.html" hreflang="de" lang="de">Deutsch</a></li>
+        <li><a href="../es/guide-summaries.html" hreflang="es" lang="es">Español</a></li>
+        <li><a href="guide-summaries.html" hreflang="it" lang="it" aria-current="true">Italiano</a></li>
+        <li><a href="../pt/guide-summaries.html" hreflang="pt" lang="pt">Português</a></li>
+      </ul>
+    </details>
   </div>
 </nav>
 
 <main id="main">
 
+<p class="muted small"><a href="guide-reading.html">← Lettura</a> · <a href="guide.html">Indice</a> · <a href="guide-finding-things.html">Trovare le cose →</a></p>
+
 <h1 id="summaries">Riassunti</h1>
 
 <h2 id="where-summarizing-happens">Dove avviene il riassunto</h2>
 
-<p><strong>Configurazione › Basic › Riassunti › Dove girano i riassunti.</strong></p>
+<p><strong>Configurazione › Base › Riassunti › Dove girano i riassunti.</strong></p>
 
 <ul>
 <li><strong>Questo dispositivo</strong>: un modello che scarichi. Niente esce dalla macchina. È più lento e consuma batteria: qualche minuto per ogni parte di un articolo, e molto di più su telefoni e tablet meno recenti.</li>
@@ -54,7 +59,7 @@
 
 <p>Ciascuno ha la sua pagina in <strong>Avanzate</strong>: <strong>Modello sul dispositivo</strong> per questo dispositivo, <strong>Server LLM</strong> per un server. Entrambe le pagine ci sono sempre; quella non in uso lo dice in cima.</p>
 
-<figure><a href="../img/phone-settings-summaries.png"><img src="../img/phone-settings-summaries.png" alt="Le impostazioni dei riassunti su un telefono" loading="lazy"></a></figure>
+<figure><a href="../img/it/phone-settings-summaries.png"><img src="../img/it/phone-settings-summaries.png" alt="Le impostazioni dei riassunti su un telefono" loading="lazy"></a></figure>
 
 <h2 id="choosing-a-model">Scegliere un modello</h2>
 
@@ -66,13 +71,13 @@
 
 <h2 id="automatic-summaries-premium-only">Riassunti automatici (solo Premium)</h2>
 
-<p>I riassunti automatici sono in Premium. Il riassunto avviene alla fine di un controllo dei nuovi articoli. Non c’è una pianificazione separata: se <strong>Configurazione › Basic › Fetching › Controllo delle novità</strong> è impostato su <em>Solo quando lo chiedo</em>, niente viene riassunto se non lo chiedi.</p>
+<p>I riassunti automatici sono in Premium. Il riassunto avviene alla fine di un controllo dei nuovi articoli. Non c’è una pianificazione separata: se <strong>Configurazione › Base › Scaricamento › Ogni quanto controllare</strong> è impostato su <em>Solo quando lo chiedo</em>, niente viene riassunto se non lo chiedi.</p>
 
 <p>Due cose decidono che cosa riassume un controllo:</p>
 
 <ul>
-<li><strong>Per fonte.</strong> Ogni feed ha un interruttore <strong>Riassumi</strong>, spento per impostazione predefinita. Impostalo nel <a href="guide-managing-sources.html#managing-sources">pannello del feed</a> oppure in <strong>Configurazione › Basic › Fonti › Fonti</strong>.</li>
-<li><strong>Per controllo.</strong> <strong>Configurazione › Basic › Riassunti › Contemporaneamente</strong> stabilisce quanti riassunti può fare un controllo e da quale capo della coda parte.</li>
+<li><strong>Per fonte.</strong> Ogni feed ha un interruttore <strong>Riassumi</strong>, spento per impostazione predefinita. Impostalo nel <a href="guide-managing-sources.html#managing-sources">pannello del feed</a> oppure in <strong>Configurazione › Base › Fonti › Fonti</strong>.</li>
+<li><strong>Per controllo.</strong> <strong>Configurazione › Base › Riassunti › Riassunti in parallelo</strong> stabilisce quanti riassunti può fare un controllo e da quale capo della coda parte.</li>
 </ul>
 
 <div class="scroll"><table>
@@ -100,11 +105,11 @@
 
 <h2 id="what-language-a-summary-is-in">In che lingua è un riassunto</h2>
 
-<p>Per impostazione predefinita, nella lingua in cui è scritto l’articolo. <strong>Configurazione › Basic › Riassunti › Riassunti in</strong> lo sostituisce se preferisci leggere sempre i riassunti in una sola lingua.</p>
+<p>Per impostazione predefinita, nella lingua in cui è scritto l’articolo. <strong>Configurazione › Base › Riassunti › Lingua dei riassunti</strong> lo sostituisce se preferisci leggere sempre i riassunti in una sola lingua.</p>
 
 <h2 id="if-nothing-gets-summarized">Se non viene riassunto niente</h2>
 
-<p>La causa più comune è che nessun modello è caricato. Il messaggio a comparsa lo dice, e <strong>Configurazione › Avanzate › Debug › Trace</strong> registra il motivo di ogni tentativo.</p>
+<p>La causa più comune è che nessun modello è caricato. Il messaggio a comparsa lo dice, e <strong>Configurazione › Avanzate › Debug › Registro delle attività</strong> registra il motivo di ogni tentativo.</p>
 
 <p class="muted small"><a href="guide-reading.html">← Lettura</a> · <a href="guide.html">Indice</a> · <a href="guide-finding-things.html">Trovare le cose →</a></p>
 
@@ -116,7 +121,7 @@
   <a href="../privacy.html">Privacy</a> ·
   <a href="../eula.html">Licenza</a> ·
   <a href="../terms.html">Termini</a></p>
-  <p>Descrive SummaReader 0.108.2, pubblicato il 15 ottobre 2026.</p>
+  <p>Descrive SummaReader 0.109.0, pubblicato il 15 ottobre 2026.</p>
 </footer>
 
 </main>

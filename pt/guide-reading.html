@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ler — SummaReader</title>
-<meta name="description" content="Clique num artigo, ou prima ↵. Conforme a janela e a disposição escolhida em Configuração › Basic › Appearance › Disposição, abre ao lado da lista, por cima…">
+<meta name="description" content="Clique num artigo, ou prima ↵. Conforme a janela e a disposição escolhida em Configuração › Básico › Aspeto › Disposição, abre ao lado da lista, por cima ou…">
 <link rel="canonical" href="https://summareader.dataiza.sk/pt/guide-reading.html">
 <link rel="alternate" hreflang="en" href="https://summareader.dataiza.sk/guide-reading.html">
 <link rel="alternate" hreflang="cs" href="https://summareader.dataiza.sk/cs/guide-reading.html">
@@ -27,25 +27,30 @@
     <a href="help.html">Ajuda</a>
     <a href="../privacy.html">Privacidade</a>
     <a href="../terms.html">Termos</a>
-    <ul class="langs" aria-label="Idioma">
-      <li><a href="../guide-reading.html" hreflang="en" lang="en">EN<span class="sr"> English</span></a></li>
-      <li><a href="../cs/guide-reading.html" hreflang="cs" lang="cs">CS<span class="sr"> Čeština</span></a></li>
-      <li><a href="../sk/guide-reading.html" hreflang="sk" lang="sk">SK<span class="sr"> Slovenčina</span></a></li>
-      <li><a href="../de/guide-reading.html" hreflang="de" lang="de">DE<span class="sr"> Deutsch</span></a></li>
-      <li><a href="../es/guide-reading.html" hreflang="es" lang="es">ES<span class="sr"> Español</span></a></li>
-      <li><a href="../it/guide-reading.html" hreflang="it" lang="it">IT<span class="sr"> Italiano</span></a></li>
-      <li><a href="guide-reading.html" hreflang="pt" lang="pt" aria-current="true">PT<span class="sr"> Português</span></a></li>
-    </ul>
+    <details class="langs">
+      <summary><span class="sr">Idioma: </span>PT<span aria-hidden="true"> ▾</span></summary>
+      <ul aria-label="Idioma">
+        <li><a href="../guide-reading.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="../cs/guide-reading.html" hreflang="cs" lang="cs">Čeština</a></li>
+        <li><a href="../sk/guide-reading.html" hreflang="sk" lang="sk">Slovenčina</a></li>
+        <li><a href="../de/guide-reading.html" hreflang="de" lang="de">Deutsch</a></li>
+        <li><a href="../es/guide-reading.html" hreflang="es" lang="es">Español</a></li>
+        <li><a href="../it/guide-reading.html" hreflang="it" lang="it">Italiano</a></li>
+        <li><a href="guide-reading.html" hreflang="pt" lang="pt" aria-current="true">Português</a></li>
+      </ul>
+    </details>
   </div>
 </nav>
 
 <main id="main">
 
+<p class="muted small"><a href="guide-the-window.html">← A janela</a> · <a href="guide.html">Índice</a> · <a href="guide-summaries.html">Resumos →</a></p>
+
 <h1 id="reading">Ler</h1>
 
-<p>Clique num artigo, ou prima <code>↵</code>. Conforme a janela e a disposição escolhida em <strong>Configuração › Basic › Appearance › Disposição</strong>, abre ao lado da lista, por cima ou por baixo dela, ou ocupa a janela inteira. Num telemóvel ocupa sempre o ecrã inteiro.</p>
+<p>Clique num artigo, ou prima <code>↵</code>. Conforme a janela e a disposição escolhida em <strong>Configuração › Básico › Aspeto › Disposição</strong>, abre ao lado da lista, por cima ou por baixo dela, ou ocupa a janela inteira. Num telemóvel ocupa sempre o ecrã inteiro.</p>
 
-<figure><a href="../img/reader.png"><img src="../img/reader.png" alt="Ler um artigo" loading="lazy"></a></figure>
+<figure><a href="../img/pt/reader.png"><img src="../img/pt/reader.png" alt="Ler um artigo" loading="lazy"></a></figure>
 
 <h2 id="the-three-tabs">Os três separadores</h2>
 
@@ -69,7 +74,7 @@
 
 <h2 id="moving-between-articles">Passar de um artigo para outro</h2>
 
-<p>Arraste o artigo para o lado, ou use <code>j</code> / <code>k</code>. Arrastar para a direita no primeiro volta à lista. Os gestos configuram-se em <strong>Configuração › Basic › Navegação › Deslizar no leitor</strong>.</p>
+<p>Arraste o artigo para o lado, ou use <code>j</code> / <code>k</code>. Arrastar para a direita no primeiro volta à lista. Os gestos configuram-se em <strong>Configuração › Básico › Navegação › Gestos de deslizar</strong>.</p>
 
 <h2 id="when-there-is-no-text">Quando não há texto</h2>
 
@@ -79,7 +84,7 @@
 <thead><tr><th>O que diz</th><th>O que aconteceu</th></tr></thead>
 <tbody>
 <tr><td>Este vídeo não tem legendas</td><td>Não há transcrição para ler</td></tr>
-<tr><td>O YouTube pediu à aplicação para abrandar</td><td>O YouTube recusou as legendas por agora</td></tr>
+<tr><td>O YouTube pediu à aplicação para abrandar</td><td>O YouTube recusou as legendas por agora. No Linux, a aplicação tenta primeiro obtê-las da página do vídeo, no seu renderizador de páginas oculto</td></tr>
 <tr><td>A página chegou, mas não tinha nenhum artigo</td><td>A página constrói o texto no navegador</td></tr>
 <tr><td>O site mostrou uma verificação anti-robôs</td><td>Uma página do tipo "prove que é humano"</td></tr>
 <tr><td>Atrás de uma barreira de subscrição</td><td>O que chegou foi a oferta</td></tr>
@@ -99,7 +104,7 @@
   <a href="../privacy.html">Privacidade</a> ·
   <a href="../eula.html">Licença</a> ·
   <a href="../terms.html">Termos</a></p>
-  <p>Descreve o SummaReader 0.108.2, publicado a 15 de outubro de 2026.</p>
+  <p>Descreve o SummaReader 0.109.0, publicado a 15 de outubro de 2026.</p>
 </footer>
 
 </main>

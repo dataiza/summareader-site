@@ -1,5 +1,7 @@
 Copyright 2022 The Figtree Project Authors (https://github.com/erikdkennedy/figtree)
 Copyright 2021 The Caprasimo Project Authors (https://github.com/etunni/caprasimo)
+Copyright (c) 2011, TypeTogether (www.type-together.com),
+with Reserved Font Names "Abril" and "Abril Fatface"
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
 This license is copied below, and is also available with a FAQ at:
