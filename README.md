@@ -3,9 +3,9 @@
 The product page, user guide, privacy policy and terms for
 [SummaReader](https://github.com/dataiza/summareader).
 
-Four hand-written HTML pages and one stylesheet. No build step, no JavaScript,
-no external requests — the fonts and screenshots are served from here, so the
-site can make the claim on its own privacy page truthfully.
+Plain HTML and one stylesheet. No JavaScript and no external requests — the
+fonts and screenshots are served from here, so the site can make the claim on
+its own privacy page truthfully.
 
 It lives in its own public repository because the app repository is private and
 GitHub Pages will not serve a private one on a free plan.
@@ -13,32 +13,35 @@ GitHub Pages will not serve a private one on a free plan.
 ## Layout
 
 ```
-index.html  guide.html  privacy.html  terms.html
+index.html                hand-written: the product page and its claims
+guide*.html  help.html    generated from the app repo — do not edit here
+privacy.html eula.html terms.html
 style.css                 the app's own palette, from lib/src/ui/theme.dart
-img/                      copies of ../summareader/docs/images/
-fonts/                    copies of ../summareader/assets/fonts/, plus OFL.txt
+img/                      copied from docs/images/ in the app repo
+fonts/                    copied from assets/fonts/ in the app repo, plus OFL.txt
 CNAME                     summareader.dataiza.sk
-refresh.sh                re-copies both, and checks the pins
 ```
 
 Every link and asset path is relative, so the folder works served from a domain
 root, from a Pages project subpath, and from `file://`.
 
-## Working on it
+## Where the pages come from
+
+Everything except `index.html` is written by `tool/site/build.py` in the app
+repo, from the user guide (`docs/USER_GUIDE.md`, one page per section),
+`PRIVACY.md`, `EULA.md`, `TERMS.md` and the in-app help texts. Each release
+regenerates and pushes it, so the site describes the app that was just
+released; the version and date are in every footer. To fix a page, fix the
+Markdown in the app repo — an edit made here is overwritten at the next release.
 
 ```sh
-python3 -m http.server -d . 8000     # then open http://localhost:8000
-./refresh.sh [../summareader]        # before publishing
+python3 tool/site/build.py ../summareader-site   # from the app repo
+python3 -m http.server -d . 8000                 # here, then open http://localhost:8000
 ```
 
-`guide.html` and `privacy.html` were written from `docs/USER_GUIDE.md` and
-`PRIVACY.md` in the app repo, and each carries the sha256 of the document it was
-written from in a comment at the top. `refresh.sh` compares those against the
-real files and fails if they have moved.
-
 That matters most for the privacy policy: the app ships `PRIVACY.md` and this
-site publishes it at the URL a store review reads. Two versions saying different
-things is the failure mode, so fix both in one change.
+site publishes it at the URL a store review reads. Generating one from the
+other is what keeps them saying the same thing.
 
 ## Publishing
 

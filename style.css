@@ -234,6 +234,19 @@ figure img {
   border: 1px solid var(--rule);
   border-radius: 6px;
 }
+/* Phone shots are tall: drawn at the desktop's width they would fill a whole
+   screen each, so they keep their own shape at about the size of a phone. */
+img[src^="img/phone-"] {
+  display: inline-block;
+  vertical-align: top;
+  width: min(47%, 280px);
+  height: auto;
+  aspect-ratio: 390 / 844;
+  margin: 0.5rem 0.5rem 0.5rem 0;
+  background: var(--shot);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+}
 figcaption {
   color: var(--muted);
   font-size: 0.9rem;
