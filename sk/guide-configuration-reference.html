@@ -88,6 +88,8 @@
 
 <p>Tri brány, každá s vlastným portom, vlastným výberom adries, na ktorých odpovedá, vlastným tokenom a vlastným prepínačom: <strong>REST API</strong>, cez ktoré niečo vkladá rozšírenie prehliadača alebo iný program, <strong>Metriky</strong> pre monitorovací systém a <strong>MCP</strong>, na ktorom odpovedá model. Začínajú na portoch 8765, 8766 a 8767 a žiadna nepotrebuje, aby bola otvorená iná.</p>
 
+<p>Token otvorí len to, čo má zaškrtnuté, v <strong>Nastavenia › Pokročilé › Tokeny › Tokeny › Upraviť oprávnenia</strong>. Oprávnenia sú zbalené podľa tém a pole nad nimi ich filtruje podľa názvu alebo popisu. Predvoľby vyplnia zaškrtnutia: <strong>Všetko okrem odstraňovania</strong>, <strong>Len čítanie</strong>, <strong>Rozšírenie prehliadača</strong>, ktoré zaškrtne presne to, čo rozšírenie prehliadača používa, a <strong>Nič</strong>.</p>
+
 <p><strong>Použiť TLS (HTTPS)</strong>, pod tromi bránami, je predvolene vypnuté a prepne všetky tri naraz na HTTPS. Pri prvom zapnutí aplikácia vytvorí certifikát pre toto zariadenie s jeho názvom hostiteľa a adresami a kľúč uchová spolu s ostatnými tajomstvami. Klienti potom musia používať <code>https://</code> a tomuto certifikátu dôverovať: stránka ukazuje jeho odtlačok SHA-256 s tlačidlom na kopírovanie, aby si ho klient mohol pripnúť. <strong>Nový certifikát</strong> vytvorí ďalší a každý klient, ktorý mal pripnutý starý odtlačok, musí dostať nový. Obal MCP pre príkazový riadok si certifikát prevezme sám; po novom certifikáte reštartujte jeho klienta.</p>
 
 <p>Terminálová čítačka medzi tieto brány nepatrí. Otvára súbor knižnice priamo, nepotrebuje žiadnu otvorenú bránu ani port a je bezplatná.</p>
@@ -110,7 +112,7 @@
   <a href="../privacy.html">Súkromie</a> ·
   <a href="../eula.html">Licencia</a> ·
   <a href="../terms.html">Podmienky</a></p>
-  <p>Opisuje SummaReader 0.113.0, vydané 16. októbra 2026.</p>
+  <p>Opisuje SummaReader 0.114.0, vydané 16. októbra 2026.</p>
 </footer>
 
 </main>

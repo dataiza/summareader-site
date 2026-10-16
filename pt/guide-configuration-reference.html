@@ -88,6 +88,8 @@
 
 <p>Três portas, cada uma com a sua porta de rede, a sua escolha dos endereços em que responde, o seu token e o seu interruptor: a <strong>API REST</strong>, por onde uma extensão do navegador ou outro programa introduz coisas, <strong>Métricas</strong> para um sistema de monitorização, e <strong>MCP</strong>, em que um modelo responde. Começam em 8765, 8766 e 8767, e nenhuma precisa de outra aberta.</p>
 
+<p>Um token abre só aquilo para que está marcado, em <strong>Configuração › Avançado › Tokens › Tokens › Editar permissões</strong>. As permissões estão recolhidas por tema, e o campo acima filtra-as por nome ou descrição. As predefinições preenchem as marcas: <strong>Tudo menos remoções</strong>, <strong>Só leitura</strong>, <strong>Extensão do navegador</strong>, que marca exatamente o que a extensão do navegador usa, e <strong>Nada</strong>.</p>
+
 <p><strong>Usar TLS (HTTPS)</strong>, por baixo das três portas, está desligado por omissão e passa as três para HTTPS de uma vez. Da primeira vez, a aplicação cria um certificado para este dispositivo, com o nome do anfitrião e os seus endereços, e guarda a chave junto dos outros segredos. Os clientes têm então de usar <code>https://</code> e confiar nesse certificado: a página mostra a impressão digital SHA-256, com um botão para a copiar, para que um cliente a possa fixar. <strong>Certificado novo</strong> cria outro, e todos os clientes que fixaram a impressão digital antiga têm de receber a nova. O wrapper de linha de comandos do MCP apanha o certificado sozinho; reinicie o cliente dele depois de um novo certificado.</p>
 
 <p>O leitor de terminal não é uma destas portas. Abre diretamente o ficheiro da biblioteca, não precisa de nenhuma porta aberta e é gratuito.</p>
@@ -110,7 +112,7 @@
   <a href="../privacy.html">Privacidade</a> ·
   <a href="../eula.html">Licença</a> ·
   <a href="../terms.html">Termos</a></p>
-  <p>Descreve o SummaReader 0.113.0, publicado a 16 de outubro de 2026.</p>
+  <p>Descreve o SummaReader 0.114.0, publicado a 16 de outubro de 2026.</p>
 </footer>
 
 </main>

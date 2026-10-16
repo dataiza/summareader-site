@@ -88,6 +88,8 @@
 
 <p>Three doors, each with its own port, its own choice of which addresses it answers on, its own token and its own switch: the <strong>REST API</strong> a browser extension or another program puts something in through, <strong>Metrics</strong> for a monitoring system, and <strong>MCP</strong>, which a model answers on. They start on 8765, 8766 and 8767, and none of them needs another to be open.</p>
 
+<p>A token opens only what it is ticked for, in <strong>Configuration › Advanced › Tokens › Tokens › Edit permissions</strong>. The permissions are folded by subject, and the field above them filters them by name or description. The presets fill the ticks: <strong>Everything but removals</strong>, <strong>Read only</strong>, <strong>Browser extension</strong>, which ticks exactly what the browser extension uses, and <strong>Nothing</strong>.</p>
+
 <p><strong>Use TLS (HTTPS)</strong>, under the three doors, is off by default and switches all three to HTTPS at once. The first time, the app makes a certificate for this device, naming its host name and its addresses, and keeps the key with the other secrets. Clients must then use <code>https://</code> and trust that certificate: the page shows its SHA-256 fingerprint, with a button to copy it, so a client can pin it. <strong>New certificate</strong> makes another one, and every client that pinned the old fingerprint must be given the new one. The MCP command-line wrapper picks the certificate up by itself; restart its client after a new certificate.</p>
 
 <p>The terminal reader is not one of these. It opens the library file directly, needs no door open and no port, and is free.</p>
@@ -110,7 +112,7 @@
   <a href="privacy.html">Privacy</a> ·
   <a href="eula.html">Licence</a> ·
   <a href="terms.html">Terms</a></p>
-  <p>Describes SummaReader 0.113.0, published 16 October 2026.</p>
+  <p>Describes SummaReader 0.114.0, published 16 October 2026.</p>
 </footer>
 
 </main>

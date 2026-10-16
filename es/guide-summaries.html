@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Resúmenes — SummaReader</title>
-<meta name="description" content="Configuración › Basic › Resúmenes › Dónde se ejecutan los resúmenes.">
+<meta name="description" content="Cada uno tiene su propia página en Avanzado: Modelo en el dispositivo para este dispositivo y Servidor LLM para un servidor. Las dos páginas están siempre…">
 <link rel="canonical" href="https://summareader.dataiza.sk/es/guide-summaries.html">
 <link rel="alternate" hreflang="en" href="https://summareader.dataiza.sk/guide-summaries.html">
 <link rel="alternate" hreflang="cs" href="https://summareader.dataiza.sk/cs/guide-summaries.html">
@@ -50,7 +50,7 @@
 
 <h2 id="where-summarizing-happens">Dónde se hacen los resúmenes</h2>
 
-<p><strong>Configuración › Basic › Resúmenes › Dónde se ejecutan los resúmenes.</strong></p>
+<p><strong>Configuración › Básico › Resúmenes › Resumir en.</strong></p>
 
 <ul>
 <li><strong>Este dispositivo</strong>: un modelo que descargas. Nada sale del equipo. Es más lento y gasta batería: unos minutos por cada parte de un artículo, y mucho más en teléfonos y tabletas antiguos.</li>
@@ -71,13 +71,13 @@
 
 <h2 id="automatic-summaries-premium-only">Resúmenes automáticos (solo Premium)</h2>
 
-<p>Los resúmenes automáticos están en Premium. Los resúmenes se hacen al final de una comprobación de artículos nuevos. No hay un horario aparte: si <strong>Configuración › Basic › Fetching › Comprobación de novedades</strong> está en <em>Solo cuando lo pida</em>, no se resume nada salvo que lo pidas.</p>
+<p>Los resúmenes automáticos están en Premium. Los resúmenes se hacen al final de una comprobación de artículos nuevos. No hay un horario aparte: si <strong>Configuración › Básico › Descarga › Cada cuánto comprobar</strong> está en <em>Solo cuando lo pida</em>, no se resume nada salvo que lo pidas.</p>
 
 <p>Dos cosas deciden qué resume una comprobación:</p>
 
 <ul>
-<li><strong>Por fuente.</strong> Cada feed tiene un interruptor <strong>Resumir</strong>, apagado por defecto. Cámbialo en el <a href="guide-managing-sources.html#managing-sources">panel del feed</a> o en <strong>Configuración › Basic › Fuentes › Fuentes</strong>.</li>
-<li><strong>Por comprobación.</strong> <strong>Configuración › Basic › Resúmenes › A la vez</strong> fija cuántos puede hacer una comprobación y por qué extremo de la cola empieza.</li>
+<li><strong>Por fuente.</strong> Cada feed tiene un interruptor <strong>Resumir</strong>, apagado por defecto. Cámbialo en el <a href="guide-managing-sources.html#managing-sources">panel del feed</a> o en <strong>Configuración › Básico › Fuentes › Fuentes</strong>.</li>
+<li><strong>Por comprobación.</strong> <strong>Configuración › Básico › Resúmenes › Resúmenes a la vez</strong> fija cuántos puede hacer una comprobación y por qué extremo de la cola empieza.</li>
 </ul>
 
 <div class="scroll"><table>
@@ -105,11 +105,11 @@
 
 <h2 id="what-language-a-summary-is-in">En qué idioma está un resumen</h2>
 
-<p>Por defecto, en el idioma en que está escrito el artículo. <strong>Configuración › Basic › Resúmenes › Resúmenes en</strong> lo cambia si prefieres leer siempre los resúmenes en un mismo idioma.</p>
+<p>Por defecto, en el idioma en que está escrito el artículo. Si la página no indica en qué idioma está, la aplicación lo deduce del texto. <strong>Configuración › Básico › Resúmenes › Idioma de los resúmenes</strong> lo cambia si prefieres leer siempre los resúmenes en un mismo idioma.</p>
 
 <h2 id="if-nothing-gets-summarized">Si no se resume nada</h2>
 
-<p>La causa más común es que no hay ningún modelo cargado. El aviso lo dice, y <strong>Configuración › Avanzado › Debug › Trace</strong> registra el motivo de cada intento.</p>
+<p>La causa más común es que no hay ningún modelo cargado. El aviso lo dice, y <strong>Configuración › Avanzado › Depuración › Registro de actividad</strong> registra el motivo de cada intento.</p>
 
 <p class="muted small"><a href="guide-reading.html">← Leer</a> · <a href="guide.html">Contenido</a> · <a href="guide-finding-things.html">Encontrar cosas →</a></p>
 
@@ -121,7 +121,7 @@
   <a href="../privacy.html">Privacidad</a> ·
   <a href="../eula.html">Licencia</a> ·
   <a href="../terms.html">Condiciones</a></p>
-  <p>Describe SummaReader 0.113.0, publicado el 16 de octubre de 2026.</p>
+  <p>Describe SummaReader 0.114.0, publicado el 16 de octubre de 2026.</p>
 </footer>
 
 </main>

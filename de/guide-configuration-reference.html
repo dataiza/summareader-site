@@ -88,6 +88,8 @@
 
 <p>Drei Zugänge, jeder mit eigenem Port, eigener Wahl der Adressen, auf denen er antwortet, eigenem Token und eigenem Schalter: die <strong>REST API</strong>, über die eine Browser-Erweiterung oder ein anderes Programm etwas einliefert, <strong>Metriken</strong> für ein Überwachungssystem und <strong>MCP</strong>, auf dem ein Modell antwortet. Sie starten auf 8765, 8766 und 8767, und keiner braucht einen anderen geöffnet.</p>
 
+<p>Ein Token öffnet nur, was für ihn angehakt ist, unter <strong>Konfiguration › Erweitert › Tokens › Tokens › Berechtigungen bearbeiten</strong>. Die Berechtigungen sind nach Thema eingeklappt, und das Feld darüber filtert sie nach Name oder Beschreibung. Die Vorgaben setzen die Haken: <strong>Alles außer Entfernen</strong>, <strong>Nur lesen</strong>, <strong>Browser-Erweiterung</strong>, die genau das anhakt, was die Browser-Erweiterung nutzt, und <strong>Nichts</strong>.</p>
+
 <p><strong>TLS verwenden (HTTPS)</strong> unter den drei Zugängen ist standardmäßig aus und stellt alle drei auf einmal auf HTTPS um. Beim ersten Mal erzeugt die App ein Zertifikat für dieses Gerät, mit seinem Hostnamen und seinen Adressen, und bewahrt den Schlüssel bei den anderen Geheimnissen auf. Clients müssen dann <code>https://</code> verwenden und diesem Zertifikat vertrauen: Die Seite zeigt seinen SHA-256-Fingerabdruck mit einer Schaltfläche zum Kopieren, damit ein Client ihn fest hinterlegen kann. <strong>Neues Zertifikat</strong> erzeugt ein neues, und jeder Client, der den alten Fingerabdruck hinterlegt hat, muss den neuen bekommen. Der MCP-Kommandozeilen-Wrapper übernimmt das Zertifikat von selbst; starten Sie seinen Client nach einem neuen Zertifikat neu.</p>
 
 <p>Der Terminal-Reader gehört nicht dazu. Er öffnet die Bibliotheksdatei direkt, braucht keinen offenen Zugang und keinen Port und ist kostenlos.</p>
@@ -110,7 +112,7 @@
   <a href="../privacy.html">Datenschutz</a> ·
   <a href="../eula.html">Lizenz</a> ·
   <a href="../terms.html">Bedingungen</a></p>
-  <p>Beschreibt SummaReader 0.113.0, veröffentlicht am 16. Oktober 2026.</p>
+  <p>Beschreibt SummaReader 0.114.0, veröffentlicht am 16. Oktober 2026.</p>
 </footer>
 
 </main>

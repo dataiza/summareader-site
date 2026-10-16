@@ -64,14 +64,14 @@
 
 <h2 id="the-shelf">La estantería</h2>
 
-<p>De arriba abajo a la izquierda: <strong>Library</strong> con <strong>Buscar novedades</strong>, <strong>Entrada</strong>, <strong>Guardados</strong> y <strong>Buscar</strong>; luego <strong>Tu estantería</strong> con tus <strong>Listas</strong> y tus feeds agrupados por tipo; y al pie, <strong>Configuración</strong>. Cada feed muestra <em>sin leer / total</em>; cada lista muestra lo que contiene. En un teléfono la estantería es un cajón que se abre con <strong>☰</strong>.</p>
+<p>De arriba abajo a la izquierda: <strong>Biblioteca</strong> con <strong>Buscar novedades</strong>, <strong>Entrada</strong>, <strong>Guardados</strong> y <strong>Buscar</strong>; luego <strong>Tu estantería</strong> con tus <strong>Listas</strong> y tus feeds agrupados por tipo; y al pie, <strong>Configuración</strong>. Cada feed muestra <em>sin leer / total</em>; cada lista muestra lo que contiene. En un teléfono la estantería es un cajón que se abre con <strong>☰</strong>.</p>
 
 <ul>
 <li><strong>Buscar novedades</strong> consulta ahora todas las fuentes.</li>
 <li><strong>El cuadro de arriba</strong> reduce la estantería y nada más: parte del nombre de un feed, o <code>tag:</code> y parte de una etiqueta. Basta con una parte, así que <code>tag:gam</code> encuentra <code>gaming</code> y <code>retro-gaming</code> por igual; y una palabra corta abarca mucho, ya que <code>tag:ai</code> también encuentra un feed etiquetado <code>retail</code>, y <code>!tag:ai</code> lo oculta. El cuadro de texto del panel de filtros pide la etiqueta entera.</li>
 <li><strong>Haz clic en un feed</strong> para ver solo ese feed.</li>
 <li><strong>Haz clic en una lista</strong> para ver lo que contiene; consulta <a href="guide-keeping-things.html#keeping-things">Guardar cosas</a>.</li>
-<li><strong>Select several</strong> (las marcas junto a <strong>Tu estantería</strong>), o una pulsación larga en una fila, muestra un engranaje en cada feed. El engranaje abre el panel propio de ese feed; consulta <a href="guide-managing-sources.html#managing-sources">Gestionar las fuentes</a>.</li>
+<li><strong>Seleccionar varias</strong> (las marcas junto a <strong>Tu estantería</strong>), o una pulsación larga en una fila, muestra un engranaje en cada feed. El engranaje abre el panel propio de ese feed; consulta <a href="guide-managing-sources.html#managing-sources">Gestionar las fuentes</a>.</li>
 <li><strong>El ojo</strong> junto a <strong>+</strong> oculta todos los feeds que no tienen nada pendiente.</li>
 <li><strong>«</strong> contrae la estantería a una tira de iconos. <code>b</code> hace lo mismo.</li>
 </ul>
@@ -88,7 +88,7 @@
 <thead><tr><th>Control</th><th>Qué hace</th></tr></thead>
 <tbody>
 <tr><td><strong>Sin leer / Leídos / Todos</strong></td><td>Qué elementos se muestran</td></tr>
-<tr><td><strong>Any / Summarized / Not summarized</strong></td><td>Si existe un resumen</td></tr>
+<tr><td><strong>Todos / Resumidos / Sin resumir</strong></td><td>Si existe un resumen</td></tr>
 <tr><td><strong>Más recientes</strong></td><td>El orden: pulsa para pasar por los seis</td></tr>
 <tr><td><strong>Marcar todo como leído</strong></td><td>Marca todo lo que abarca el filtro</td></tr>
 <tr><td><strong>Resumir todo</strong></td><td>Resume todo lo que abarca el filtro</td></tr>
@@ -114,12 +114,13 @@
 <div class="scroll"><table>
 <thead><tr><th>Ajuste</th><th>Dónde</th></tr></thead>
 <tbody>
-<tr><td><strong>Tamaño del texto</strong></td><td><strong>Configuración › Basic › Appearance › Text › Tamaño del texto</strong></td></tr>
-<tr><td><strong>Densidad de la lista</strong></td><td><strong>Configuración › Basic › Appearance › List › Densidad de la lista</strong></td></tr>
-<tr><td><strong>Miniaturas</strong></td><td><strong>Configuración › Basic › Appearance › List › Miniaturas</strong></td></tr>
-<tr><td><strong>Interlineado</strong>, <strong>Ancho de la columna</strong></td><td><strong>Configuración › Basic › Appearance › Article</strong></td></tr>
-<tr><td>Dónde se coloca el artículo</td><td><strong>Configuración › Basic › Appearance › Disposición</strong></td></tr>
-<tr><td><strong>Agrupar por fuente</strong></td><td><strong>Configuración › Basic › Appearance › List › Agrupar por fuente</strong></td></tr>
+<tr><td><strong>Tamaño del texto</strong></td><td><strong>Configuración › Básico › Apariencia › Texto › Tamaño del texto</strong></td></tr>
+<tr><td><strong>Densidad de la lista</strong></td><td><strong>Configuración › Básico › Apariencia › Lista › Densidad de la lista</strong></td></tr>
+<tr><td><strong>Resumen en la lista</strong></td><td><strong>Configuración › Básico › Apariencia › Lista › Resumen en la lista</strong></td></tr>
+<tr><td><strong>Miniaturas</strong></td><td><strong>Configuración › Básico › Apariencia › Lista › Miniaturas</strong></td></tr>
+<tr><td><strong>Interlineado</strong>, <strong>Ancho de la columna</strong></td><td><strong>Configuración › Básico › Apariencia › Artículo</strong></td></tr>
+<tr><td>Dónde se coloca el artículo</td><td><strong>Configuración › Básico › Apariencia › Disposición</strong></td></tr>
+<tr><td><strong>Agrupar por fuente</strong></td><td><strong>Configuración › Básico › Apariencia › Lista › Agrupar por fuente</strong></td></tr>
 </tbody></table></div>
 
 <p><strong>Densidad de la lista</strong> decide cuánto de cada elemento dibuja la lista:</p>
@@ -131,6 +132,8 @@
 <tr><td><strong>Compacta</strong> (por defecto)</td><td>—</td><td>dos líneas</td><td>pequeña</td></tr>
 <tr><td>Densa</td><td>—</td><td>una línea</td><td>ninguna</td></tr>
 </tbody></table></div>
+
+<p>Con Cómoda elegida, <strong>Resumen en la lista</strong> (<strong>Configuración › Básico › Apariencia › Lista › Resumen en la lista</strong>) fija cuánto de cada resumen muestra una fila: <strong>2 líneas</strong>, <strong>4 líneas</strong> o el <strong>Resumen completo</strong> (por defecto). Un artículo que aún no tiene resumen muestra en el mismo lugar, más tenue y con el mismo límite, su comienzo: la descripción propia de la fuente o, si no la hay, las primeras palabras del texto del artículo. La fila solo aparece con Cómoda, porque Compacta y Densa no muestran resumen.</p>
 
 <p><strong>Miniaturas: Imagen</strong> muestra la imagen propia de cada artículo en lugar de un icono de tipo. Es la única de las tres opciones que cuesta algo: las imágenes se descargan de pocas en pocas para las filas en pantalla, así que una lista larga de pendientes se va completando poco a poco y no de golpe. Densa no hace caso de este ajuste: una imagen tiene tres líneas de alto, y eso no es denso.</p>
 
@@ -144,7 +147,7 @@
   <a href="../privacy.html">Privacidad</a> ·
   <a href="../eula.html">Licencia</a> ·
   <a href="../terms.html">Condiciones</a></p>
-  <p>Describe SummaReader 0.113.0, publicado el 16 de octubre de 2026.</p>
+  <p>Describe SummaReader 0.114.0, publicado el 16 de octubre de 2026.</p>
 </footer>
 
 </main>
