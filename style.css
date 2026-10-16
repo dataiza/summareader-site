@@ -295,9 +295,10 @@ figure img {
 }
 /* Phone shots are tall: drawn at the desktop's width they would fill a whole
    screen each, so they keep their own shape at about the size of a phone.
-   Matched anywhere in the address, because translated pages reach the same
-   pictures as ../img/. */
-img[src*="img/phone-"] {
+   Matched on the file name alone, because a translated page reaches its own
+   shots as ../img/<language>/phone-…, which "img/phone-" never matched: those
+   took the desktop shape above and were stretched. */
+img[src*="/phone-"] {
   display: inline-block;
   vertical-align: top;
   width: min(47%, 280px);
