@@ -134,7 +134,7 @@
 
 <p>After each page, success or failure, the app clears the web engine's cookies, stored data and cache. A site that you did not sign in to keeps nothing from one page to the next. On Linux the renderer is a separate process that uses a new, empty temporary folder for each page. The renderer never loads addresses on your local network.</p>
 
-<p><strong>YouTube transcripts (Linux).</strong> When YouTube refuses to send a video's transcript to the app, the app opens the video's page on YouTube in the hidden page renderer, one video at a time, and keeps the transcript that the page's own player gets. After a refusal, the app goes to the page first for the next hour. YouTube sees the page address, which names the video, and a page load with its scripts, the player and its advertising included, as in a browser. The renderer sends no cookies for this, not even those of a signed-in account, so YouTube does not see your account.</p>
+<p><strong>YouTube transcripts (Linux).</strong> When YouTube refuses to send a video's transcript to the app, the app opens the video's page on YouTube in the hidden page renderer and keeps the transcript that the page's own player gets. For the next videos, the app keeps that one page open and tells its player to switch to each video, one video at a time. The page closes after 5 minutes with no video to get, or when the renderer is needed for another page; until then it keeps its cookies and stored data, which are deleted when it closes. If the open page gives nothing for a video, the app opens a new page for that video. After a refusal, the app goes to the page first for the next hour. YouTube sees the page address, which names the first video, each video the player switches to, and the page's scripts, the player and its advertising included, as in a browser. The renderer sends no cookies for this, not even those of a signed-in account, so YouTube does not see your account.</p>
 
 <h3 id="site-sign-ins-premium">Site sign-ins (Premium)</h3>
 
@@ -365,7 +365,7 @@
   <a href="privacy.html">Privacy</a> ·
   <a href="eula.html">Licence</a> ·
   <a href="terms.html">Terms</a></p>
-  <p>Describes SummaReader 0.112.0, published 16 October 2026.</p>
+  <p>Describes SummaReader 0.113.0, published 16 October 2026.</p>
 </footer>
 
 </main>
