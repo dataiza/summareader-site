@@ -63,12 +63,16 @@
 <tr><td>A página inicial de um site</td><td>Um feed, se a página anunciar um</td></tr>
 <tr><td>O endereço de um canal ou vídeo do YouTube</td><td>Esse canal</td></tr>
 <tr><td>Uma conta do Mastodon (<code>@nome@servidor</code>)</td><td>As publicações dessa conta</td></tr>
+<tr><td>Um perfil do Nostr (<code>npub1…</code> ou <code>nprofile1…</code>)</td><td>As notas e os artigos desse autor</td></tr>
+<tr><td>Um canal público do Telegram (<code>t.me/nome</code>)</td><td>As publicações desse canal</td></tr>
 <tr><td>Qualquer outra página</td><td>A própria página, guardada uma vez</td></tr>
 </tbody></table></div>
 
-<p>O Nostr é o único que ainda não está pronto: o leitor de eventos existe, o transporte por relays não, por isso um <code>npub…</code> é recusado em vez de ficar seguido a meio.</p>
+<p>Um autor do Nostr é lido a partir dos relays onde publica. Cada publicação é verificada com a assinatura do autor. Um canal do Telegram tem de ser público: a aplicação lê a sua página web em <code>t.me/s/nome</code>. Um canal privado ou um grupo é recusado. Um <code>@nome</code> sozinho é uma conta do Mastodon, não um canal do Telegram.</p>
 
 <p>Quando uma página também anuncia um feed, a caixa de diálogo oferece os dois: o feed continua a trazer artigos, a página é guardada uma vez e mais nada.</p>
+
+<p>Um feed de podcast segue-se como qualquer outro feed. Quando um episódio aponta para uma transcrição, o SummaReader lê e resume a transcrição em vez da página do episódio.</p>
 
 <h2 id="importing-what-you-already-follow">Importar o que já segue</h2>
 
@@ -90,7 +94,7 @@
   <a href="../privacy.html">Privacidade</a> ·
   <a href="../eula.html">Licença</a> ·
   <a href="../terms.html">Termos</a></p>
-  <p>Descreve o SummaReader 0.117.0, publicado a 17 de outubro de 2026.</p>
+  <p>Descreve o SummaReader 0.118.0, publicado a 17 de outubro de 2026.</p>
 </footer>
 
 </main>

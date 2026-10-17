@@ -63,12 +63,16 @@
 <tr><td>Die Startseite einer Website</td><td>Ein Feed, wenn die Seite einen anbietet</td></tr>
 <tr><td>Die Adresse eines YouTube-Kanals oder -Videos</td><td>Dieser Kanal</td></tr>
 <tr><td>Ein Mastodon-Konto (<code>@name@server</code>)</td><td>Die Beiträge dieses Kontos</td></tr>
+<tr><td>Ein Nostr-Profil (<code>npub1…</code> oder <code>nprofile1…</code>)</td><td>Die Notizen und Artikel dieses Autors</td></tr>
+<tr><td>Ein öffentlicher Telegram-Kanal (<code>t.me/name</code>)</td><td>Die Beiträge dieses Kanals</td></tr>
 <tr><td>Jede andere Seite</td><td>Die Seite selbst, einmal aufbewahrt</td></tr>
 </tbody></table></div>
 
-<p>Nur Nostr ist noch nicht fertig: Der Parser für Ereignisse existiert, die Anbindung an Relays nicht. Deshalb wird ein <code>npub…</code> abgelehnt statt nur halb verfolgt.</p>
+<p>Ein Nostr-Autor wird von den Relays gelesen, auf denen er veröffentlicht. Jeder Beitrag wird gegen die Signatur des Autors geprüft. Ein Telegram-Kanal muss öffentlich sein: Die App liest seine Webseite unter <code>t.me/s/name</code>. Ein privater Kanal oder eine Gruppe wird abgelehnt. Ein bloßes <code>@name</code> ist ein Mastodon-Konto, kein Telegram-Kanal.</p>
 
 <p>Wenn eine Seite auch einen Feed anbietet, bietet der Dialog beides an: Der Feed liefert weiter, die Seite selbst wird einmal aufbewahrt und sonst nichts.</p>
+
+<p>Ein Podcast-Feed wird wie jeder andere Feed verfolgt. Verweist eine Folge auf ein Transkript, liest und fasst SummaReader das Transkript statt der Seite der Folge zusammen.</p>
 
 <h2 id="importing-what-you-already-follow">Übernehmen, was Sie schon verfolgen</h2>
 
@@ -90,7 +94,7 @@
   <a href="../privacy.html">Datenschutz</a> ·
   <a href="../eula.html">Lizenz</a> ·
   <a href="../terms.html">Bedingungen</a></p>
-  <p>Beschreibt SummaReader 0.117.0, veröffentlicht am 17. Oktober 2026.</p>
+  <p>Beschreibt SummaReader 0.118.0, veröffentlicht am 17. Oktober 2026.</p>
 </footer>
 
 </main>

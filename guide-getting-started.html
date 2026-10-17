@@ -63,12 +63,16 @@
 <tr><td>A site's home page</td><td>A feed, if the page advertises one</td></tr>
 <tr><td>A YouTube channel or video address</td><td>That channel</td></tr>
 <tr><td>A Mastodon account (<code>@name@server</code>)</td><td>That account's posts</td></tr>
+<tr><td>A Nostr profile (<code>npub1…</code> or <code>nprofile1…</code>)</td><td>That author's notes and articles</td></tr>
+<tr><td>A public Telegram channel (<code>t.me/name</code>)</td><td>That channel's posts</td></tr>
 <tr><td>Any other page</td><td>The page itself, kept once</td></tr>
 </tbody></table></div>
 
-<p>Nostr is the one that is not ready: the event parser exists, the relay transport does not, so an <code>npub…</code> is refused rather than half-followed.</p>
+<p>A Nostr author is read from the relays that the author writes to. Each post is checked against the author's signature. A Telegram channel must be public: the app reads its web page at <code>t.me/s/name</code>. A private channel or a group is refused. A bare <code>@name</code> is a Mastodon account, not a Telegram channel.</p>
 
 <p>When a page also advertises a feed, the dialog offers both: the feed keeps delivering, the page itself is kept once and nothing more.</p>
+
+<p>A podcast feed is followed like any other feed. When an episode links a transcript, SummaReader reads and summarizes the transcript instead of the episode's page.</p>
 
 <h2 id="importing-what-you-already-follow">Importing what you already follow</h2>
 
@@ -90,7 +94,7 @@
   <a href="privacy.html">Privacy</a> ·
   <a href="eula.html">Licence</a> ·
   <a href="terms.html">Terms</a></p>
-  <p>Describes SummaReader 0.117.0, published 17 October 2026.</p>
+  <p>Describes SummaReader 0.118.0, published 17 October 2026.</p>
 </footer>
 
 </main>

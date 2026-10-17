@@ -63,12 +63,16 @@
 <tr><td>Domovskú stránku webu</td><td>Kanál, ak ho stránka ponúka</td></tr>
 <tr><td>Adresu kanála alebo videa na YouTube</td><td>Ten kanál</td></tr>
 <tr><td>Účet na Mastodone (<code>@meno@server</code>)</td><td>Príspevky toho účtu</td></tr>
+<tr><td>Profil na Nostri (<code>npub1…</code> alebo <code>nprofile1…</code>)</td><td>Poznámky a články toho autora</td></tr>
+<tr><td>Verejný kanál na Telegrame (<code>t.me/meno</code>)</td><td>Príspevky toho kanála</td></tr>
 <tr><td>Akúkoľvek inú stránku</td><td>Samotnú stránku, uloženú raz</td></tr>
 </tbody></table></div>
 
-<p>Jediné, čo ešte nie je pripravené, je Nostr: spracovanie udalostí existuje, prenos cez relé nie, preto aplikácia <code>npub…</code> odmietne, namiesto toho, aby ho sledovala len napoly.</p>
+<p>Autora na Nostri aplikácia číta z relé, na ktoré publikuje. Každý príspevok overí podľa podpisu autora. Kanál na Telegrame musí byť verejný: aplikácia číta jeho webovú stránku <code>t.me/s/meno</code>. Súkromný kanál alebo skupinu odmietne. Samotné <code>@meno</code> je účet na Mastodone, nie kanál na Telegrame.</p>
 
 <p>Keď stránka ponúka aj kanál, okno ponúkne oboje: kanál bude priebežne doručovať, samotná stránka sa uloží raz a nič viac.</p>
+
+<p>Podcastový kanál sa sleduje ako každý iný kanál. Keď epizóda odkazuje na prepis, SummaReader načíta a zhrnie prepis namiesto stránky epizódy.</p>
 
 <h2 id="importing-what-you-already-follow">Import toho, čo už sledujete</h2>
 
@@ -90,7 +94,7 @@
   <a href="../privacy.html">Súkromie</a> ·
   <a href="../eula.html">Licencia</a> ·
   <a href="../terms.html">Podmienky</a></p>
-  <p>Opisuje SummaReader 0.117.0, vydané 17. októbra 2026.</p>
+  <p>Opisuje SummaReader 0.118.0, vydané 17. októbra 2026.</p>
 </footer>
 
 </main>
