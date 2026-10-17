@@ -70,6 +70,8 @@
 
 <p>A Nostr author is read from the relays that the author writes to. Each post is checked against the author's signature. A Telegram channel must be public: the app reads its web page at <code>t.me/s/name</code>. A private channel or a group is refused. A bare <code>@name</code> is a Mastodon account, not a Telegram channel.</p>
 
+<p>To find an author's relays, the app first asks four built-in relays for the author's relay list and profile. It also reads posts from them when an author publishes no list. To use other relays, for example one that you run, change the list in <strong>Configuration › Basic › Fetching › Nostr relays</strong>. Each address must start with <code>wss://</code>. The section shows only when you follow a Nostr author.</p>
+
 <p>When a page also advertises a feed, the dialog offers both: the feed keeps delivering, the page itself is kept once and nothing more.</p>
 
 <p>A podcast feed is followed like any other feed. When an episode links a transcript, SummaReader reads and summarizes the transcript instead of the episode's page.</p>
@@ -94,7 +96,7 @@
   <a href="privacy.html">Privacy</a> ·
   <a href="eula.html">Licence</a> ·
   <a href="terms.html">Terms</a></p>
-  <p>Describes SummaReader 0.118.1, published 17 October 2026.</p>
+  <p>Describes SummaReader 0.119.0, published 18 October 2026.</p>
 </footer>
 
 </main>
