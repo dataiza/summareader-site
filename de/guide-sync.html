@@ -66,10 +66,31 @@
 
 <p>Was Sie auch wählen, eine getaktete Verbindung oder eine Akku-Regel hält ihn trotzdem zurück.</p>
 
+<h2 id="get-the-server">Den Server besorgen</h2>
+
+<p>Der Server ist ein eigenes Programm, kostenlos und quelloffen. Laden Sie ihn von seiner <a href="https://github.com/dataiza/summareader-sync-server/releases">Release-Seite</a> herunter:</p>
+
+<ul>
+<li><strong>SummaReader Sync</strong>, ein AppImage für Linux: ein Fenster, das den Server startet und seine Geräte zeigt.</li>
+<li>Die <strong>headless</strong>-Pakete für Linux, macOS und Windows: nur der Server, für einen Rechner, der immer läuft.</li>
+</ul>
+
+<p>Betreiben Sie ihn auf einem Rechner, den alle Ihre Geräte erreichen, zum Beispiel einem, der zu Hause immer eingeschaltet ist. Beim Start gibt er seine Adresse und den Fingerabdruck seines Zertifikats aus. Sein <a href="https://github.com/dataiza/summareader-sync-server#readme">README</a> beschreibt auch Docker und einen systemd-Dienst.</p>
+
+<h2 id="connecting-the-first-device">Das erste Gerät verbinden</h2>
+
+<ol>
+<li>Führen Sie auf dem Server <code>summareader-sync first-device &quot;My library&quot; &quot;Desktop&quot;</code> aus oder drücken Sie im Fenster von SummaReader Sync auf <strong>Pair a device</strong>. Er zeigt ein Geräte-Token einmal an und kann es nicht noch einmal zeigen.</li>
+<li>Öffnen Sie <strong>Konfiguration › Erweitert › Sync › Sync</strong> und schalten Sie <strong>Meine Geräte im Gleichschritt halten</strong> ein.</li>
+<li>Tragen Sie die <strong>Serveradresse</strong> ein, die mit <code>https://</code> beginnt. Für einen Server im selben Netz drücken Sie stattdessen <strong>Im eigenen Netz finden</strong>.</li>
+<li>Fügen Sie das Token in <strong>Geräte-Token</strong> ein.</li>
+<li>Beim ersten Kontakt zeigt die App den Fingerabdruck des Serverzertifikats. Vergleichen Sie ihn mit dem, den der Server ausgegeben hat, und bestätigen Sie ihn nur, wenn beide gleich sind.</li>
+</ol>
+
 <h2 id="pairing-a-second-device">Ein zweites Gerät koppeln</h2>
 
 <ol>
-<li>Schalten Sie Sync ein und tragen Sie auf dem ersten Gerät eine Adresse ein.</li>
+<li>Verbinden Sie das erste Gerät wie oben beschrieben.</li>
 <li>Unter <strong>Konfiguration › Erweitert › Sync › Weiteres Gerät</strong> zeigt <strong>Code erzeugen</strong> einen QR-Code und denselben Code als Text.</li>
 <li>Scannen Sie ihn auf dem zweiten Gerät oder fügen Sie ihn unter <strong>Oder mit einem Code beitreten</strong> ein und drücken Sie dann <strong>Code verwenden</strong>. Ein Smartphone, ein Mac und ein Linux-Desktop mit Webcam können den Code scannen; unter Windows fügen Sie ihn ein.</li>
 </ol>

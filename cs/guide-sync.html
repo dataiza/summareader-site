@@ -66,10 +66,31 @@
 
 <p>Ať zvolíte cokoli, měřené připojení nebo pravidlo pro baterii ji stále může pozdržet.</p>
 
+<h2 id="get-the-server">Získání serveru</h2>
+
+<p>Server je samostatný program, zdarma a s otevřeným zdrojovým kódem. Stáhněte ho z jeho <a href="https://github.com/dataiza/summareader-sync-server/releases">stránky s vydáními</a>:</p>
+
+<ul>
+<li><strong>SummaReader Sync</strong>, AppImage pro Linux: okno, které server spouští a ukazuje jeho zařízení.</li>
+<li>Balíčky <strong>headless</strong> pro Linux, macOS a Windows: jen server, pro počítač, který stále běží.</li>
+</ul>
+
+<p>Provozujte ho na počítači, na který dosáhnou všechna vaše zařízení, například na tom, který je doma stále zapnutý. Při spuštění vypíše svou adresu a otisk svého certifikátu. Jeho <a href="https://github.com/dataiza/summareader-sync-server#readme">README</a> popisuje i Docker a službu systemd.</p>
+
+<h2 id="connecting-the-first-device">Připojení prvního zařízení</h2>
+
+<ol>
+<li>Na serveru spusťte <code>summareader-sync first-device &quot;My library&quot; &quot;Desktop&quot;</code>, nebo v okně SummaReader Sync stiskněte <strong>Pair a device</strong>. Token zařízení ukáže jednou a znovu ho ukázat nemůže.</li>
+<li>Otevřete <strong>Nastavení › Pokročilé › Synchronizace › Synchronizace</strong> a zapněte <strong>Držet moje zařízení v souladu</strong>.</li>
+<li>Vyplňte <strong>Adresa serveru</strong>, která začíná <code>https://</code>. Pro server ve stejné síti místo toho stiskněte <strong>Najít ho v mé síti</strong>.</li>
+<li>Vložte token do pole <strong>Token zařízení</strong>.</li>
+<li>Při prvním spojení aplikace ukáže otisk certifikátu serveru. Porovnejte ho s tím, který vypsal server, a přijměte ho, jen když jsou stejné.</li>
+</ol>
+
 <h2 id="pairing-a-second-device">Spárování druhého zařízení</h2>
 
 <ol>
-<li>V prvním zařízení zapněte synchronizaci a nastavte adresu.</li>
+<li>Připojte první zařízení podle postupu výše.</li>
 <li>V <strong>Nastavení › Pokročilé › Synchronizace › Další zařízení</strong> stiskněte <strong>Vytvořit kód</strong>. Ukáže se QR kód a tentýž kód jako text.</li>
 <li>Ve druhém zařízení ho naskenujte nebo vložte pod <strong>Nebo se připojit pomocí kódu</strong>, pak stiskněte <strong>Použít kód</strong>. Kód umí naskenovat telefon, Mac a linuxový počítač s webkamerou; ve Windows ho vložte.</li>
 </ol>

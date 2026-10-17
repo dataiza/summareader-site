@@ -66,10 +66,31 @@
 
 <p>Whichever you pick, a metered connection or a battery rule still holds it back.</p>
 
+<h2 id="get-the-server">Get the server</h2>
+
+<p>The server is a separate program, free and open source. Download it from its <a href="https://github.com/dataiza/summareader-sync-server/releases">releases page</a>:</p>
+
+<ul>
+<li><strong>SummaReader Sync</strong>, an AppImage for Linux: a window that starts the server and shows its devices.</li>
+<li>The <strong>headless</strong> bundles for Linux, macOS and Windows: the server alone, for a machine that stays on.</li>
+</ul>
+
+<p>Run it on a computer that all your devices can reach, for example one at home that is always on. When it starts, it prints its address and its certificate fingerprint. Its <a href="https://github.com/dataiza/summareader-sync-server#readme">README</a> also covers Docker and a systemd service.</p>
+
+<h2 id="connecting-the-first-device">Connecting the first device</h2>
+
+<ol>
+<li>On the server, run <code>summareader-sync first-device &quot;My library&quot; &quot;Desktop&quot;</code>, or press <strong>Pair a device</strong> in the SummaReader Sync window. It shows a device token once, and cannot show it again.</li>
+<li>Open <strong>Configuration › Advanced › Sync › Sync</strong> and turn on <strong>Keep my devices in step</strong>.</li>
+<li>Fill in <strong>Server address</strong>, which starts with <code>https://</code>. For a server on the same network, press <strong>Find it on my network</strong> instead.</li>
+<li>Paste the token into <strong>Device token</strong>.</li>
+<li>On first contact, the app shows the server's certificate fingerprint. Compare it with the one the server printed, and accept it only if they are the same.</li>
+</ol>
+
 <h2 id="pairing-a-second-device">Pairing a second device</h2>
 
 <ol>
-<li>Turn sync on and set an address on the first device.</li>
+<li>Connect the first device, as above.</li>
 <li>In <strong>Configuration › Advanced › Sync › Another device</strong>, <strong>Make a code</strong> shows a QR code and the same code as text.</li>
 <li>On the second device, scan it or paste it below <strong>Or join from a code</strong>, then press <strong>Use the code</strong>. A phone, a Mac and a Linux desktop with a webcam can scan the code; on Windows, paste it.</li>
 </ol>

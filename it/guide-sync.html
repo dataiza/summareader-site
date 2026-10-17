@@ -66,10 +66,31 @@
 
 <p>Qualunque scelta tu faccia, una connessione a consumo o una regola sulla batteria la trattiene comunque.</p>
 
+<h2 id="get-the-server">Procurarsi il server</h2>
+
+<p>Il server è un programma a parte, gratuito e open source. Scaricalo dalla sua <a href="https://github.com/dataiza/summareader-sync-server/releases">pagina delle versioni</a>:</p>
+
+<ul>
+<li><strong>SummaReader Sync</strong>, un AppImage per Linux: una finestra che avvia il server e mostra i suoi dispositivi.</li>
+<li>I pacchetti <strong>headless</strong> per Linux, macOS e Windows: solo il server, per un computer sempre acceso.</li>
+</ul>
+
+<p>Eseguilo su un computer che tutti i tuoi dispositivi possono raggiungere, per esempio uno sempre acceso a casa. All'avvio stampa il suo indirizzo e l'impronta del suo certificato. Il suo <a href="https://github.com/dataiza/summareader-sync-server#readme">README</a> spiega anche Docker e un servizio systemd.</p>
+
+<h2 id="connecting-the-first-device">Collegare il primo dispositivo</h2>
+
+<ol>
+<li>Sul server, esegui <code>summareader-sync first-device &quot;My library&quot; &quot;Desktop&quot;</code> oppure premi <strong>Pair a device</strong> nella finestra di SummaReader Sync. Mostra un token del dispositivo una sola volta e non può mostrarlo di nuovo.</li>
+<li>Apri <strong>Configurazione › Avanzate › Sincronizzazione › Sincronizzazione</strong> e attiva <strong>Tieni allineati i miei dispositivi</strong>.</li>
+<li>Compila <strong>Indirizzo del server</strong>, che inizia con <code>https://</code>. Per un server nella stessa rete, premi invece <strong>Trovalo nella mia rete</strong>.</li>
+<li>Incolla il token in <strong>Token del dispositivo</strong>.</li>
+<li>Al primo contatto, l'app mostra l'impronta del certificato del server. Confrontala con quella stampata dal server e accettala solo se sono uguali.</li>
+</ol>
+
 <h2 id="pairing-a-second-device">Abbinare un secondo dispositivo</h2>
 
 <ol>
-<li>Attiva la sincronizzazione e imposta un indirizzo sul primo dispositivo.</li>
+<li>Collega il primo dispositivo come descritto sopra.</li>
 <li>In <strong>Configurazione › Avanzate › Sincronizzazione › Un altro dispositivo</strong>, <strong>Crea un codice</strong> mostra un codice QR e lo stesso codice come testo.</li>
 <li>Sul secondo dispositivo, scansionalo o incollalo sotto <strong>Oppure unisciti con un codice</strong>, poi premi <strong>Usa il codice</strong>. Un telefono, un Mac e un computer Linux con webcam possono scansionare il codice; su Windows, incollalo.</li>
 </ol>
