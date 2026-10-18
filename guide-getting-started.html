@@ -59,7 +59,7 @@
 <div class="scroll"><table>
 <thead><tr><th>You paste</th><th>It becomes</th></tr></thead>
 <tbody>
-<tr><td>A feed address (<code>…/feed.xml</code>, <code>…/rss</code>)</td><td>A feed</td></tr>
+<tr><td>A feed address (<code>…/feed.xml</code>, <code>…/rss</code>, <code>feeds.…</code>)</td><td>A feed</td></tr>
 <tr><td>A site's home page</td><td>A feed, if the page advertises one</td></tr>
 <tr><td>A YouTube channel or video address</td><td>That channel</td></tr>
 <tr><td>A Mastodon account (<code>@name@server</code>)</td><td>That account's posts</td></tr>
@@ -72,7 +72,7 @@
 
 <p>To find an author's relays, the app first asks four built-in relays for the author's relay list and profile. It also reads posts from them when an author publishes no list. To use other relays, for example one that you run, change the list in <strong>Configuration › Basic › Fetching › Nostr relays</strong>. Each address must start with <code>wss://</code>. The section shows only when you follow a Nostr author.</p>
 
-<p>When a page also advertises a feed, the dialog offers both: the feed keeps delivering, the page itself is kept once and nothing more.</p>
+<p>When a page also advertises a feed, the dialog offers both: the feed keeps delivering, the page itself is kept once and nothing more. A shared or pasted address that turns out to be a feed itself is followed, not kept.</p>
 
 <p>A podcast feed is followed like any other feed. When an episode links a transcript, SummaReader reads and summarizes the transcript instead of the episode's page.</p>
 
@@ -96,7 +96,7 @@
   <a href="privacy.html">Privacy</a> ·
   <a href="eula.html">Licence</a> ·
   <a href="terms.html">Terms</a></p>
-  <p>Describes SummaReader 0.119.3, published 18 October 2026.</p>
+  <p>Describes SummaReader 0.120.0, published 18 October 2026.</p>
 </footer>
 
 </main>
