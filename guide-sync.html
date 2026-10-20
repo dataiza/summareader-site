@@ -105,7 +105,7 @@
 
 <p>Read state, highlights and the articles themselves travel automatically. Their <em>words and pictures</em> are the bulk, and by default they stay behind a pointer: sync tells this device that a copy exists, and it is fetched when you open the article.</p>
 
-<p><strong>Configuration › Advanced › Sync › Sync › Keep everything on this device</strong> changes that — each article's words and pictures are downloaded as they arrive. It is a setting per device rather than per library: worth it on a machine you read on offline, a lot of data on a phone for articles you will not open. Turning it on starts fetching whatever is already outstanding, a few seconds at a time, so a large library catches up over several syncs rather than in one long wait.</p>
+<p><strong>Configuration › Advanced › Sync › Sync › Keep everything on this device</strong> changes that — each article's words and pictures are downloaded as they arrive. It is a setting per device rather than per library: worth it on a machine you read on offline, a lot of data on a phone for articles you will not open. Each sync spends at most the time set in <strong>Spend at most</strong> on this, words first and then pictures. While the app is open, the download then continues in the background until nothing is left, so an article you open later already has its picture. It stops when the app goes to the background and continues at the next sync.</p>
 
 <p class="muted small"><a href="guide-managing-sources.html">← Managing sources</a> · <a href="guide.html">Contents</a> · <a href="guide-keyboard.html">Keyboard →</a></p>
 
@@ -117,7 +117,7 @@
   <a href="privacy.html">Privacy</a> ·
   <a href="eula.html">Licence</a> ·
   <a href="terms.html">Terms</a></p>
-  <p>Describes SummaReader 0.120.1, published 18 October 2026.</p>
+  <p>Describes SummaReader 0.121.0, published 20 October 2026.</p>
 </footer>
 
 </main>
