@@ -56,13 +56,15 @@
 
 <h2 id="when-it-runs">When it runs</h2>
 
-<p><strong>Configuration › Advanced › Sync › Sync › How often</strong> offers a clock — every 15 minutes through to once a day — and moments instead:</p>
+<p><strong>Configuration › Advanced › Sync › When to sync › How often</strong> offers a clock — every 15 minutes through to once a day — and moments instead:</p>
 
 <ul>
 <li><strong>After a check</strong> — as soon as every source has been fetched, before anything is summarized. On a local model summarizing can take twenty minutes, and the articles are ready long before that.</li>
 <li><strong>After summarizing</strong> — once the whole check is finished, so one sync carries the articles and their summaries together.</li>
 <li><strong>After each change</strong> — shortly after you read, save or tag something.</li>
 </ul>
+
+<p>While the app is on screen, <strong>Configuration › Advanced › Sync › When to sync › Sync each change while the app is open</strong> sends each change within a few seconds, whatever <strong>How often</strong> says; the clock then only applies in the background. It is on unless you turn it off, and <strong>Only when I ask</strong> still means only when you ask. Coming back to the app syncs once, on every schedule but <strong>Only when I ask</strong>. Changes from your other devices arrive within seconds while the app is open, whatever the schedule.</p>
 
 <p>Whichever you pick, a metered connection or a battery rule still holds it back.</p>
 
@@ -82,7 +84,7 @@
 <ol>
 <li>On the server, run <code>summareader-sync first-device &quot;My library&quot; &quot;Desktop&quot;</code>, or press <strong>Pair a device</strong> in the SummaReader Sync window. It shows a device token once, and cannot show it again.</li>
 <li>Open <strong>Configuration › Advanced › Sync › Sync</strong> and turn on <strong>Keep my devices in step</strong>.</li>
-<li>Fill in <strong>Server address</strong>, which starts with <code>https://</code>. For a server on the same network, press <strong>Find it on my network</strong> instead.</li>
+<li>Fill in <strong>Server address</strong>, which starts with <code>https://</code>. For a server on the same network, press <strong>Find the server on this network</strong> instead.</li>
 <li>Paste the token into <strong>Device token</strong>.</li>
 <li>On first contact, the app shows the server's certificate fingerprint. Compare it with the one the server printed, and accept it only if they are the same.</li>
 </ol>
@@ -92,7 +94,7 @@
 <ol>
 <li>Connect the first device, as above.</li>
 <li>In <strong>Configuration › Advanced › Sync › Another device</strong>, <strong>Make a code</strong> shows a QR code and the same code as text.</li>
-<li>On the second device, scan it or paste it below <strong>Or join from a code</strong>, then press <strong>Use the code</strong>. A phone, a Mac and a Linux desktop with a webcam can scan the code; on Windows, paste it.</li>
+<li>On the second device, scan it or paste it below <strong>Join with a code</strong>, then press <strong>Use the code</strong>. A phone, a Mac and a Linux desktop with a webcam can scan the code; on Windows, paste it.</li>
 </ol>
 
 <p>The first sync to a fresh server asks before uploading — a server that has never seen your library is a decision, not a detail.</p>
@@ -105,7 +107,7 @@
 
 <p>Read state, highlights and the articles themselves travel automatically. Their <em>words and pictures</em> are the bulk, and by default they stay behind a pointer: sync tells this device that a copy exists, and it is fetched when you open the article.</p>
 
-<p><strong>Configuration › Advanced › Sync › Sync › Keep everything on this device</strong> changes that — each article's words and pictures are downloaded as they arrive. It is a setting per device rather than per library: worth it on a machine you read on offline, a lot of data on a phone for articles you will not open. Each sync spends at most the time set in <strong>Spend at most</strong> on this, words first and then pictures. While the app is open, the download then continues in the background until nothing is left, so an article you open later already has its picture. It stops when the app goes to the background and continues at the next sync.</p>
+<p><strong>Configuration › Advanced › Sync › Sync › Keep everything on this device</strong> changes that — each article's words and pictures are downloaded as they arrive. It is a setting per device rather than per library: worth it on a machine you read on offline, a lot of data on a phone for articles you will not open. Each sync spends at most the time set in <strong>Maximum time</strong> on this, words first and then pictures. While the app is open, the download then continues in the background until nothing is left, so an article you open later already has its picture. It stops when the app goes to the background and continues at the next sync.</p>
 
 <p class="muted small"><a href="guide-managing-sources.html">← Managing sources</a> · <a href="guide.html">Contents</a> · <a href="guide-keyboard.html">Keyboard →</a></p>
 
@@ -117,7 +119,7 @@
   <a href="privacy.html">Privacy</a> ·
   <a href="eula.html">Licence</a> ·
   <a href="terms.html">Terms</a></p>
-  <p>Describes SummaReader 0.122.0, published 21 October 2026.</p>
+  <p>Describes SummaReader 0.123.0, published 21 October 2026.</p>
 </footer>
 
 </main>

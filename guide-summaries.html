@@ -65,7 +65,7 @@
 
 <p><strong>Configuration › Advanced › On-device model › Find a model.</strong> Search, open a result's <strong>Variants</strong> to see the files inside it — they differ in size, and size is what decides whether one fits — and download the one you want.</p>
 
-<p><strong>Configuration › Advanced › On-device model › This machine</strong> shows the processor, the GPU, how much memory the device and its GPU have and use, and how much SummaReader holds, read again every three seconds; <strong>Copy</strong> puts it on the clipboard. Which model and context window fit depends on these numbers.</p>
+<p><strong>Configuration › Advanced › On-device model › This device</strong> shows the processor, the GPU, how much memory the device and its GPU have and use, and how much SummaReader holds, read again every three seconds; <strong>Copy</strong> puts it on the clipboard. Which model and context window fit depends on these numbers.</p>
 
 <p>Downloaded models are listed in <strong>Configuration › Advanced › On-device model › Models on this device</strong>. <strong>Start</strong> loads one and makes it the model that answers — starting it is how it is chosen. Only one runs at a time, so starting another asks first: the model in memory has to go before the next arrives. The choice is remembered, and <strong>Load it when the app starts</strong> brings it back on its own. <strong>Delete</strong> takes the files and the row together. Each downloaded model's row also says about how much memory it needs with the context window and section size set below, and changes as you change them. Once a model has run, its row also says what it really used: for a GGUF model, which is loaded only while it summarizes, what the last summary took; for a model that stays loaded, what it holds now. A model downloaded from Hugging Face has a <strong>Hugging Face page</strong> button, which opens its page there: its description, its licence and who made it. When some models need another engine, the list shows only the models the active engine runs, with a line under it that says how many more there are; <strong>All</strong> above the list shows every model, and the app remembers your choice.</p>
 
@@ -73,7 +73,7 @@
 
 <p><strong>Configuration › Advanced › On-device model › Models on this device › Section size</strong> is the most text of an article one call to the model reads; a longer article is read in sections and the summaries of the sections are merged. It is 3,000 tokens until you change it. A larger section means fewer calls, and most articles then get one summary from one call, but a small model can write garbled or repeating text from a long section. The most it can be is what the context window leaves after the room for the reply, shown beside it. The merge at the end always uses the whole window. A change takes effect with the next summary.</p>
 
-<p>With <strong>Configuration › Advanced › Development › Experiments › Experimental engines</strong> on, <strong>Configuration › Advanced › On-device model › Engine</strong> sets the engine that runs the model. If a model runs when you pick a different engine, the app asks first: <strong>Stop and switch</strong> stops the model, then changes the engine. The model does not start again when you switch back. Turning <strong>Experimental engines</strong> off goes back to LiteRT-LM, and asks the same way. Apple Foundation Models is part of the system and needs no download. With it chosen, the downloaded models show <strong>Delete</strong> only, and the search is not there.</p>
+<p>With <strong>Configuration › Advanced › Development › Experiments › Experimental engines</strong> on, <strong>Configuration › Advanced › On-device model › Engine</strong> sets the engine that runs the model. If a model runs when you pick a different engine, the app asks first: <strong>Stop and change</strong> stops the model, then changes the engine. The model does not start again when you switch back. Turning <strong>Experimental engines</strong> off goes back to LiteRT-LM, and asks the same way. Apple Foundation Models is part of the system and needs no download. With it chosen, the downloaded models show <strong>Delete</strong> only, and the search is not there.</p>
 
 <p>Some models will not run at all here — a file can require graphics support this build has no way to ask for, and the app says so rather than retrying.</p>
 
@@ -85,14 +85,14 @@
 
 <ul>
 <li><strong>Per source.</strong> Each feed has a <strong>Summarize</strong> switch, off by default. Set it in the <a href="guide-managing-sources.html#managing-sources">feed panel</a> or in <strong>Configuration › Basic › Sources › Sources</strong>.</li>
-<li><strong>Per check.</strong> <strong>Configuration › Basic › Summaries › Summaries at once</strong> sets how many one check may do, and which end of the queue it works through.</li>
+<li><strong>Per check.</strong> <strong>Configuration › Basic › Summaries › Summaries at the same time</strong> sets how many one check may do, and which end of the queue it works through.</li>
 </ul>
 
 <div class="scroll"><table>
 <thead><tr><th>Setting</th><th>Meaning</th></tr></thead>
 <tbody>
 <tr><td><strong>Summaries per check</strong></td><td>Default 30. <strong>No limit</strong> does everything waiting</td></tr>
-<tr><td><strong>Work through</strong></td><td><strong>Newest first</strong> keeps up with arrivals. <strong>Oldest first</strong> clears a backlog</td></tr>
+<tr><td><strong>Order</strong></td><td><strong>Newest first</strong> keeps up with arrivals. <strong>Oldest first</strong> clears a backlog</td></tr>
 </tbody></table></div>
 
 <p>An article's own text is fetched during the check, not later — up to twenty per feed per round, newest first. An article that arrives without its words has usually failed rather than been deferred, and the reader says which.</p>
@@ -131,7 +131,7 @@
   <a href="privacy.html">Privacy</a> ·
   <a href="eula.html">Licence</a> ·
   <a href="terms.html">Terms</a></p>
-  <p>Describes SummaReader 0.122.0, published 21 October 2026.</p>
+  <p>Describes SummaReader 0.123.0, published 21 October 2026.</p>
 </footer>
 
 </main>
