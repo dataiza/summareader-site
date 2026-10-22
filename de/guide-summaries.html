@@ -73,6 +73,15 @@
 
 <p>Automatische Zusammenfassungen gibt es in Premium. Das Zusammenfassen läuft am Ende einer Prüfung auf neue Artikel. Einen eigenen Zeitplan gibt es nicht — wenn <strong>Konfiguration › Grundlegend › Abrufen › Wie oft nach Neuem suchen</strong> auf <em>Nur auf Anfrage</em> steht, wird nichts zusammengefasst, solange Sie nicht darum bitten.</p>
 
+<p>Auf einem Telefon läuft eine Prüfung auch, wenn die App geschlossen ist. Nach dieser Prüfung fasst die App auch im Hintergrund zusammen. Sie verwendet das Modell, das Sie gewählt haben, und dieselben Regeln wie bei geöffneter App: nur ungelesene Artikel aus Quellen mit eingeschaltetem <strong>Zusammenfassen</strong>, die Mindestlänge des Textes und die zwei Schalter unter <strong>Konfiguration › Grundlegend › Zusammenfassungen › Wo Zusammenfassungen laufen</strong> für das Laden und für nicht getaktete Netze. Das Telefon gibt einer Aufgabe im Hintergrund nur wenig Zeit. Bevor die Zeit endet, hält die App zwischen zwei Teilen eines Artikels an und behält die fertigen Teile. Der nächste Lauf im Hintergrund macht dort weiter. Ein Artikel, den die App nicht fertig gemacht hat, wird nicht als fehlgeschlagen markiert.</p>
+
+<ul>
+<li><strong>Android</strong> — die Zusammenfassungen laufen nach jeder Prüfung im Hintergrund, in der Zeit, die nach der Prüfung bleibt.</li>
+<li><strong>iPhone</strong> — die Prüfung im Hintergrund ist kurz und fasst nicht zusammen. Die Zusammenfassungen laufen in einer eigenen Aufgabe, zu einer Zeit, die iOS wählt, meist beim Laden. Auf einem iPhone fasst im Hintergrund nur ein entferntes LLM zusammen. Mit dem Modell auf dem iPhone warten die Zusammenfassungen, bis Sie die App öffnen.</li>
+</ul>
+
+<p>Ist Ihr LLM-Server in Ihrem Heimnetz, erreicht das Telefon ihn über mobile Daten nicht. Die App fasst dann nicht zusammen und versucht es beim nächsten Lauf im Hintergrund wieder.</p>
+
 <p>Zwei Dinge bestimmen, was eine Prüfung zusammenfasst:</p>
 
 <ul>
@@ -123,7 +132,7 @@
   <a href="../privacy.html">Datenschutz</a> ·
   <a href="../eula.html">Lizenz</a> ·
   <a href="../terms.html">Bedingungen</a></p>
-  <p>Beschreibt SummaReader 0.124.0, veröffentlicht am 22. Oktober 2026.</p>
+  <p>Beschreibt SummaReader 0.125.0, veröffentlicht am 22. Oktober 2026.</p>
 </footer>
 
 </main>

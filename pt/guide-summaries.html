@@ -73,6 +73,15 @@
 
 <p>Os resumos automáticos fazem parte da Premium. Os resumos correm no fim de uma verificação de artigos novos. Não há um horário próprio — se <strong>Configuração › Básico › Obtenção › Com que frequência procurar novidades</strong> estiver em <em>Só quando eu pedir</em>, nada é resumido a não ser que o peça.</p>
 
+<p>Num telemóvel, uma verificação também corre com a aplicação fechada. Depois dessa verificação, a aplicação também resume em segundo plano. Usa o modelo que escolheu e as mesmas regras que com a aplicação aberta: só artigos por ler de fontes com <strong>Resumir</strong> ligado, o comprimento mínimo do texto e os dois interruptores em <strong>Configuração › Básico › Resumos › Onde correm os resumos</strong> para o carregamento e para as ligações sem tarifação. O telemóvel dá pouco tempo a uma tarefa em segundo plano. Antes de o tempo acabar, a aplicação para entre duas partes de um artigo e guarda as partes feitas. A execução seguinte em segundo plano continua a partir daí. Um artigo que a aplicação não acabou não fica marcado como falhado.</p>
+
+<ul>
+<li><strong>Android</strong> — os resumos correm depois de cada verificação em segundo plano, no tempo que sobra depois da verificação.</li>
+<li><strong>iPhone</strong> — a verificação em segundo plano é curta e não resume. Os resumos correm numa tarefa à parte, a uma hora que o iOS escolhe, normalmente durante o carregamento. Num iPhone, só um LLM remoto resume em segundo plano. Com o modelo no iPhone, os resumos esperam até abrir a aplicação.</li>
+</ul>
+
+<p>Se o seu servidor LLM estiver na rede de casa, o telemóvel não consegue ligar-se a ele com dados móveis. A aplicação então não resume e tenta de novo na execução seguinte em segundo plano.</p>
+
 <p>Duas coisas decidem o que uma verificação resume:</p>
 
 <ul>
@@ -123,7 +132,7 @@
   <a href="../privacy.html">Privacidade</a> ·
   <a href="../eula.html">Licença</a> ·
   <a href="../terms.html">Termos</a></p>
-  <p>Descreve o SummaReader 0.124.0, publicado a 22 de outubro de 2026.</p>
+  <p>Descreve o SummaReader 0.125.0, publicado a 22 de outubro de 2026.</p>
 </footer>
 
 </main>

@@ -73,6 +73,15 @@
 
 <p>Automatická shrnutí jsou v Premium. Shrnování běží na konci kontroly nových článků. Samostatný plán nemá — pokud je <strong>Nastavení › Základní › Stahování › Jak často kontrolovat</strong> nastaveno na <em>Jen když o to požádám</em>, nic se neshrne, dokud o to nepožádáte.</p>
 
+<p>Na telefonu běží kontrola i tehdy, když je aplikace zavřená. Po této kontrole aplikace shrnuje i na pozadí. Používá model, který jste vybrali, a stejná pravidla jako s otevřenou aplikací: jen nepřečtené články ze zdrojů se zapnutým <strong>Shrnout</strong>, minimální délku textu a dva přepínače pod <strong>Nastavení › Základní › Shrnutí › Shrnovat pomocí</strong> pro nabíjení a pro neomezená připojení. Telefon dává úloze na pozadí jen krátký čas. Před jeho koncem aplikace skončí mezi dvěma částmi článku a hotové části si ponechá. Další běh na pozadí pokračuje od tohoto místa. Článek, který aplikace nedokončila, se neoznačí jako neúspěšný.</p>
+
+<ul>
+<li><strong>Android</strong> — shrnutí běží po každé kontrole na pozadí, v čase, který po kontrole zbývá.</li>
+<li><strong>iPhone</strong> — kontrola na pozadí je krátká a neshrnuje. Shrnutí běží v samostatné úloze, v čase, který zvolí iOS, obvykle během nabíjení. Na iPhonu shrnuje na pozadí jen vzdálený LLM. S modelem v iPhonu shrnutí počkají, až aplikaci otevřete.</li>
+</ul>
+
+<p>Pokud je váš server LLM v domácí síti, telefon se k němu přes mobilní data nepřipojí. Aplikace pak neshrnuje a zkusí to znovu při dalším běhu na pozadí.</p>
+
 <p>O tom, co kontrola shrne, rozhodují dvě věci:</p>
 
 <ul>
@@ -123,7 +132,7 @@
   <a href="../privacy.html">Soukromí</a> ·
   <a href="../eula.html">Licence</a> ·
   <a href="../terms.html">Podmínky</a></p>
-  <p>Popisuje SummaReader 0.124.0, vydáno 22. října 2026.</p>
+  <p>Popisuje SummaReader 0.125.0, vydáno 22. října 2026.</p>
 </footer>
 
 </main>

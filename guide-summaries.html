@@ -81,6 +81,15 @@
 
 <p>Automatic summaries are in Premium. Summarizing runs at the end of a check for new articles. There is no separate schedule — if <strong>Configuration › Basic › Fetching › How often to check</strong> is set to <em>Only when I ask</em>, nothing is summarized unless you ask.</p>
 
+<p>On a phone, a check also runs when the app is closed. After that check, the app also summarizes in the background. It uses the model that you selected and the same rules as when the app is open: only unread articles from sources with <strong>Summarize</strong> on, the minimum text length, and the two switches under <strong>Configuration › Basic › Summaries › Summarize on</strong> for the charger and for unmetered connections. The phone gives a background task only a short time. Before the time ends, the app stops between two parts of an article and keeps the parts that are done. The next background run continues from there. An article that the app did not finish is not marked as failed.</p>
+
+<ul>
+<li><strong>Android</strong> — the summaries run after each background check, in the time that remains after the check.</li>
+<li><strong>iPhone</strong> — the background check is short and does not summarize. The summaries run in a separate task, at a time that iOS selects, usually while the phone charges. On an iPhone, only a remote LLM summarizes in the background. With the model on the iPhone, the summaries wait until you open the app.</li>
+</ul>
+
+<p>If your LLM server is on your home network, the phone cannot connect to it on mobile data. The app then does not summarize, and it tries again at the next background run.</p>
+
 <p>Two things decide what a check summarizes:</p>
 
 <ul>
@@ -131,7 +140,7 @@
   <a href="privacy.html">Privacy</a> ·
   <a href="eula.html">Licence</a> ·
   <a href="terms.html">Terms</a></p>
-  <p>Describes SummaReader 0.124.0, published 22 October 2026.</p>
+  <p>Describes SummaReader 0.125.0, published 22 October 2026.</p>
 </footer>
 
 </main>

@@ -73,6 +73,15 @@
 
 <p>I riassunti automatici sono in Premium. Il riassunto avviene alla fine di un controllo dei nuovi articoli. Non c’è una pianificazione separata: se <strong>Configurazione › Base › Scaricamento › Ogni quanto controllare</strong> è impostato su <em>Solo quando lo chiedo</em>, niente viene riassunto se non lo chiedi.</p>
 
+<p>Su un telefono un controllo avviene anche quando l’app è chiusa. Dopo quel controllo, l’app riassume anche in background. Usa il modello che hai scelto e le stesse regole di quando l’app è aperta: solo articoli non letti da fonti con <strong>Riassumi</strong> acceso, la lunghezza minima del testo e i due interruttori in <strong>Configurazione › Base › Riassunti › Dove girano i riassunti</strong> per la ricarica e per le connessioni non a consumo. Il telefono dà poco tempo a un’attività in background. Prima che il tempo finisca, l’app si ferma tra due parti di un articolo e tiene le parti finite. L’esecuzione successiva in background continua da lì. Un articolo che l’app non ha finito non è segnato come non riuscito.</p>
+
+<ul>
+<li><strong>Android</strong> — i riassunti avvengono dopo ogni controllo in background, nel tempo che resta dopo il controllo.</li>
+<li><strong>iPhone</strong> — il controllo in background è breve e non riassume. I riassunti avvengono in un’attività separata, in un momento che sceglie iOS, di solito mentre il telefono è in carica. Su un iPhone, solo un LLM remoto riassume in background. Con il modello sull’iPhone, i riassunti aspettano che tu apra l’app.</li>
+</ul>
+
+<p>Se il tuo server LLM è sulla rete di casa, il telefono non può collegarsi con i dati mobili. Allora l’app non riassume e riprova alla prossima esecuzione in background.</p>
+
 <p>Due cose decidono che cosa riassume un controllo:</p>
 
 <ul>
@@ -123,7 +132,7 @@
   <a href="../privacy.html">Privacy</a> ·
   <a href="../eula.html">Licenza</a> ·
   <a href="../terms.html">Termini</a></p>
-  <p>Descrive SummaReader 0.124.0, pubblicato il 22 ottobre 2026.</p>
+  <p>Descrive SummaReader 0.125.0, pubblicato il 22 ottobre 2026.</p>
 </footer>
 
 </main>

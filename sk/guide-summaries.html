@@ -73,6 +73,15 @@
 
 <p>Automatické zhrnutia sú v Premium. Zhŕňanie beží na konci kontroly nových článkov. Samostatný plán nemá — ak je <strong>Nastavenia › Základné › Sťahovanie › Ako často kontrolovať</strong> nastavené na <em>Iba keď o to požiadam</em>, nič sa nezhrnie, kým o to nepožiadate.</p>
 
+<p>Na telefóne beží kontrola aj vtedy, keď je aplikácia zatvorená. Po tejto kontrole aplikácia zhŕňa aj na pozadí. Používa model, ktorý ste vybrali, a rovnaké pravidlá ako s otvorenou aplikáciou: len neprečítané články zo zdrojov so zapnutým <strong>Zhrnúť</strong>, minimálnu dĺžku textu a dva prepínače pod <strong>Nastavenia › Základné › Zhrnutia › Zhrnutia vytvára</strong> pre nabíjanie a pre neobmedzené pripojenia. Telefón dáva úlohe na pozadí len krátky čas. Pred jeho koncom sa aplikácia zastaví medzi dvoma časťami článku a hotové časti si ponechá. Ďalší beh na pozadí pokračuje od tohto miesta. Článok, ktorý aplikácia nedokončila, sa neoznačí ako neúspešný.</p>
+
+<ul>
+<li><strong>Android</strong> — zhrnutia bežia po každej kontrole na pozadí, v čase, ktorý po kontrole zostáva.</li>
+<li><strong>iPhone</strong> — kontrola na pozadí je krátka a nezhŕňa. Zhrnutia bežia v samostatnej úlohe, v čase, ktorý zvolí iOS, zvyčajne počas nabíjania. Na iPhone zhŕňa na pozadí len vzdialený LLM. S modelom v iPhone zhrnutia počkajú, kým aplikáciu otvoríte.</li>
+</ul>
+
+<p>Ak je váš server LLM v domácej sieti, telefón sa k nemu cez mobilné dáta nepripojí. Aplikácia potom nezhŕňa a skúsi to znova pri ďalšom behu na pozadí.</p>
+
 <p>O tom, čo kontrola zhrnie, rozhodujú dve veci:</p>
 
 <ul>
@@ -123,7 +132,7 @@
   <a href="../privacy.html">Súkromie</a> ·
   <a href="../eula.html">Licencia</a> ·
   <a href="../terms.html">Podmienky</a></p>
-  <p>Opisuje SummaReader 0.124.0, vydané 22. októbra 2026.</p>
+  <p>Opisuje SummaReader 0.125.0, vydané 22. októbra 2026.</p>
 </footer>
 
 </main>
