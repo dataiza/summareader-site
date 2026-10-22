@@ -65,7 +65,15 @@
 
 <p><strong>Nastavenia › Pokročilé › Model v zariadení › Nájsť model.</strong> Vyhľadajte, otvorte pri výsledku <strong>Varianty</strong> a uvidíte súbory v ňom — líšia sa veľkosťou a práve veľkosť rozhoduje, či sa súbor zmestí — a stiahnite ten, ktorý chcete.</p>
 
-<p>Stiahnuté modely sú v <strong>Nastavenia › Pokročilé › Model v zariadení › Modely v tomto zariadení</strong>. <strong>Spustiť</strong> model načíta a urobí z neho model, ktorý odpovedá — spustením ho vyberiete. Naraz beží iba jeden, preto sa spustenie ďalšieho najprv opýta: model v pamäti musí odísť, kým príde ďalší. Výber si aplikácia pamätá a <strong>Načítať ho pri spustení aplikácie</strong> ho vráti sám. <strong>Odstrániť</strong> odstráni súbory aj riadok naraz.</p>
+<p><strong>Nastavenia › Pokročilé › Model v zariadení › Tento hardvér</strong> ukazuje procesor, GPU, koľko pamäte má a používa zariadenie a jeho GPU a koľko jej drží SummaReader, znova načítané každé tri sekundy; <strong>Kopírovať</strong> to vloží do schránky. Aký model a aké kontextové okno sa zmestia, závisí od týchto čísel.</p>
+
+<p>Stiahnuté modely sú v <strong>Nastavenia › Pokročilé › Model v zariadení › Modely v tomto zariadení</strong>. <strong>Spustiť</strong> model načíta a urobí z neho model, ktorý odpovedá — spustením ho vyberiete. Naraz beží iba jeden, preto sa spustenie ďalšieho najprv opýta: model v pamäti musí odísť, kým príde ďalší. Výber si aplikácia pamätá a <strong>Načítať ho pri spustení aplikácie</strong> ho vráti sám. <strong>Odstrániť</strong> odstráni súbory aj riadok naraz. Riadok každého stiahnutého modelu tiež hovorí, približne koľko pamäte potrebuje s kontextovým oknom a veľkosťou časti nastavenými nižšie, a mení sa, keď ich meníte. Keď model raz bežal, jeho riadok hovorí aj to, čo naozaj použil: pri modeli GGUF, ktorý je načítaný iba počas zhŕňania, koľko zabralo posledné zhrnutie; pri modeli, ktorý zostáva načítaný, koľko drží teraz. Model stiahnutý z Hugging Face má tlačidlo <strong>Stránka na Hugging Face</strong>, ktoré tam otvorí jeho stránku: jeho popis, licenciu a kto ho vytvoril. Keď niektoré modely potrebujú iný engine, zoznam ukazuje iba modely, ktoré spúšťa aktívny engine, s riadkom pod ním, ktorý hovorí, koľko ďalších ich je; <strong>Všetky</strong> nad zoznamom ukáže všetky modely a aplikácia si vašu voľbu pamätá.</p>
+
+<p><strong>Nastavenia › Pokročilé › Model v zariadení › Modely v tomto zariadení › Kontextové okno</strong> je, koľko textu model drží naraz, článok aj odpoveď spolu. Vedľa neho je najviac, čo vybraný model môže v tomto zariadení použiť: menšie z okna, na ktoré bol model trénovaný, a z toho, čo zostane z pamäte po samotnom modeli. Väčšie číslo, než je toto, dá modelu jeho maximum. Počítač s dostatkom pamäte môže použiť veľké okno; telefón zvyčajne nie. Zmena sa prejaví pri ďalšom načítaní modelu.</p>
+
+<p><strong>Nastavenia › Pokročilé › Model v zariadení › Modely v tomto zariadení › Veľkosť časti</strong> je najviac textu článku, ktorý prečíta jedno volanie modelu; dlhší článok sa číta po častiach a zhrnutia častí sa spoja. Kým to nezmeníte, je to 3 000 tokenov. Väčšia časť znamená menej volaní a väčšina článkov potom dostane jedno zhrnutie z jedného volania, ale malý model môže z dlhej časti napísať skomolený alebo opakujúci sa text. Najviac môže byť to, čo kontextové okno nechá po mieste na odpoveď; je to uvedené vedľa. Spojenie na konci vždy používa celé okno. Zmena sa prejaví pri ďalšom zhrnutí.</p>
+
+<p>Keď sú zapnuté <strong>Nastavenia › Pokročilé › Vývoj › Experimenty › Experimentálne enginy</strong>, <strong>Nastavenia › Pokročilé › Model v zariadení › Engine</strong> nastavuje engine, ktorý model spúšťa. Ak model beží, keď vyberiete iný engine, aplikácia sa najprv opýta: <strong>Zastaviť a prepnúť</strong> model zastaví a potom engine zmení. Keď prepnete späť, model sa znova nespustí. Keď vypnete <strong>Experimentálne enginy</strong>, aplikácia sa vráti k LiteRT-LM a opýta sa rovnako. Apple Foundation Models je súčasťou systému a netreba ho sťahovať. Keď je vybraný, stiahnuté modely ukazujú iba <strong>Odstrániť</strong> a vyhľadávanie tam nie je.</p>
 
 <p>Niektoré modely tu nepobežia vôbec — súbor môže vyžadovať grafickú podporu, o ktorú táto verzia nevie požiadať, a aplikácia to povie, namiesto toho, aby to skúšala znova.</p>
 
@@ -132,7 +140,7 @@
   <a href="../privacy.html">Súkromie</a> ·
   <a href="../eula.html">Licencia</a> ·
   <a href="../terms.html">Podmienky</a></p>
-  <p>Opisuje SummaReader 0.125.1, vydané 22. októbra 2026.</p>
+  <p>Opisuje SummaReader 0.125.2, vydané 22. októbra 2026.</p>
 </footer>
 
 </main>

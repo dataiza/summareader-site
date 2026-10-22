@@ -65,7 +65,15 @@
 
 <p><strong>Nastavení › Pokročilé › Model v zařízení › Najít model.</strong> Vyhledejte model, otevřete u výsledku <strong>Varianty</strong> a uvidíte soubory, které obsahuje — liší se velikostí a velikost rozhoduje o tom, zda se vejde — a stáhněte ten, který chcete.</p>
 
-<p>Stažené modely najdete v <strong>Nastavení › Pokročilé › Model v zařízení › Modely v tomto zařízení</strong>. <strong>Spustit</strong> model načte a udělá z něj model, který odpovídá — spuštěním ho vybíráte. Najednou běží jen jeden, takže spuštění jiného se nejdřív zeptá: model v paměti musí odejít, než přijde další. Volba se pamatuje a <strong>Načíst ho při spuštění aplikace</strong> ho načte znovu samo. <strong>Smazat</strong> odstraní soubory i řádek najednou.</p>
+<p><strong>Nastavení › Pokročilé › Model v zařízení › Tento hardware</strong> ukazuje procesor, GPU, kolik paměti má a používá zařízení a jeho GPU a kolik jí drží SummaReader, znovu načteno každé tři sekundy; <strong>Kopírovat</strong> to vloží do schránky. Jaký model a jaké kontextové okno se vejdou, závisí na těchto číslech.</p>
+
+<p>Stažené modely najdete v <strong>Nastavení › Pokročilé › Model v zařízení › Modely v tomto zařízení</strong>. <strong>Spustit</strong> model načte a udělá z něj model, který odpovídá — spuštěním ho vybíráte. Najednou běží jen jeden, takže spuštění jiného se nejdřív zeptá: model v paměti musí odejít, než přijde další. Volba se pamatuje a <strong>Načíst ho při spuštění aplikace</strong> ho načte znovu samo. <strong>Smazat</strong> odstraní soubory i řádek najednou. Řádek každého staženého modelu také říká, kolik paměti asi potřebuje s kontextovým oknem a velikostí části nastavenými níže, a mění se, když je měníte. Jakmile model jednou běžel, jeho řádek také říká, co skutečně použil: u modelu GGUF, který je načtený jen během shrnování, kolik zabralo poslední shrnutí; u modelu, který zůstává načtený, kolik drží teď. Model stažený z Hugging Face má tlačítko <strong>Stránka na Hugging Face</strong>, které tam otevře jeho stránku: jeho popis, licenci a kdo ho vytvořil. Když některé modely potřebují jiný engine, seznam ukazuje jen modely, které spouští aktivní engine, s řádkem pod ním, který říká, kolik dalších jich je; <strong>Všechny</strong> nad seznamem ukáže všechny modely a aplikace si vaši volbu pamatuje.</p>
+
+<p><strong>Nastavení › Pokročilé › Model v zařízení › Modely v tomto zařízení › Kontextové okno</strong> je, kolik textu model drží najednou, článek i odpověď dohromady. Vedle něj je nejvíc, co vybraný model může v tomto zařízení použít: menší z okna, pro které byl model natrénován, a z toho, co zbude z paměti po samotném modelu. Větší číslo než toto dá modelu jeho maximum. Počítač s dostatkem paměti může použít velké okno; telefon obvykle ne. Změna se projeví při příštím načtení modelu.</p>
+
+<p><strong>Nastavení › Pokročilé › Model v zařízení › Modely v tomto zařízení › Velikost části</strong> je nejvíc textu článku, které přečte jedno volání modelu; delší článek se čte po částech a shrnutí částí se spojí. Dokud to nezměníte, je to 3 000 tokenů. Větší část znamená méně volání a většina článků pak dostane jedno shrnutí z jednoho volání, ale malý model může z dlouhé části napsat zkomolený nebo opakující se text. Nejvíc může být to, co kontextové okno ponechá po místě pro odpověď; je to uvedeno vedle. Spojení na konci vždy používá celé okno. Změna se projeví při příštím shrnutí.</p>
+
+<p>Když jsou zapnuté <strong>Nastavení › Pokročilé › Vývoj › Experimenty › Experimentální enginy</strong>, <strong>Nastavení › Pokročilé › Model v zařízení › Engine</strong> nastavuje engine, který model spouští. Pokud model běží, když vyberete jiný engine, aplikace se nejdřív zeptá: <strong>Zastavit a přepnout</strong> model zastaví a pak engine změní. Když přepnete zpět, model se znovu nespustí. Když vypnete <strong>Experimentální enginy</strong>, aplikace se vrátí k LiteRT-LM a zeptá se stejně. Apple Foundation Models je součástí systému a nepotřebuje stahování. Když je vybraný, stažené modely ukazují jen <strong>Smazat</strong> a hledání tam není.</p>
 
 <p>Některé modely tady vůbec nepoběží — soubor může vyžadovat grafickou podporu, o kterou tato verze nemá jak požádat, a aplikace to řekne, místo aby to zkoušela znovu.</p>
 
@@ -132,7 +140,7 @@
   <a href="../privacy.html">Soukromí</a> ·
   <a href="../eula.html">Licence</a> ·
   <a href="../terms.html">Podmínky</a></p>
-  <p>Popisuje SummaReader 0.125.1, vydáno 22. října 2026.</p>
+  <p>Popisuje SummaReader 0.125.2, vydáno 22. října 2026.</p>
 </footer>
 
 </main>

@@ -65,7 +65,15 @@
 
 <p><strong>Configuração › Avançado › Modelo no dispositivo › Encontrar um modelo.</strong> Pesquise, abra as <strong>Variantes</strong> de um resultado para ver os ficheiros que tem — diferem no tamanho, e é o tamanho que decide se um cabe — e transfira o que quiser.</p>
 
-<p>Os modelos transferidos aparecem em <strong>Configuração › Avançado › Modelo no dispositivo › Modelos neste dispositivo</strong>. <strong>Iniciar</strong> carrega um e torna-o o modelo que responde — iniciá-lo é a forma de o escolher. Só corre um de cada vez, por isso iniciar outro pede confirmação: o modelo em memória tem de sair antes de o seguinte entrar. A escolha fica lembrada, e <strong>Carregá-lo ao iniciar a aplicação</strong> volta a carregá-lo sozinho. <strong>Eliminar</strong> apaga os ficheiros e a linha ao mesmo tempo.</p>
+<p><strong>Configuração › Avançado › Modelo no dispositivo › Este hardware</strong> mostra o processador, a GPU, quanta memória o dispositivo e a sua GPU têm e usam, e quanta o SummaReader ocupa, lido de novo a cada três segundos; <strong>Copiar</strong> coloca-o na área de transferência. Que modelo e que janela de contexto cabem depende destes números.</p>
+
+<p>Os modelos transferidos aparecem em <strong>Configuração › Avançado › Modelo no dispositivo › Modelos neste dispositivo</strong>. <strong>Iniciar</strong> carrega um e torna-o o modelo que responde — iniciá-lo é a forma de o escolher. Só corre um de cada vez, por isso iniciar outro pede confirmação: o modelo em memória tem de sair antes de o seguinte entrar. A escolha fica lembrada, e <strong>Carregá-lo ao iniciar a aplicação</strong> volta a carregá-lo sozinho. <strong>Eliminar</strong> apaga os ficheiros e a linha ao mesmo tempo. A linha de cada modelo transferido diz também quanta memória precisa, aproximadamente, com a janela de contexto e o tamanho da secção definidos abaixo, e muda quando os muda. Depois de um modelo correr, a sua linha diz também o que usou de facto: para um modelo GGUF, que só é carregado enquanto resume, o que o último resumo ocupou; para um modelo que fica carregado, o que ocupa agora. Um modelo transferido do Hugging Face tem um botão <strong>Página no Hugging Face</strong>, que abre lá a sua página: a descrição, a licença e quem o fez. Quando alguns modelos precisam de outro motor, a lista mostra só os modelos que o motor ativo corre, com uma linha por baixo que diz quantos mais há; <strong>Todos</strong> acima da lista mostra todos os modelos, e a aplicação lembra a sua escolha.</p>
+
+<p><strong>Configuração › Avançado › Modelo no dispositivo › Modelos neste dispositivo › Janela de contexto</strong> é quanto texto o modelo guarda de uma vez, o artigo e a resposta juntos. Ao lado está o máximo que o modelo escolhido pode usar neste dispositivo: o menor entre a janela para que o modelo foi treinado e o que sobra da memória depois do que o modelo ocupa. Um número maior do que esse dá ao modelo o seu máximo. Um computador com muita memória pode usar uma janela grande; um telemóvel normalmente não. Uma alteração tem efeito da próxima vez que o modelo é carregado.</p>
+
+<p><strong>Configuração › Avançado › Modelo no dispositivo › Modelos neste dispositivo › Tamanho da secção</strong> é o máximo de texto de um artigo que uma chamada ao modelo lê; um artigo mais longo é lido em secções e os resumos das secções são juntados. São 3000 tokens até o alterar. Uma secção maior significa menos chamadas, e a maioria dos artigos recebe então um resumo de uma só chamada, mas um modelo pequeno pode escrever texto incoerente ou repetitivo a partir de uma secção longa. O máximo que pode ser é o que a janela de contexto deixa depois do espaço para a resposta, mostrado ao lado. A junção final usa sempre a janela inteira. Uma alteração tem efeito no resumo seguinte.</p>
+
+<p>Com <strong>Configuração › Avançado › Desenvolvimento › Experiências › Motores experimentais</strong> ligado, <strong>Configuração › Avançado › Modelo no dispositivo › Motor</strong> define o motor que corre o modelo. Se um modelo estiver a correr quando escolhe outro motor, a aplicação pergunta primeiro: <strong>Parar e mudar</strong> para o modelo e depois muda o motor. O modelo não volta a iniciar quando volta atrás. Desligar <strong>Motores experimentais</strong> volta ao LiteRT-LM, e pergunta da mesma forma. O Apple Foundation Models faz parte do sistema e não precisa de transferência. Com ele escolhido, os modelos transferidos mostram só <strong>Eliminar</strong>, e a pesquisa não está lá.</p>
 
 <p>Alguns modelos não correm de todo aqui — um ficheiro pode exigir suporte gráfico que esta versão não tem forma de pedir, e a aplicação diz isso em vez de tentar de novo.</p>
 
@@ -132,7 +140,7 @@
   <a href="../privacy.html">Privacidade</a> ·
   <a href="../eula.html">Licença</a> ·
   <a href="../terms.html">Termos</a></p>
-  <p>Descreve o SummaReader 0.125.1, publicado a 22 de outubro de 2026.</p>
+  <p>Descreve o SummaReader 0.125.2, publicado a 22 de outubro de 2026.</p>
 </footer>
 
 </main>
