@@ -43,7 +43,7 @@
 
 <h1 id="privacy-policy">Privacy policy</h1>
 
-<p><strong>Last updated:</strong> 17 October 2026</p>
+<p><strong>Last updated:</strong> 25 October 2026</p>
 
 <blockquote>
 <p>Published at <a href="https://summareader.dataiza.sk/privacy.html">https://summareader.dataiza.sk/privacy.html</a>. This text applies to the SummaReader app for Linux, Android, iOS and macOS, in its free and its Premium edition, and to the pages at summareader.dataiza.sk.</p>
@@ -108,7 +108,7 @@
 <tr><td>The app gets a picture or a PDF</td><td>The server that holds it, often a content-delivery network</td><td>Your IP address, and which file was asked for</td></tr>
 <tr><td>A page has no text without its scripts</td><td>The publisher, through the hidden page renderer (see below)</td><td>The same as a visit in a browser, scripts included</td></tr>
 <tr><td>You follow a YouTube channel</td><td>YouTube, and <code>i.ytimg.com</code> for pictures</td><td>Your IP address, and which channel, video or transcript was asked for</td></tr>
-<tr><td>YouTube refuses a transcript download (Linux)</td><td>YouTube, through the hidden page renderer (see below)</td><td>The same as a visit to the video's page in a browser, scripts included, with no account</td></tr>
+<tr><td>YouTube refuses a transcript download (Linux)</td><td>YouTube, through the hidden page renderer (see below)</td><td>The same as a visit to the video's page in a browser, scripts included, as the source's signed-in account if it has one</td></tr>
 <tr><td>A source fetches as a signed-in account (Premium)</td><td>That site</td><td>Your account on that site, through its cookies</td></tr>
 <tr><td>You follow a PeerTube channel</td><td>The server that the channel is on</td><td>Your IP address, and which channel or video was asked for</td></tr>
 <tr><td>You follow a Mastodon account</td><td>The server that account is on</td><td>Your IP address, and which account was asked for</td></tr>
@@ -136,7 +136,7 @@
 
 <p>After each page, success or failure, the app clears the web engine's cookies, stored data and cache. A site that you did not sign in to keeps nothing from one page to the next. On Linux the renderer is a separate process that uses a new, empty temporary folder for each page. The renderer never loads addresses on your local network.</p>
 
-<p><strong>YouTube transcripts (Linux).</strong> When YouTube refuses to send a video's transcript to the app, the app opens the video's page on YouTube in the hidden page renderer and keeps the transcript that the page's own player gets. For the next videos, the app keeps that one page open and tells its player to switch to each video, one video at a time. The page closes after 5 minutes with no video to get, or when the renderer is needed for another page; until then it keeps its cookies and stored data, which are deleted when it closes. If the open page gives nothing for a video, the app opens a new page for that video. After a refusal, the app goes to the page first for the next hour. YouTube sees the page address, which names the first video, each video the player switches to, and the page's scripts, the player and its advertising included, as in a browser. The renderer sends no cookies for this, not even those of a signed-in account, so YouTube does not see your account.</p>
+<p><strong>YouTube transcripts (Linux).</strong> When YouTube refuses to send a video's transcript to the app, the app opens the video's page on YouTube in the hidden page renderer and keeps the transcript that the page's own player gets. For the next videos, the app keeps that one page open and tells its player to switch to each video, one video at a time. The page closes after 5 minutes with no video to get, or when the renderer is needed for another page; until then it keeps its cookies and stored data, which are deleted when it closes. If the open page gives nothing for a video, the app opens a new page for that video. After a refusal, the app goes to the page first for the next hour. YouTube sees the page address, which names the first video, each video the player switches to, and the page's scripts, the player and its advertising included, as in a browser. For a source that uses a signed-in YouTube account, the transcript download and this page both carry that account's cookies, so YouTube sees your account, as it would in your own browser. For a source with no account, they carry no cookies.</p>
 
 <h3 id="site-sign-ins-premium">Site sign-ins (Premium)</h3>
 
@@ -367,7 +367,7 @@
   <a href="privacy.html">Privacy</a> ·
   <a href="eula.html">Licence</a> ·
   <a href="terms.html">Terms</a></p>
-  <p>Describes SummaReader 0.128.0, published 24 October 2026.</p>
+  <p>Describes SummaReader 0.128.1, published 25 October 2026.</p>
 </footer>
 
 </main>
