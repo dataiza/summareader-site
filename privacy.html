@@ -136,7 +136,7 @@
 
 <p>After each page, success or failure, the app clears the web engine's cookies, stored data and cache. A site that you did not sign in to keeps nothing from one page to the next. On Linux the renderer is a separate process that uses a new, empty temporary folder for each page. The renderer never loads addresses on your local network.</p>
 
-<p><strong>YouTube transcripts (Linux).</strong> When YouTube refuses to send a video's transcript to the app, the app opens the video's page on YouTube in the hidden page renderer and keeps the transcript that the page's own player gets. For the next videos, the app keeps that one page open and tells its player to switch to each video, one video at a time. The page closes after 5 minutes with no video to get, or when the renderer is needed for another page; until then it keeps its cookies and stored data, which are deleted when it closes. If the open page gives nothing for a video, the app opens a new page for that video. After a refusal, the app goes to the page first for the next hour. YouTube sees the page address, which names the first video, each video the player switches to, and the page's scripts, the player and its advertising included, as in a browser. For a source that uses a signed-in YouTube account, the transcript download and this page both carry that account's cookies, so YouTube sees your account, as it would in your own browser. For a source with no account, they carry no cookies.</p>
+<p><strong>YouTube transcripts (Linux).</strong> When YouTube refuses to send a video's transcript to the app, the app opens the video's page on YouTube in the hidden page renderer and keeps the transcript that the page's own player gets. For the next videos, the app keeps that one page open and tells its player to switch to each video, one video at a time. The page closes after 5 minutes with no video to get, or when the renderer is needed for another page; until then it keeps its cookies and stored data, which are deleted when it closes. For a source that uses a signed-in YouTube account, the cookies YouTube set on that page and the account did not already have, such as the visitor cookies a browser keeps, are first added to that account's stored cookies, so that the next page is the same visitor and not a new one. The page tells YouTube that it is a desktop Chrome browser. If the open page gives nothing for a video, the app opens a new page for that video. After a refusal, the app goes to the page first for the next hour. YouTube sees the page address, which names the first video, each video the player switches to, and the page's scripts, the player and its advertising included, as in a browser. For a source that uses a signed-in YouTube account, the transcript download and this page both carry that account's cookies, so YouTube sees your account, as it would in your own browser. When YouTube refuses that account's transcript download, the app asks once more with no cookies, as it does for a source with no account, before it opens the page. For a source with no account, they carry no cookies.</p>
 
 <h3 id="site-sign-ins-premium">Site sign-ins (Premium)</h3>
 
@@ -260,7 +260,7 @@
 <ul>
 <li><strong>always on</strong>, kept in the library database</li>
 <li><strong>limited to about 4 MB</strong>; the oldest lines go first</li>
-<li>it holds <strong>article titles, addresses, what the app did, and error text</strong>; at the level DEBUG, chosen by you, it also records the decisions inside each job, in memory only</li>
+<li>it holds <strong>article titles, addresses, what the app did, and error text</strong>, and which app version, platform, system version and, on Android, phone model wrote it — so that a trace you share says which device it came from; at the level DEBUG, chosen by you, it also records the decisions inside each job, in memory only</li>
 <li>it is in the system backup and in the library backup file, like the rest of the library</li>
 </ul>
 
@@ -367,7 +367,7 @@
   <a href="privacy.html">Privacy</a> ·
   <a href="eula.html">Licence</a> ·
   <a href="terms.html">Terms</a></p>
-  <p>Describes SummaReader 0.128.2, published 25 October 2026.</p>
+  <p>Describes SummaReader 0.129.0, published 25 October 2026.</p>
 </footer>
 
 </main>
