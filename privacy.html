@@ -43,7 +43,7 @@
 
 <h1 id="privacy-policy">Privacy policy</h1>
 
-<p><strong>Last updated:</strong> 1 November 2026</p>
+<p><strong>Last updated:</strong> 2 November 2026</p>
 
 <blockquote>
 <p>Published at <a href="https://summareader.dataiza.sk/privacy.html">https://summareader.dataiza.sk/privacy.html</a>. This text applies to the SummaReader app for Linux, Android, iOS and macOS, in its free and its Premium edition, and to the pages at summareader.dataiza.sk.</p>
@@ -109,7 +109,7 @@
 <tr><td>The app gets a picture or a PDF</td><td>The server that holds it, often a content-delivery network</td><td>Your IP address, and which file was asked for</td></tr>
 <tr><td>A page has no text without its scripts</td><td>The publisher, through the hidden page renderer (see below)</td><td>The same as a visit in a browser, scripts included</td></tr>
 <tr><td>You follow a YouTube channel</td><td>YouTube, and <code>i.ytimg.com</code> for pictures</td><td>Your IP address, and which channel, video or transcript was asked for</td></tr>
-<tr><td>YouTube refuses a transcript download (Linux)</td><td>YouTube, through the hidden page renderer (see below)</td><td>The same as a visit to the video's page in a browser, scripts included, as the source's signed-in account if it has one</td></tr>
+<tr><td>YouTube refuses a transcript download (Linux)</td><td>YouTube, through the hidden page renderer (see below)</td><td>The same as a visit to the video's page in a browser, scripts included, with no account unless the video is shown only to a signed-in account</td></tr>
 <tr><td>A source fetches as a signed-in account (Premium)</td><td>That site</td><td>Your account on that site, through its cookies</td></tr>
 <tr><td>You follow a PeerTube channel</td><td>The server that the channel is on</td><td>Your IP address, and which channel or video was asked for</td></tr>
 <tr><td>You follow a Mastodon account</td><td>The server that account is on</td><td>Your IP address, and which account was asked for</td></tr>
@@ -137,7 +137,9 @@
 
 <p>After each page, success or failure, the app clears the web engine's cookies, stored data and cache. A site that you did not sign in to keeps nothing from one page to the next. On Linux the renderer is a separate process that uses a new, empty temporary folder for each page. The renderer never loads addresses on your local network.</p>
 
-<p><strong>YouTube transcripts (Linux).</strong> When YouTube refuses to send a video's transcript to the app, the app opens the video's page on YouTube in the hidden page renderer and keeps the transcript that the page's own player gets. For the next videos, the app keeps that one page open and tells its player to switch to each video, one video at a time. The page closes after 5 minutes with no video to get, or when the renderer is needed for another page; until then it keeps its cookies and stored data, which are deleted when it closes. For a source that uses a signed-in YouTube account, the cookies YouTube set on that page and the account did not already have, such as the visitor cookies a browser keeps, are first added to that account's stored cookies, so that the next page is the same visitor and not a new one. The page tells YouTube that it is a desktop Chrome browser. If the open page gives nothing for a video, the app opens a new page for that video. After a refusal, the app goes to the page first for the next hour. YouTube sees the page address, which names the first video, each video the player switches to, and the page's scripts, the player and its advertising included, as in a browser. For a source that uses a signed-in YouTube account, the transcript download and this page both carry that account's cookies, so YouTube sees your account, as it would in your own browser. When YouTube refuses that account's transcript download, the app asks once more with no cookies, as it does for a source with no account, before it opens the page. For a source with no account, they carry no cookies.</p>
+<p><strong>YouTube transcripts (Linux).</strong> When YouTube refuses to send a video's transcript to the app, the app opens the video's page on YouTube in the hidden page renderer and keeps the transcript that the page's own player gets. When YouTube refuses the player too, the app opens the transcript in the video's description, as you would with <strong>Show transcript</strong>, and keeps that. For the next videos, the app keeps that one page open and moves it to each video's address, one video at a time. The page closes after 5 minutes with no video to get, or when the renderer is needed for another page; until then it keeps its cookies and stored data, which are deleted when it closes. When the page is opened as a signed-in YouTube account (see below), the cookies YouTube set on that page and the account did not already have, such as the visitor cookies a browser keeps, are first added to that account's stored cookies, so that the next page is the same visitor and not a new one. The page tells YouTube that it is a desktop Chrome browser. After a refusal, the app goes to the page first for the next hour. YouTube sees the page address, which names each video, and the page's scripts, the player and its advertising included, as in a browser.</p>
+
+<p><strong>YouTube transcripts are asked for without your account.</strong> The video's details, the transcript download and this page carry no cookies, even for a source that uses a signed-in YouTube account. Only when YouTube shows a video to signed-in accounts alone, such as a members-only or age-restricted video, does the app ask for that video again as the source's account, with its cookies, so YouTube sees your account for that video, as it would in your own browser.</p>
 
 <h3 id="site-sign-ins-premium">Site sign-ins (Premium)</h3>
 
@@ -151,7 +153,7 @@
 
 <p>The cookies are sent to that site when a source that uses the account is fetched, and they are put into the hidden page renderer for that one page. The app keeps a session cookie until the site's own expiry date, or until you remove the sign-in at <strong>Configuration › Advanced › Accounts</strong>. The app does not end a session when it closes.</p>
 
-<p><strong>YouTube access is unofficial.</strong> The app reads YouTube's public pages and the same internal interface that YouTube's own web page uses. It does not use an official YouTube interface or key. With a signed-in Google account, YouTube sees that account when the app lists your subscriptions or your playlists (Watch Later included), or fetches as it. The app only reads these lists. It never changes your subscriptions or playlists.</p>
+<p><strong>YouTube access is unofficial.</strong> The app reads YouTube's public pages and the same internal interface that YouTube's own web page uses. It does not use an official YouTube interface or key. With a signed-in Google account, YouTube sees that account when the app lists your subscriptions or your playlists (Watch Later included), or gets a video that is shown only to signed-in accounts. The app only reads these lists. It never changes your subscriptions or playlists.</p>
 
 <h3 id="summaries">Summaries</h3>
 
@@ -370,7 +372,7 @@
   <a href="privacy.html">Privacy</a> ·
   <a href="eula.html">Licence</a> ·
   <a href="terms.html">Terms</a></p>
-  <p>Describes SummaReader 0.138.1, published 1 November 2026.</p>
+  <p>Describes SummaReader 0.139.0, published 2 November 2026.</p>
 </footer>
 
 </main>
