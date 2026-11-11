@@ -43,7 +43,7 @@
 
 <h1 id="privacy-policy">Privacy policy</h1>
 
-<p><strong>Last updated:</strong> 2 November 2026</p>
+<p><strong>Last updated:</strong> 11 November 2026</p>
 
 <blockquote>
 <p>Published at <a href="https://summareader.dataiza.sk/privacy.html">https://summareader.dataiza.sk/privacy.html</a>. This text applies to the SummaReader app for Linux, Android, iOS and macOS, in its free and its Premium edition, and to the pages at summareader.dataiza.sk.</p>
@@ -290,7 +290,19 @@
 
 <h2 id="the-browser-extension">The browser extension</h2>
 
-<p>The SummaReader browser extension sends the address and title of the page you are on, and any text you selected, to the app's REST server, only when you press its button. Unless the app uses TLS, it sends them over plain HTTP. The extension keeps the server address and the token in the browser's sync storage, so your browser can copy them to your other browsers through your browser account.</p>
+<p>The SummaReader browser extension talks only to the app's REST server, at the address you give it in its options, and only after you press its button. It sends:</p>
+
+<ul>
+<li>the address of the page you are on, to ask whether your library has it;</li>
+<li>that address and the page's title, when you save the page;</li>
+<li>the text you selected and the page's title, when you keep the selection;</li>
+<li>the page's address, when you follow its site or ask for a summary;</li>
+<li>the tags you type, when you tag the page;</li>
+<li>the words you type into its search box, when you search your library;</li>
+<li>with each of these, the token you gave it, so that the app knows the request is yours.</li>
+</ul>
+
+<p>It sends nothing to us or to anybody else. Unless the app uses TLS, it sends these over plain HTTP. The extension keeps the server address and the token in the browser's sync storage, so your browser can copy them to your other browsers through your browser account.</p>
 
 <h2 id="background-work">Background work</h2>
 
