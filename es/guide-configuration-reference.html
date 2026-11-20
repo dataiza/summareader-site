@@ -86,9 +86,11 @@
 
 <h2 id="api--mcp-premium-only">API y MCP (solo Premium)</h2>
 
-<p>Tres puertas, cada una con su propio puerto, su propia elección de las direcciones en las que responde, su propio token y su propio interruptor: la <strong>API REST</strong>, por la que una extensión del navegador u otro programa mete algo; <strong>Métricas</strong>, para un sistema de monitorización; y <strong>MCP</strong>, en la que responde un modelo. Empiezan en 8765, 8766 y 8767, y ninguna necesita que otra esté abierta.</p>
+<p>Tres puertas, cada una con su propio puerto, su propia elección de las direcciones en las que responde y su propio interruptor: la <strong>API REST</strong>, por la que una extensión del navegador u otro programa mete algo; <strong>Métricas</strong>, para un sistema de monitorización; y <strong>MCP</strong>, en la que responde un modelo. Empiezan en 8765, 8766 y 8767, y ninguna necesita que otra esté abierta.</p>
 
-<p>Un token abre solo lo que tiene marcado, en <strong>Configuración › Avanzado › Tokens › Tokens › Editar permisos</strong>. Los permisos están plegados por tema, y el campo de encima los filtra por nombre o descripción. Los ajustes rápidos rellenan las marcas: <strong>Todo menos borrar</strong>, <strong>Solo lectura</strong>, <strong>Extensión del navegador</strong>, que marca exactamente lo que usa la extensión del navegador, y <strong>Nada</strong>.</p>
+<p>Cada puerta acepta los tokens con nombre de <strong>Configuración › Avanzado › Tokens</strong>. La primera vez que abres una puerta y ningún token puede abrirla, la aplicación crea uno. Un token abre solo lo que tiene marcado, en <strong>Configuración › Avanzado › Tokens › Tokens › Editar permisos</strong>. Los permisos están plegados por tema, y el campo de encima los filtra por nombre o descripción. Los ajustes rápidos rellenan las marcas: <strong>Todo menos borrar</strong>, <strong>Solo lectura</strong>, <strong>Extensión del navegador</strong>, que marca exactamente lo que usa la extensión del navegador, <strong>Supervisión</strong>, que marca solo <strong>metrics</strong>, y <strong>Nada</strong>.</p>
+
+<p>La puerta Métricas acepta solo un token de Supervisión: un token con el permiso <strong>metrics</strong> y ningún otro. Rechaza un token con cualquier otro permiso, porque un sistema de monitorización guarda su token como texto sin cifrar en su configuración. Un token de Supervisión no abre nada en las puertas API REST y MCP. Si tenías un token de Métricas de una versión anterior, ahora es un token llamado <strong>Supervisión</strong> con el mismo valor, así que tu sistema de monitorización sigue funcionando.</p>
 
 <p><strong>Usar TLS (HTTPS)</strong>, debajo de las tres puertas, está apagado por defecto y cambia las tres a HTTPS a la vez. La primera vez, la aplicación crea un certificado para este dispositivo, con su nombre de host y sus direcciones, y guarda la clave con los demás secretos. A partir de ahí, los clientes deben usar <code>https://</code> y confiar en ese certificado: la página muestra su huella SHA-256, con un botón para copiarla, para que un cliente pueda fijarla. <strong>Certificado nuevo</strong> crea otro, y a cada cliente que fijó la huella antigua hay que darle la nueva. El envoltorio de línea de comandos de MCP recoge el certificado por sí solo; reinicia su cliente después de un certificado nuevo.</p>
 
@@ -114,7 +116,7 @@
   <a href="../privacy.html">Privacidad</a> ·
   <a href="../eula.html">Licencia</a> ·
   <a href="../terms.html">Condiciones</a></p>
-  <p>Describe SummaReader 0.147.0, publicado el 17 de noviembre de 2026.</p>
+  <p>Describe SummaReader 0.148.0, publicado el 20 de noviembre de 2026.</p>
 </footer>
 
 </main>

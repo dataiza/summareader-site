@@ -86,9 +86,11 @@
 
 <h2 id="api--mcp-premium-only">API a MCP (len Premium)</h2>
 
-<p>Tri brány, každá s vlastným portom, vlastným výberom adries, na ktorých odpovedá, vlastným tokenom a vlastným prepínačom: <strong>REST API</strong>, cez ktoré niečo vkladá rozšírenie prehliadača alebo iný program, <strong>Metriky</strong> pre monitorovací systém a <strong>MCP</strong>, na ktorom odpovedá model. Začínajú na portoch 8765, 8766 a 8767 a žiadna nepotrebuje, aby bola otvorená iná.</p>
+<p>Tri brány, každá s vlastným portom, vlastným výberom adries, na ktorých odpovedá, a vlastným prepínačom: <strong>REST API</strong>, cez ktoré niečo vkladá rozšírenie prehliadača alebo iný program, <strong>Metriky</strong> pre monitorovací systém a <strong>MCP</strong>, na ktorom odpovedá model. Začínajú na portoch 8765, 8766 a 8767 a žiadna nepotrebuje, aby bola otvorená iná.</p>
 
-<p>Token otvorí len to, čo má zaškrtnuté, v <strong>Nastavenia › Pokročilé › Tokeny › Tokeny › Upraviť oprávnenia</strong>. Oprávnenia sú zbalené podľa tém a pole nad nimi ich filtruje podľa názvu alebo popisu. Predvoľby vyplnia zaškrtnutia: <strong>Všetko okrem odstraňovania</strong>, <strong>Len čítanie</strong>, <strong>Rozšírenie prehliadača</strong>, ktoré zaškrtne presne to, čo rozšírenie prehliadača používa, a <strong>Nič</strong>.</p>
+<p>Každá brána berie pomenované tokeny z <strong>Nastavenia › Pokročilé › Tokeny</strong>. Keď prvýkrát otvoríte bránu a žiadny token ju nemôže otvoriť, aplikácia jeden vytvorí. Token otvorí len to, čo má zaškrtnuté, v <strong>Nastavenia › Pokročilé › Tokeny › Tokeny › Upraviť oprávnenia</strong>. Oprávnenia sú zbalené podľa tém a pole nad nimi ich filtruje podľa názvu alebo popisu. Predvoľby vyplnia zaškrtnutia: <strong>Všetko okrem odstraňovania</strong>, <strong>Len čítanie</strong>, <strong>Rozšírenie prehliadača</strong>, ktoré zaškrtne presne to, čo rozšírenie prehliadača používa, <strong>Monitorovanie</strong>, ktoré zaškrtne len <strong>metrics</strong>, a <strong>Nič</strong>.</p>
+
+<p>Brána Metriky berie len token Monitorovanie: token s oprávnením <strong>metrics</strong> a žiadnym iným. Token s akýmkoľvek iným oprávnením odmietne, pretože monitorovací systém drží svoj token ako obyčajný text vo svojej konfigurácii. Token Monitorovanie neotvorí nič na bránach REST API a MCP. Ak ste mali token pre Metriky z predchádzajúcej verzie, je z neho teraz token s názvom <strong>Monitorovanie</strong> s rovnakou hodnotou, takže váš monitorovací systém funguje ďalej.</p>
 
 <p><strong>Použiť TLS (HTTPS)</strong>, pod tromi bránami, je predvolene vypnuté a prepne všetky tri naraz na HTTPS. Pri prvom zapnutí aplikácia vytvorí certifikát pre toto zariadenie s jeho názvom hostiteľa a adresami a kľúč uchová spolu s ostatnými tajomstvami. Klienti potom musia používať <code>https://</code> a tomuto certifikátu dôverovať: stránka ukazuje jeho odtlačok SHA-256 s tlačidlom na kopírovanie, aby si ho klient mohol pripnúť. <strong>Nový certifikát</strong> vytvorí ďalší a každý klient, ktorý mal pripnutý starý odtlačok, musí dostať nový. Obal MCP pre príkazový riadok si certifikát prevezme sám; po novom certifikáte reštartujte jeho klienta.</p>
 
@@ -114,7 +116,7 @@
   <a href="../privacy.html">Súkromie</a> ·
   <a href="../eula.html">Licencia</a> ·
   <a href="../terms.html">Podmienky</a></p>
-  <p>Opisuje SummaReader 0.147.0, vydané 17. novembra 2026.</p>
+  <p>Opisuje SummaReader 0.148.0, vydané 20. novembra 2026.</p>
 </footer>
 
 </main>

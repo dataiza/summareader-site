@@ -69,7 +69,7 @@
 
 <p>Stažené modely najdete v <strong>Nastavení › Pokročilé › Model v zařízení › Modely v tomto zařízení</strong>. <strong>Spustit</strong> model načte a udělá z něj model, který odpovídá — spuštěním ho vybíráte. Najednou běží jen jeden, takže spuštění jiného se nejdřív zeptá: model v paměti musí odejít, než přijde další. Volba se pamatuje a <strong>Načíst ho při spuštění aplikace</strong> ho načte znovu samo. <strong>Smazat</strong> odstraní soubory i řádek najednou. Řádek každého staženého modelu také říká, kolik paměti asi potřebuje s kontextovým oknem a velikostí části nastavenými níže, a mění se, když je měníte. Jakmile model jednou běžel, jeho řádek také říká, co skutečně použil: u modelu GGUF, který je načtený jen během shrnování, kolik zabralo poslední shrnutí; u modelu, který zůstává načtený, kolik drží teď. Model stažený z Hugging Face má tlačítko <strong>Stránka na Hugging Face</strong>, které tam otevře jeho stránku: jeho popis, licenci a kdo ho vytvořil. Když některé modely potřebují jiný engine, seznam ukazuje jen modely, které spouští aktivní engine, s řádkem pod ním, který říká, kolik dalších jich je; <strong>Všechny</strong> nad seznamem ukáže všechny modely a aplikace si vaši volbu pamatuje.</p>
 
-<p><strong>Nastavení › Pokročilé › Model v zařízení › Modely v tomto zařízení › Kontextové okno</strong> je, kolik textu model drží najednou, článek i odpověď dohromady. Vedle něj je nejvíc, co vybraný model může v tomto zařízení použít: menší z okna, pro které byl model natrénován, a z toho, co zbude z paměti po samotném modelu. Větší číslo než toto dá modelu jeho maximum. Počítač s dostatkem paměti může použít velké okno; telefon obvykle ne. Změna se projeví při příštím načtení modelu.</p>
+<p><strong>Nastavení › Pokročilé › Model v zařízení › Modely v tomto zařízení › Kontextové okno</strong> je, kolik textu model drží najednou, článek i odpověď dohromady. Vedle něj je nejvíc, co vybraný model může v tomto zařízení použít: menší z okna, pro které byl model natrénován, a z toho, co zbude z paměti po samotném modelu. U modelu GGUF na počítači, jehož GPU má vlastní paměť, a s <strong>Nastavení › Pokročilé › Model v zařízení › Procesor</strong> nastaveným jinak než na procesor je to volná paměť GPU, přečtená znovu při každém výpočtu okna; jinde je to paměť zařízení. Stejné číslo rozhoduje, zda <strong>Najít model</strong> označí soubor jako příliš velký. Větší číslo než toto dá modelu jeho maximum. Počítač s dostatkem paměti může použít velké okno; telefon obvykle ne. Změna se projeví při příštím načtení modelu.</p>
 
 <p><strong>Nastavení › Pokročilé › Model v zařízení › Modely v tomto zařízení › Velikost části</strong> je nejvíc textu článku, které přečte jedno volání modelu; delší článek se čte po částech a shrnutí částí se spojí. Dokud to nezměníte, je to 3 000 tokenů. Větší část znamená méně volání a většina článků pak dostane jedno shrnutí z jednoho volání, ale malý model může z dlouhé části napsat zkomolený nebo opakující se text. Nejvíc může být to, co kontextové okno ponechá po místě pro odpověď; je to uvedeno vedle. Spojení na konci vždy používá celé okno. Změna se projeví při příštím shrnutí.</p>
 
@@ -140,7 +140,7 @@
   <a href="../privacy.html">Soukromí</a> ·
   <a href="../eula.html">Licence</a> ·
   <a href="../terms.html">Podmínky</a></p>
-  <p>Popisuje SummaReader 0.147.0, vydáno 17. listopadu 2026.</p>
+  <p>Popisuje SummaReader 0.148.0, vydáno 20. listopadu 2026.</p>
 </footer>
 
 </main>

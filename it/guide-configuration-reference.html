@@ -86,9 +86,11 @@
 
 <h2 id="api--mcp-premium-only">API &amp; MCP (solo Premium)</h2>
 
-<p>Tre porte, ciascuna con la sua porta di rete, la sua scelta degli indirizzi su cui risponde, il suo token e il suo interruttore: la <strong>REST API</strong>, attraverso cui un’estensione del browser o un altro programma inserisce qualcosa, <strong>Metriche</strong> per un sistema di monitoraggio, e <strong>MCP</strong>, su cui risponde un modello. Partono da 8765, 8766 e 8767, e nessuna ha bisogno che un’altra sia aperta.</p>
+<p>Tre porte, ciascuna con la sua porta di rete, la sua scelta degli indirizzi su cui risponde e il suo interruttore: la <strong>REST API</strong>, attraverso cui un’estensione del browser o un altro programma inserisce qualcosa, <strong>Metriche</strong> per un sistema di monitoraggio, e <strong>MCP</strong>, su cui risponde un modello. Partono da 8765, 8766 e 8767, e nessuna ha bisogno che un’altra sia aperta.</p>
 
-<p>Un token apre solo ciò per cui è spuntato, in <strong>Configurazione › Avanzate › Token › Token › Modifica permessi</strong>. I permessi sono chiusi per argomento, e il campo sopra li filtra per nome o descrizione. Le preimpostazioni riempiono le spunte: <strong>Tutto tranne le rimozioni</strong>, <strong>Solo lettura</strong>, <strong>Estensione del browser</strong>, che spunta esattamente ciò che l'estensione del browser usa, e <strong>Niente</strong>.</p>
+<p>Ogni porta accetta i token con nome di <strong>Configurazione › Avanzate › Token</strong>. La prima volta che apri una porta e nessun token può aprirla, l’app ne crea uno. Un token apre solo ciò per cui è spuntato, in <strong>Configurazione › Avanzate › Token › Token › Modifica permessi</strong>. I permessi sono chiusi per argomento, e il campo sopra li filtra per nome o descrizione. Le preimpostazioni riempiono le spunte: <strong>Tutto tranne le rimozioni</strong>, <strong>Solo lettura</strong>, <strong>Estensione del browser</strong>, che spunta esattamente ciò che l'estensione del browser usa, <strong>Monitoraggio</strong>, che spunta solo <strong>metrics</strong>, e <strong>Niente</strong>.</p>
+
+<p>La porta Metriche accetta solo un token di Monitoraggio: un token con il permesso <strong>metrics</strong> e nessun altro. Rifiuta un token con qualsiasi altro permesso, perché un sistema di monitoraggio tiene il suo token in chiaro nella sua configurazione. Un token di Monitoraggio non apre nulla alle porte REST API e MCP. Se avevi un token per Metriche da una versione precedente, ora è un token chiamato <strong>Monitoraggio</strong> con lo stesso valore, così il tuo sistema di monitoraggio continua a funzionare.</p>
 
 <p><strong>Usa TLS (HTTPS)</strong>, sotto le tre porte, è spento per impostazione predefinita e passa tutte e tre a HTTPS in un colpo solo. La prima volta, l’app crea un certificato per questo dispositivo, con il suo nome host e i suoi indirizzi, e conserva la chiave insieme agli altri segreti. I client devono allora usare <code>https://</code> e fidarsi di quel certificato: la pagina mostra la sua impronta SHA-256, con un pulsante per copiarla, così un client può fissarla. <strong>Nuovo certificato</strong> ne crea un altro, e ogni client che aveva fissato la vecchia impronta deve ricevere quella nuova. Il wrapper MCP da riga di comando prende il certificato da solo; riavvia il suo client dopo un nuovo certificato.</p>
 
@@ -114,7 +116,7 @@
   <a href="../privacy.html">Privacy</a> ·
   <a href="../eula.html">Licenza</a> ·
   <a href="../terms.html">Termini</a></p>
-  <p>Descrive SummaReader 0.147.0, pubblicato il 17 novembre 2026.</p>
+  <p>Descrive SummaReader 0.148.0, pubblicato il 20 novembre 2026.</p>
 </footer>
 
 </main>

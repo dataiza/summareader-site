@@ -86,9 +86,11 @@
 
 <h2 id="api--mcp-premium-only">API &amp; MCP (Premium only)</h2>
 
-<p>Three doors, each with its own port, its own choice of which addresses it answers on, its own token and its own switch: the <strong>REST API</strong> a browser extension or another program puts something in through, <strong>Metrics</strong> for a monitoring system, and <strong>MCP</strong>, which a model answers on. They start on 8765, 8766 and 8767, and none of them needs another to be open.</p>
+<p>Three doors, each with its own port, its own choice of which addresses it answers on and its own switch: the <strong>REST API</strong> a browser extension or another program puts something in through, <strong>Metrics</strong> for a monitoring system, and <strong>MCP</strong>, which a model answers on. They start on 8765 (REST API), 8766 (MCP) and 8767 (Metrics), and none of them needs another to be open.</p>
 
-<p>A token opens only what it is ticked for, in <strong>Configuration › Advanced › Tokens › Tokens › Edit permissions</strong>. The permissions are folded by subject, and the field above them filters them by name or description. The presets fill the ticks: <strong>All except removals</strong>, <strong>Read only</strong>, <strong>Browser extension</strong>, which ticks exactly what the browser extension uses, and <strong>Nothing</strong>.</p>
+<p>Every door takes the named tokens from <strong>Configuration › Advanced › Tokens</strong>. The first time you open a door and no token can open it, the app makes one. A token opens only what it is ticked for, in <strong>Configuration › Advanced › Tokens › Tokens › Edit permissions</strong>. The permissions are folded by subject, and the field above them filters them by name or description. The presets fill the ticks: <strong>All except removals</strong>, <strong>Read only</strong>, <strong>Browser extension</strong>, which ticks exactly what the browser extension uses, <strong>Monitoring</strong>, which ticks only <strong>metrics</strong>, and <strong>Nothing</strong>.</p>
+
+<p>The Metrics door takes only a Monitoring token: a token with the <strong>metrics</strong> permission and no other. It refuses a token with any other permission, because a monitoring system keeps its token as plain text in its configuration. A Monitoring token opens nothing at the REST API and MCP doors. If you had a Metrics token from an earlier version, it is now a token called <strong>Monitoring</strong> with the same value, so your monitoring system keeps working.</p>
 
 <p><strong>Use TLS (HTTPS)</strong>, under the three doors, is off by default and switches all three to HTTPS at once. The first time, the app makes a certificate for this device, naming its host name and its addresses, and keeps the key with the other secrets. Clients must then use <code>https://</code> and trust that certificate: the page shows its SHA-256 fingerprint, with a button to copy it, so a client can pin it. <strong>New certificate</strong> makes another one, and every client that pinned the old fingerprint must be given the new one. The MCP command-line wrapper picks the certificate up by itself; restart its client after a new certificate.</p>
 
@@ -112,7 +114,7 @@
   <a href="privacy.html">Privacy</a> ·
   <a href="eula.html">Licence</a> ·
   <a href="terms.html">Terms</a></p>
-  <p>Describes SummaReader 0.147.0, published 17 November 2026.</p>
+  <p>Describes SummaReader 0.148.0, published 20 November 2026.</p>
 </footer>
 
 </main>
