@@ -76,7 +76,9 @@
 
 <p>Arrastra el artículo hacia un lado, o usa <code>j</code> / <code>k</code>, o <code>Espacio</code> al final del artículo. Arrastrar a la derecha en el primero vuelve a la lista. En un teléfono, o en una ventana estrecha, arrastrar desde el borde izquierdo vuelve a la lista y arrastrar desde el borde derecho abre la página web. Tirar más allá del final o del principio del artículo no hace nada hasta que le eliges una acción.</p>
 
-<p>Tirar actúa cuando sueltas. Cuando has tirado lo bastante, un aviso breve nombra la acción. Si vuelves atrás antes de soltar, no pasa nada. El artículo siguiente entra entonces desde abajo, y el anterior desde arriba. Con <code>j</code> y <code>k</code> el artículo cambia del mismo modo.</p>
+<p>Tirar actúa cuando sueltas. Cuando has tirado lo bastante, un aviso breve nombra la acción. Si vuelves atrás antes de soltar, no pasa nada. El artículo siguiente entra entonces desde abajo, y el anterior desde arriba. Con <code>j</code> y <code>k</code> el artículo cambia del mismo modo. En una pantalla táctil, tirar hacia el artículo siguiente o el anterior mete ese artículo con tu dedo mientras tiras. El aviso aparece encima cuando has tirado lo bastante, y el artículo vuelve atrás si sueltas demasiado pronto.</p>
+
+<p>En el último artículo de la lista, arrastrar hacia un lado o tirar hacia el artículo siguiente marca el artículo como leído y vuelve a la lista. Un mensaje te dice que era el último artículo, y durante el tirón el aviso lo dice. En el último artículo de una página, las dos cosas abren el primer artículo de la página siguiente.</p>
 
 <p>Para elegir cuánto tienes que tirar antes de que soltar haga la acción, selecciona <strong>Corta</strong>, <strong>Media</strong> o <strong>Larga</strong> en <strong>Configuración › Básico › Navegación › Gestos › Distancia del tirón</strong>. Son un tercio, la mitad y tres cuartos de la altura del artículo. <strong>Larga</strong> es la opción por defecto. Un gesto rápido hace la acción a cualquier distancia.</p>
 
@@ -85,6 +87,8 @@
 <p>En un teléfono o una tableta, tira de la lista hacia abajo para recargarla o para comprobar tus fuentes. La aplicación pregunta: <strong>Recargar la lista</strong> o <strong>Buscar artículos nuevos</strong>. Para hacer una de las dos sin pregunta, elígela en <strong>Configuración › Básico › Navegación › Gestos › Tirar de la lista hacia abajo</strong>.</p>
 
 <h2 id="scrolling">Desplazamiento</h2>
+
+<p>Un clic con el ratón da las teclas al panel en el que haces clic. Un clic en un artículo de la lista lo abre y deja las teclas en la lista, así que <code>↓</code> y <code>↑</code> siguen recorriendo desde ese artículo. Para desplazar el artículo con las teclas, haz clic en el artículo. Un toque con el dedo no cambia qué panel tiene las teclas.</p>
 
 <p>Con el artículo activo, <code>↓</code> y <code>↑</code> lo mueven unas líneas de su texto, igual que un paso de la rueda del ratón sobre él. Cuántas líneas lo decide <strong>Configuración › Básico › Navegación › Desplazamiento › Desplazar</strong>: 1, 2, 3, 5 u 8, y 3 al principio. El paso sigue el tamaño del texto y el interlineado, así que son las mismas líneas con cualquier ajuste. Un panel táctil conserva su propio movimiento fino.</p>
 
@@ -106,7 +110,7 @@
 <thead><tr><th>Dice</th><th>Qué pasó</th></tr></thead>
 <tbody>
 <tr><td>Este vídeo no tiene subtítulos</td><td>No hay transcripción que leer</td></tr>
-<tr><td>YouTube pidió a la aplicación que fuera más despacio</td><td>YouTube rechazó los subtítulos por ahora</td></tr>
+<tr><td>YouTube pidió a la aplicación que fuera más despacio</td><td>YouTube rechazó los subtítulos por ahora. En Linux, la aplicación intenta primero obtenerlos de la página del vídeo, en su renderizador de páginas oculto, de su reproductor o de su panel <strong>Mostrar transcripción</strong></td></tr>
 <tr><td>La página llegó, pero no tenía ningún artículo</td><td>La página construye su texto en el navegador</td></tr>
 <tr><td>El sitio mostró una comprobación antirrobots</td><td>Una página de «demuestra que eres humano»</td></tr>
 <tr><td>Tras un muro de suscripción</td><td>Lo que llegó fue la oferta</td></tr>
@@ -115,6 +119,8 @@
 </tbody></table></div>
 
 <p>Las comprobaciones posteriores vuelven a intentar por sí solas, unas cuantas veces, el caso de ir más despacio. De los demás, solo vale la pena reintentar el último, y <strong>Obtener el texto</strong> hace eso.</p>
+
+<p>Cuando las comprobaciones dejan de intentarlo, la campana muestra «N articles from &lt;source&gt; could not be read». <strong>Obtener el texto</strong> en esa fila los intenta todos otra vez de una vez, y <strong>Detener</strong> en la franja de estado lo termina.</p>
 
 <p class="muted small"><a href="guide-the-window.html">← La ventana</a> · <a href="guide.html">Contenido</a> · <a href="guide-summaries.html">Resúmenes →</a></p>
 
@@ -126,7 +132,7 @@
   <a href="../privacy.html">Privacidad</a> ·
   <a href="../eula.html">Licencia</a> ·
   <a href="../terms.html">Condiciones</a></p>
-  <p>Describe SummaReader 0.150.0, publicado el 25 de noviembre de 2026.</p>
+  <p>Describe SummaReader 0.150.1, publicado el 25 de noviembre de 2026.</p>
 </footer>
 
 </main>

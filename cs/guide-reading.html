@@ -76,7 +76,9 @@
 
 <p>Táhněte článek do strany, nebo použijte <code>j</code> / <code>k</code>, nebo <code>mezerník</code> na konci článku. Tažení doprava u prvního článku vás vrátí na seznam. Na telefonu nebo v úzkém okně vás přetažení od levého okraje vrátí na seznam a přetažení od pravého okraje otevře webovou stránku. Přetažení za konec nebo za začátek článku nedělá nic, dokud mu nevyberete akci.</p>
 
-<p>Přetažení provede akci, až pustíte prst. Když je přetažení dost dlouhé, krátká nápověda ukáže akci. Když se před puštěním vrátíte, nestane se nic. Další článek se pak vysune zdola a předchozí shora. Stejně se článek posune s <code>j</code> a <code>k</code>.</p>
+<p>Přetažení provede akci, až pustíte prst. Když je přetažení dost dlouhé, krátká nápověda ukáže akci. Když se před puštěním vrátíte, nestane se nic. Další článek se pak vysune zdola a předchozí shora. Stejně se článek posune s <code>j</code> a <code>k</code>. Na dotykové obrazovce se při přetažení k dalšímu nebo předchozímu článku tento článek vsouvá spolu s prstem. Když je přetažení dost dlouhé, ukáže se nad ním nápověda, a když prst pustíte příliš brzy, článek se vrátí zpět.</p>
+
+<p>U posledního článku v seznamu ho tažení do strany nebo přetažení k dalšímu článku označí jako přečtený a vrátí vás na seznam. Zpráva řekne, že to byl poslední článek, a při přetažení to říká i nápověda. U posledního článku stránky obojí otevře první článek další stránky.</p>
 
 <p>Jak daleko musíte táhnout, než puštění provede akci, nastavíte volbou <strong>Krátká</strong>, <strong>Střední</strong> nebo <strong>Dlouhá</strong> v <strong>Nastavení › Základní › Navigace › Gesta › Délka přetažení</strong>. Jsou to třetina, polovina a tři čtvrtiny výšky článku. Výchozí je <strong>Dlouhá</strong>. Rychlé švihnutí provede akci na jakoukoli vzdálenost.</p>
 
@@ -85,6 +87,8 @@
 <p>V telefonu nebo tabletu stáhněte seznam dolů, abyste ho obnovili nebo zkontrolovali zdroje. Aplikace se zeptá: <strong>Obnovit seznam</strong> nebo <strong>Zkontrolovat nové články</strong>. Chcete-li jedno z nich bez otázky, vyberte ho v <strong>Nastavení › Základní › Navigace › Gesta › Stažení seznamu dolů</strong>.</p>
 
 <h2 id="scrolling">Posouvání</h2>
+
+<p>Kliknutí myší předá klávesy panelu, na který kliknete. Kliknutí na článek v seznamu ho otevře a nechá klávesy v seznamu, takže <code>↓</code> a <code>↑</code> pokračují v procházení od tohoto článku. Chcete-li článek posouvat klávesami, klikněte do článku. Klepnutí prstem nemění, který panel má klávesy.</p>
 
 <p>Když je článek aktivní, posunou jej klávesy <code>↓</code> a <code>↑</code> o několik řádků textu, stejně jako jeden dílek kolečka myši nad ním. Kolik řádků, určuje <strong>Nastavení › Základní › Navigace › Posouvání › Posunout o</strong>: 1, 2, 3, 5 nebo 8, na začátku 3. Krok se řídí velikostí písma a řádkováním, takže zůstává stejný počet řádků při jakémkoli nastavení. Touchpad si ponechává svůj vlastní jemný pohyb.</p>
 
@@ -106,7 +110,7 @@
 <thead><tr><th>Říká</th><th>Co se stalo</th></tr></thead>
 <tbody>
 <tr><td>Toto video nemá titulky</td><td>Není co číst, přepis neexistuje</td></tr>
-<tr><td>YouTube požádal aplikaci o zpomalení</td><td>YouTube zatím titulky odmítl</td></tr>
+<tr><td>YouTube požádal aplikaci o zpomalení</td><td>YouTube zatím titulky odmítl. V Linuxu je aplikace nejdřív zkusí získat ze stránky videa ve svém skrytém vykreslovači stránek, z jeho přehrávače nebo z panelu <strong>Zobrazit přepis</strong></td></tr>
 <tr><td>Stránka přišla, ale článek v ní nebyl</td><td>Stránka skládá text až v prohlížeči</td></tr>
 <tr><td>Web poslal kontrolu proti robotům</td><td>Stránka „dokažte, že jste člověk“</td></tr>
 <tr><td>Za předplatným</td><td>Místo článku přišla nabídka</td></tr>
@@ -115,6 +119,8 @@
 </tbody></table></div>
 
 <p>Případ se zpomalením zkoušejí další kontroly samy znovu, několikrát. Z ostatních má smysl zkusit znovu jen poslední, a to udělá <strong>Získat text</strong>.</p>
+
+<p>Když kontroly přestanou zkoušet, zvonek ukáže „N articles from &lt;source&gt; could not be read“. <strong>Získat text</strong> na tom řádku zkusí všechny znovu v jednom běhu a <strong>Zastavit</strong> ve stavovém pruhu ho ukončí.</p>
 
 <p class="muted small"><a href="guide-the-window.html">← Okno</a> · <a href="guide.html">Obsah</a> · <a href="guide-summaries.html">Shrnutí →</a></p>
 
@@ -126,7 +132,7 @@
   <a href="../privacy.html">Soukromí</a> ·
   <a href="../eula.html">Licence</a> ·
   <a href="../terms.html">Podmínky</a></p>
-  <p>Popisuje SummaReader 0.150.0, vydáno 25. listopadu 2026.</p>
+  <p>Popisuje SummaReader 0.150.1, vydáno 25. listopadu 2026.</p>
 </footer>
 
 </main>

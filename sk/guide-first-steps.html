@@ -104,7 +104,7 @@
 
 <p>Nové články prídu do <strong>Všetkých zdrojov</strong>.</p>
 
-<p>Kontrolu zastavíte ťuknutím na <strong>Zastaviť</strong> v stavovom pruhu dole. Tlačidlo sa zmení na <strong>Zastavujem…</strong>. V každom zdroji aplikácia dočíta článok, ktorý práve číta. Zdroje, ktoré čakajú, už nespustí. Stiahnuté články zostanú. Ďalšia kontrola začne zdrojmi, ktoré nedokončila.</p>
+<p>Kontrolu zastavíte ťuknutím na <strong>Zastaviť</strong> v stavovom pruhu dole. Aplikácia sa najprv opýta: ťuknite znova na <strong>Zastaviť</strong>, alebo na <strong>Pokračovať</strong>. Tlačidlo sa zmení na <strong>Zastavujem…</strong>. V každom zdroji aplikácia dočíta článok, ktorý práve číta. Zdroje, ktoré čakajú, už nespustí. Stiahnuté články zostanú. Ďalšia kontrola začne zdrojmi, ktoré nedokončila.</p>
 
 <figure><a href="../img/sk/phone-shelf.png"><img src="../img/sk/phone-shelf.png" alt="Polica v telefóne" loading="lazy"></a></figure>
 
@@ -117,7 +117,7 @@
 <ol>
 <li>Ťuknite na článok vo <strong>Všetkých zdrojoch</strong>.</li>
 <li>Prečítajte si ho. Článok má dole tri karty: <strong>Zhrnutie</strong>, <strong>Zdroj</strong> (celý text) a <strong>Podrobnosti</strong>.</li>
-<li>V telefóne sa ťuknutím na <strong>←</strong> vrátite do zoznamu.</li>
+<li>V telefóne sa ťuknutím na <strong>←</strong> vrátite do zoznamu. V tablete alebo počítači, kde je zoznam vedľa článku, článok zatvoríte ťuknutím na <strong>×</strong> vľavo hore v článku. Zoznam potom dostane celú šírku.</li>
 </ol>
 
 <figure><a href="../img/sk/phone-library.png"><img src="../img/sk/phone-library.png" alt="Všetky zdroje v telefóne" loading="lazy"></a></figure>
@@ -131,7 +131,7 @@
 <p>Zhrnutie píše <strong>model</strong>: program, ktorý prečíta článok a napíše jeho krátku verziu. Model beží na jednom z dvoch miest.</p>
 
 <ul>
-<li><strong>Toto zariadenie</strong> — model beží vo vašom telefóne alebo počítači. Nič neopustí zariadenie. Model stiahnete raz. Zhrnutia v zariadení sú pomalé: niekoľko minút na každú časť článku a v starších telefónoch a tabletoch oveľa dlhšie.</li>
+<li><strong>Toto zariadenie</strong> — model beží vo vašom telefóne alebo počítači. Nič neopustí zariadenie. Model stiahnete raz. Zhrnutia v zariadení sú pomalé: niekoľko minút na každú časť článku a v starších telefónoch a tabletoch oveľa dlhšie. Kým model číta text, ktorý dostal, stavový pruh ukazuje „čítam zadanie“ a doterajší čas, napríklad 1:40. Pri dlhej časti to môžu byť minúty a nič iné sa nezmení, kým model nezačne písať. S llama.cpp pruh ukazuje aj podiel prečítaného textu, napríklad 41 %. Pri ostatných enginoch a pri texte s obrázkami alebo zvukom je to iba hodiny: nehlásia, ako ďaleko prečítali. Potom pruh ukazuje napísané tokeny.</li>
 <li><strong>Vzdialený LLM</strong> — článok ide na server, na ktorom beží model: na váš vlastný alebo na platenú službu. Server je oveľa rýchlejší. Je to jediný prípad, keď text článku opustí vaše zariadenie.</li>
 </ul>
 
@@ -220,7 +220,7 @@
   <a href="../privacy.html">Súkromie</a> ·
   <a href="../eula.html">Licencia</a> ·
   <a href="../terms.html">Podmienky</a></p>
-  <p>Opisuje SummaReader 0.150.0, vydané 25. novembra 2026.</p>
+  <p>Opisuje SummaReader 0.150.1, vydané 25. novembra 2026.</p>
 </footer>
 
 </main>
