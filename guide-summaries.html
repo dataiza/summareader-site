@@ -65,6 +65,8 @@
 
 <p><strong>Configuration › Advanced › On-device model › Find a model.</strong> Search, open a result's <strong>Variants</strong> to see the files inside it — they differ in size, and size is what decides whether one fits — and download the one you want.</p>
 
+<p><strong>Configuration › Advanced › LLM server › LLM server › Model.</strong> <strong>Fetch models</strong> lists everything the server offers, with no word on which of them can summarize. Under the address, a server that has a tested pick (today only Ollama Cloud, <strong>gemma4:31b</strong>) shows it under <strong>Worked when tested</strong>, with the day it was tried. That is a statement about that day, not a recommendation, and the service may have changed since. The app also remembers, on this device only (it does not sync), what happened with each model on each server: <strong>worked here</strong> after a finished summary (the <strong>Test</strong> button alone does not set it), <strong>thinks first</strong> for a model that reasons before it answers, and <strong>answered 400</strong> when the server said the model cannot be used for chat, with the reason it gave. Models that worked are listed first, and a model that answered 400 is listed last and greyed. No model is hidden, and a greyed one can still be chosen.</p>
+
 <p>A Gemma 4 E2B or E4B model in a GGUF file brings a small helper file after it, about 60 MB, which guesses the next words for the model to check. With it, llama.cpp writes summaries faster; the summaries can differ a little in wording from what the model writes without it. It is downloaded at the end of the model's download and kept beside the model, and it is deleted with the last model of its size. A model downloaded before this version gets it on its own when the app starts on a connection that is not metered; until then the model runs without it.</p>
 
 <p><strong>Configuration › Advanced › On-device model › This device</strong> shows the processor, the GPU, how much memory the device and its GPU have and use, and how much SummaReader holds, read again every three seconds; <strong>Copy</strong> puts it on the clipboard. Which model and context window fit depends on these numbers.</p>
@@ -77,7 +79,7 @@
 
 <p>With <strong>Configuration › Advanced › Development › Experiments › Experimental engines</strong> on, <strong>Configuration › Advanced › On-device model › Engine</strong> sets the engine that runs the model. If a model runs when you pick a different engine, the app asks first: <strong>Stop and change</strong> stops the model, then changes the engine. The model does not start again when you switch back. Turning <strong>Experimental engines</strong> off goes back to LiteRT-LM, and asks the same way. Apple Foundation Models is part of the system and needs no download. With it chosen, the downloaded models show <strong>Delete</strong> only, and the search is not there.</p>
 
-<p><strong>Configuration › Advanced › On-device model › Processor</strong> sets where the model runs. With <strong>Automatic</strong>, the engine selects. For llama.cpp, Automatic uses the processor when the graphics processor is an Adreno (most Android phones with a Qualcomm chip), because llama.cpp on that graphics processor can stop the app. You can still select <strong>Graphics</strong>; its help text then says that it can stop the app.</p>
+<p><strong>Configuration › Advanced › On-device model › Processor</strong> sets where the model runs. With <strong>Automatic</strong>, the engine selects. For llama.cpp, Automatic uses the processor when the graphics processor is an Adreno (most Android phones with a Qualcomm chip), because llama.cpp on that graphics processor can stop the app. You can still select <strong>Graphics</strong>; its help text then says that it can stop the app. <strong>Start</strong> on a model loads it on the processor you selected, so with <strong>Processor</strong> on the CPU the model does not first go to the graphics processor.</p>
 
 <p><strong>Configuration › Advanced › On-device model › Processor › Multi-token prediction</strong> lets a small helper model guess the next words, which the model then checks in one step. It works with Gemma 4 models, on both engines; with llama.cpp, only for Gemma 4 E2B and E4B, whose helper file the app downloads with the model. <strong>Automatic</strong> uses it with a graphics processor, where summaries are faster, but not on iPhone or iPad and not on the processor: on an iPad it made every summary fail. <strong>On</strong> and <strong>Off</strong> apply everywhere. A change takes effect the next time the model is loaded.</p>
 
@@ -123,7 +125,7 @@
 <h2 id="summarizing-by-hand">Summarizing by hand</h2>
 
 <ul>
-<li><strong>One article</strong> — open it and press <strong>Summarize</strong>.</li>
+<li><strong>One article</strong> — open it and press <strong>Summarize</strong>, or press <strong>Summarize</strong> in the strip a swipe uncovers on its row. It summarizes at once, at the length its source, its group or <strong>Configuration › Basic › Summaries › Summarizing › Overview length</strong> gives it. To choose the length for that one summary, hold the button (touch) or right-click it (mouse); a screen reader has the action <strong>Summarize with a length…</strong>. The first plain press tells you this once. <strong>Configuration › Basic › Summaries › Summarizing › Ask for the length</strong> changes it: <strong>Always</strong> asks on every press, <strong>On long press or right click</strong> is the default, and <strong>Never</strong> turns the hold and the right-click off too.</li>
 <li><strong>One feed</strong> — its panel, <strong>Summarize this feed</strong>.</li>
 <li><strong>Whatever is filtered</strong> — the <strong>Summarize all</strong> button in the filter panel. It says how many it will do, and that number is what it does.</li>
 </ul>
@@ -148,7 +150,7 @@
   <a href="privacy.html">Privacy</a> ·
   <a href="eula.html">Licence</a> ·
   <a href="terms.html">Terms</a></p>
-  <p>Describes SummaReader 0.149.0, published 20 November 2026.</p>
+  <p>Describes SummaReader 0.150.0, published 25 November 2026.</p>
 </footer>
 
 </main>

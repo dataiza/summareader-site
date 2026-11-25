@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Reading — SummaReader</title>
-<meta name="description" content="Click an article, or press ↵. Depending on the window and the layout chosen in Configuration › Basic › Appearance › Layout, it opens beside the list, above…">
+<meta name="description" content="Click an article, or press ↵. Depending on the window and the layout chosen in Configuration › Basic › Navigation › Panes and shelf › Layout, it opens…">
 <link rel="canonical" href="https://summareader.dataiza.sk/guide-reading.html">
 <link rel="alternate" hreflang="en" href="https://summareader.dataiza.sk/guide-reading.html">
 <link rel="alternate" hreflang="cs" href="https://summareader.dataiza.sk/cs/guide-reading.html">
@@ -48,7 +48,7 @@
 
 <h1 id="reading">Reading</h1>
 
-<p>Click an article, or press <code>↵</code>. Depending on the window and the layout chosen in <strong>Configuration › Basic › Appearance › Layout</strong>, it opens beside the list, above or below it, or takes the whole window. On a phone it always takes the whole screen.</p>
+<p>Click an article, or press <code>↵</code>. Depending on the window and the layout chosen in <strong>Configuration › Basic › Navigation › Panes and shelf › Layout</strong>, it opens beside the list, above or below it, or takes the whole window. On a phone it always takes the whole screen.</p>
 
 <figure><a href="img/reader.png"><img src="img/reader.png" alt="Reading an article" loading="lazy"></a></figure>
 
@@ -74,17 +74,17 @@
 
 <h2 id="moving-between-articles">Moving between articles</h2>
 
-<p>Drag the article sideways, or use <code>j</code> / <code>k</code>. Dragging right at the first one goes back to the list. On a phone, or in a narrow window, a drag from the left edge goes back to the list and a drag from the right edge opens the web page. A pull past the end or the top of the article does nothing until you select an action for it.</p>
+<p>Drag the article sideways, or use <code>j</code> / <code>k</code>, or <code>Space</code> at the end of it. Dragging right at the first one goes back to the list. On a phone, or in a narrow window, a drag from the left edge goes back to the list and a drag from the right edge opens the web page. A pull past the end or the top of the article does nothing until you select an action for it.</p>
 
 <p>A pull acts when you let go. When the pull is far enough, a short hint names the action. If you move back before you let go, nothing occurs. The next article then slides up from below, and the previous article slides down from above. <code>j</code> and <code>k</code> move the article in the same way. On a touch screen, a pull to the next or previous article moves that article in with your finger as you pull. The hint shows over it when the pull is far enough, and the article moves back if you let go too soon.</p>
 
 <p>On the last article in the list, a drag sideways or a pull to the next article marks the article read and goes back to the list. A message tells you it was the last article, and during a pull the hint says so. On the last article of a page, both open the first article of the next page.</p>
 
-<p>To set how far you must pull before letting go does the action, select <strong>Short</strong>, <strong>Medium</strong> or <strong>Long</strong> under <strong>Configuration › Basic › Navigation › Article gestures › Pull distance</strong>. They are a third, half and three quarters of the article's height. <strong>Long</strong> is the default. A fast flick does the action at any distance.</p>
+<p>To set how far you must pull before letting go does the action, select <strong>Short</strong>, <strong>Medium</strong> or <strong>Long</strong> under <strong>Configuration › Basic › Navigation › Gestures › Pull distance</strong>. They are a third, half and three quarters of the article's height. <strong>Long</strong> is the default. A fast flick does the action at any distance.</p>
 
-<p>You can give each of these six gestures a different action, for example <strong>Mark read / unread</strong> or <strong>Mark read and open the next</strong>. Select them under <strong>Configuration › Basic › Navigation › Article gestures</strong>. The swipe on a list entry is under <strong>Configuration › Basic › Navigation › Swipe gestures</strong>.</p>
+<p>You can give each of these six gestures a different action, for example <strong>Mark read / unread</strong> or <strong>Mark read and open the next</strong>. Select them under <strong>Configuration › Basic › Navigation › Gestures › Article gestures</strong>. The swipe on a list entry is under <strong>Configuration › Basic › Navigation › Gestures</strong>.</p>
 
-<p>On a phone or a tablet, pull the list down to reload it or to check your sources. The app asks which: <strong>Reload the list</strong> or <strong>Check for new articles</strong>. To do one of them without the question, select it under <strong>Configuration › Basic › Navigation › Swipe gestures › Pull down the list</strong>.</p>
+<p>On a phone or a tablet, pull the list down to reload it or to check your sources. The app asks which: <strong>Reload the list</strong> or <strong>Check for new articles</strong>. To do one of them without the question, select it under <strong>Configuration › Basic › Navigation › Gestures › Pull down the list</strong>.</p>
 
 <h2 id="scrolling">Scrolling</h2>
 
@@ -92,7 +92,11 @@
 
 <p>With the article focused, <code>↓</code> and <code>↑</code> move it by a few lines of its text, and so does one notch of the mouse wheel over it. How many lines is <strong>Configuration › Basic › Navigation › Scrolling › Scroll by</strong>: 1, 2, 3, 5 or 8, and 3 to begin with. The step follows the text size and the line spacing, so it stays the same number of lines at any setting. A touchpad keeps its own fine movement.</p>
 
-<p><code>Page Down</code> and <code>Page Up</code> move nine tenths of a screen, so the last lines you read stay at the top of the next screen. <code>Home</code> and <code>End</code> go to the start and the end.</p>
+<p><code>Page Down</code> and <code>Page Up</code> move nine tenths of a screen, so the last lines you read stay at the top of the next screen. <code>Home</code> and <code>End</code> go to the start and the end. These four stop at the ends of the article and go no further.</p>
+
+<p><code>Space</code> is the key that goes on. It moves a page down, and when the article is already at its end it opens the next article, sliding in from below as <code>j</code> does. <code>Shift+Space</code> moves a page up, and from the start of the article it opens the previous one. An article that fits the window turns on the first <code>Space</code>. Holding the key does not turn more than one article.</p>
+
+<p><code>Tab</code> and <code>Shift+Tab</code> move between the shelf, the list and the article, and so do <code>→</code> and <code>←</code>. They stop at the first and the last pane instead of going round, and do nothing when the window shows one pane. Since this version <code>←</code> and <code>→</code> no longer step through the list or open the previous and next article, and they no longer fold or unfold a group in the shelf: <code>↵</code> folds a group there, and <code>⇧↵</code> filters to it. A drag sideways still turns the article.</p>
 
 <p>These moves glide to the new place instead of jumping. <strong>Configuration › Basic › Navigation › Scrolling › Smooth scrolling</strong> turns that off. It is also off when your system is set to reduce motion.</p>
 
@@ -128,7 +132,7 @@
   <a href="privacy.html">Privacy</a> ·
   <a href="eula.html">Licence</a> ·
   <a href="terms.html">Terms</a></p>
-  <p>Describes SummaReader 0.149.0, published 20 November 2026.</p>
+  <p>Describes SummaReader 0.150.0, published 25 November 2026.</p>
 </footer>
 
 </main>

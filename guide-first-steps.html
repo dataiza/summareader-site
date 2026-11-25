@@ -131,7 +131,7 @@
 <p>A summary is written by a <strong>model</strong>: a program that reads the article and writes a short version of it. The model runs in one of two places.</p>
 
 <ul>
-<li><strong>This device</strong> — the model runs on your phone or computer. Nothing leaves the device. You download the model once. Summaries on this device are slow: a few minutes for each part of an article, and much longer on older phones and tablets.</li>
+<li><strong>This device</strong> — the model runs on your phone or computer. Nothing leaves the device. You download the model once. Summaries on this device are slow: a few minutes for each part of an article, and much longer on older phones and tablets. While the model reads the text it has been given, the status bar shows "reading the prompt" and the time so far, for example 1:40. It can be minutes on a long part, and nothing else changes until the model starts to write. With llama.cpp the bar also shows the share of the text read, for example 41%. It is a clock only on the other engines and for text with images or audio: they do not say how far they have read. Then the bar shows the tokens written.</li>
 <li><strong>Remote LLM</strong> — the article goes to a server that runs the model: one you run yourself, or a paid service. A server is much faster. It is the only time an article's text leaves your device.</li>
 </ul>
 
@@ -220,7 +220,7 @@
   <a href="privacy.html">Privacy</a> ·
   <a href="eula.html">Licence</a> ·
   <a href="terms.html">Terms</a></p>
-  <p>Describes SummaReader 0.149.0, published 20 November 2026.</p>
+  <p>Describes SummaReader 0.150.0, published 25 November 2026.</p>
 </footer>
 
 </main>

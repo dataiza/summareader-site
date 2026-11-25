@@ -75,6 +75,10 @@
 
 <p>Když jsou zapnuté <strong>Nastavení › Pokročilé › Vývoj › Experimenty › Experimentální enginy</strong>, <strong>Nastavení › Pokročilé › Model v zařízení › Engine</strong> nastavuje engine, který model spouští. Pokud model běží, když vyberete jiný engine, aplikace se nejdřív zeptá: <strong>Zastavit a přepnout</strong> model zastaví a pak engine změní. Když přepnete zpět, model se znovu nespustí. Když vypnete <strong>Experimentální enginy</strong>, aplikace se vrátí k LiteRT-LM a zeptá se stejně. Apple Foundation Models je součástí systému a nepotřebuje stahování. Když je vybraný, stažené modely ukazují jen <strong>Smazat</strong> a hledání tam není.</p>
 
+<p><strong>Nastavení › Pokročilé › Model v zařízení › Procesor</strong> nastavuje, kde model běží. S <strong>Automaticky</strong> vybírá engine. U llama.cpp Automaticky používá procesor, když je grafický procesor Adreno (většina telefonů s Androidem a čipem Qualcomm), protože llama.cpp na tomto grafickém procesoru může aplikaci zastavit. Přesto můžete vybrat <strong>Grafika</strong>; její nápověda pak říká, že může aplikaci zastavit. <strong>Spustit</strong> u modelu ho načte na procesoru, který jste vybrali, takže s <strong>Procesor</strong> nastaveným na procesor model nejdřív nejde na grafický procesor.</p>
+
+<p><strong>Nastavení › Pokročilé › Model v zařízení › Procesor › Predikce více tokenů</strong> nechá malý pomocný model hádat další slova, která model ověří v jednom kroku. Funguje s modely Gemma 4 na obou enginech; s llama.cpp jen u Gemma 4 E2B a E4B, jejichž pomocný soubor aplikace stáhne spolu s modelem. <strong>Automaticky</strong> ji používá s grafickým procesorem, kde jsou shrnutí rychlejší, ale ne na iPhonu či iPadu a ne na procesoru: na iPadu kvůli ní selhalo každé shrnutí. <strong>Zapnuto</strong> a <strong>Vypnuto</strong> platí všude. Změna se projeví při příštím načtení modelu.</p>
+
 <p>Některé modely tady vůbec nepoběží — soubor může vyžadovat grafickou podporu, o kterou tato verze nemá jak požádat, a aplikace to řekne, místo aby to zkoušela znovu.</p>
 
 <h2 id="automatic-summaries-premium-only">Automatická shrnutí (jen Premium)</h2>
@@ -140,7 +144,7 @@
   <a href="../privacy.html">Soukromí</a> ·
   <a href="../eula.html">Licence</a> ·
   <a href="../terms.html">Podmínky</a></p>
-  <p>Popisuje SummaReader 0.149.0, vydáno 20. listopadu 2026.</p>
+  <p>Popisuje SummaReader 0.150.0, vydáno 25. listopadu 2026.</p>
 </footer>
 
 </main>

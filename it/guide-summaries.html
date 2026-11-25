@@ -75,6 +75,10 @@
 
 <p>Con <strong>Configurazione › Avanzate › Sviluppo › Esperimenti › Motori sperimentali</strong> attivo, <strong>Configurazione › Avanzate › Modello sul dispositivo › Motore</strong> imposta il motore che esegue il modello. Se un modello gira quando scegli un motore diverso, l’app chiede prima conferma: <strong>Ferma e cambia</strong> ferma il modello, poi cambia il motore. Il modello non riparte quando torni indietro. Spegnere <strong>Motori sperimentali</strong> torna a LiteRT-LM, e chiede allo stesso modo. Apple Foundation Models fa parte del sistema e non richiede download. Quando è scelto, i modelli scaricati mostrano solo <strong>Elimina</strong>, e la ricerca non c’è.</p>
 
+<p><strong>Configurazione › Avanzate › Modello sul dispositivo › Processore</strong> imposta dove gira il modello. Con <strong>Automatico</strong>, sceglie il motore. Con llama.cpp, Automatico usa il processore quando il processore grafico è un Adreno (la maggior parte dei telefoni Android con chip Qualcomm), perché llama.cpp su quel processore grafico può fermare l’app. Puoi comunque scegliere <strong>Grafica</strong>; il suo testo di aiuto dice allora che può fermare l’app. <strong>Avvia</strong> su un modello lo carica sul processore che hai scelto, quindi con <strong>Processore</strong> sulla CPU il modello non passa prima dal processore grafico.</p>
+
+<p><strong>Configurazione › Avanzate › Modello sul dispositivo › Processore › Previsione multi-token</strong> lascia che un piccolo modello ausiliario indovini le parole successive, che il modello verifica in un solo passaggio. Funziona con i modelli Gemma 4 su entrambi i motori; con llama.cpp solo per Gemma 4 E2B ed E4B, il cui file ausiliario l'app scarica insieme al modello. <strong>Automatico</strong> la usa con un processore grafico, dove i riassunti sono più veloci, ma non su iPhone o iPad e non sul processore: su un iPad faceva fallire ogni riassunto. <strong>Attiva</strong> e <strong>Disattiva</strong> valgono ovunque. Una modifica ha effetto al prossimo caricamento del modello.</p>
+
 <p>Alcuni modelli qui non funzionano affatto: un file può richiedere un supporto grafico che questa versione non ha modo di chiedere, e l’app lo dice invece di riprovare.</p>
 
 <h2 id="automatic-summaries-premium-only">Riassunti automatici (solo Premium)</h2>
@@ -140,7 +144,7 @@
   <a href="../privacy.html">Privacy</a> ·
   <a href="../eula.html">Licenza</a> ·
   <a href="../terms.html">Termini</a></p>
-  <p>Descrive SummaReader 0.149.0, pubblicato il 20 novembre 2026.</p>
+  <p>Descrive SummaReader 0.150.0, pubblicato il 25 novembre 2026.</p>
 </footer>
 
 </main>
